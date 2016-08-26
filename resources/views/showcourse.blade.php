@@ -1,3 +1,4 @@
+@extends('master')
 @foreach($Courses as $Course)
-	{{$Course->subject}}<br> 
+	<a href='/course/{{$Course->id}}'>{{$Course->subject}}</a><br> 
 @endforeach
