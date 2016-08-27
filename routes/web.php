@@ -38,6 +38,11 @@ Route::get('/logout', function(){
     return redirect()->route('welcome');
 });
 Route::get('/course/{id}/uninterest', 'JobController@uninterest');
+Route::get('/viewmycourse', 'JobController@viewmycourse');
+Route::get('/viewmycourse/{id}', 'JobController@manage');
+
+
+
 Route::get('/run',function(){
 Sentinel::getRoleRepository()->createModel()->create([
     'name' => 'Student',

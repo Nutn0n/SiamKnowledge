@@ -5,6 +5,7 @@ use App\Http\Requests;
 use App\Course;
 use App\interest;
 use Sentinel;
+use App\User;
 class JobController extends Controller
 {
     public function addcourse(Request $request){
@@ -16,6 +17,10 @@ class JobController extends Controller
 		$Course->available = true;
 		$Course->save();
 		return 'successful';
+	}
+	public function viewmycourse(){
+		$Courses = Course::where('user_id', Sentinel::getUser()->id)->get();
+		return view('viewmycourse')->with('data', ['course'=>$Courses]);
 	}
 	public function showcourse(){
 		$Courses = Course::where('available', True)->get();
@@ -47,5 +52,9 @@ class JobController extends Controller
 		interest::where([['course_id', $id], ['user_id', Sentinel::getUser()->id]])->delete();
 		return back();
 
+	}
+	public function manage($id){
+		$Course = Course::find($id);
+		return view('managecourse')->with('data', ['course'=>$Course]);
 	}
 }
