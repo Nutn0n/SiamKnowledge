@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Course;
+use App\interest;
 use Sentinel;
 class JobController extends Controller
 {
@@ -20,15 +21,31 @@ class JobController extends Controller
 		$Courses = Course::where('available', True)->get();
 		return view('showcourse')->with('Courses', $Courses);
 	}
+	public function interest($id){
+		$interest = new interest;
+		$interest->user_id = Sentinel::getUser()->id;
+		$interest->course_id = $id;
+		$interest->save();
+		return back();
+	}
 	public function showcoursepage($id){
 		$Course = Course::find($id);
 		$tutor = false;
+		$haveinterest = true;
 		if(Sentinel::check()){
 			if(Sentinel::getUser()->hasAccess(['Interest',])){
 				$tutor = true;
 			}
+			if(interest::where([['user_id', Sentinel::getUser()->id], ['course_id', $id]])->get()->isEmpty()){
+				$haveinterest = false;
+			}
 			}
 		
-		return view('showcoursepage')->with('data', ['Course'=>$Course, 'tutor'=>$tutor]);
+		return view('showcoursepage')->with('data', ['Course'=>$Course, 'tutor'=>$tutor, 'haveinterest'=>$haveinterest]);
+	}
+	public function uninterest($id){
+		interest::where([['course_id', $id], ['user_id', Sentinel::getUser()->id]])->delete();
+		return back();
+
 	}
 }

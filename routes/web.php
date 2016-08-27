@@ -25,6 +25,7 @@ Route::get('/tutorregister', function(){
     return view('register');
 });
 Route::get('/course/{id}', 'JobController@showcoursepage');
+Route::get('/course/{id}/interest', 'JobController@interest');
 Route::get('/check', function(){
     return var_dump(Sentinel::check());
 });
@@ -36,6 +37,7 @@ Route::get('/logout', function(){
     Sentinel::logout();
     return redirect()->route('welcome');
 });
+Route::get('/course/{id}/uninterest', 'JobController@uninterest');
 Route::get('/run',function(){
 Sentinel::getRoleRepository()->createModel()->create([
     'name' => 'Student',
@@ -44,7 +46,6 @@ Sentinel::getRoleRepository()->createModel()->create([
         'Addcourse' => true,
     ),
 ]);
-Route::get('/course/1/interest', 'JobController@interest');
 Sentinel::getRoleRepository()->createModel()->create([
     'name' => 'Tutor',
     'slug' => 'Tutor',
