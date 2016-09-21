@@ -26,9 +26,10 @@ class CreditController extends Controller
     	$log->save();
     }
     public function approvecredit($id){
-        $log = log::findById($id);
+        $log = log::find($id);
         $log->status = 'approve';
         //$log->by = approve by who. Need Implement
+        $log->save();
         
     }
 }

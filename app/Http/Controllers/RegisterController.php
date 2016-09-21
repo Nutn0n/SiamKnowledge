@@ -17,7 +17,7 @@ class RegisterController extends Controller
 		$role = Sentinel::findRoleByName('Student');
 		$role->users()->attach($user);
 		$credit = new credit;
-		$credit->user_id = Sentinel->getUser()->id;
+		$credit->user_id = Sentinel::getUser()->id;
 		$credit->save();
 		Sentinel::loginAndRemember($user);
 		return "registered";
@@ -31,7 +31,7 @@ class RegisterController extends Controller
 		$role = Sentinel::findRoleByName('Tutor');
 		$role->users()->attach($user);
 		$credit = new credit;
-		$credit->user_id = Sentinel->getUser()->id;
+		$credit->user_id = Sentinel::getUser()->id;
 		$credit->save();
 		Sentinel::loginAndRemember($user);
 		return "registered";
