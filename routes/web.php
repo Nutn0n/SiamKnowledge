@@ -27,13 +27,11 @@ Route::get('/', 'JobController@showcourse')->name('welcome');
 Route::get('/studentregister', function(){
 	return view('register');
 });
-/*Register */
 Route::post('/studentregister','RegisterController@registerStudent');
 Route::post('/tutorregister', 'RegisterController@registerTutor');
 Route::get('/tutorregister', function(){
     return view('register');
 });
-/*End Register */
 Route::get('/course/{id}', 'JobController@showcoursepage');
 Route::get('/course/{id}/interest', 'JobController@interest');
 Route::get('/check', function(){
@@ -56,7 +54,6 @@ Route::get('/assignadmin', function(){
     $role = Sentinel::findRoleByName('Admin');
     $role->users()->attach($user);
 });
-//Not complete need to be implemented ASAP.
 Route::get('/run',function(){
 Sentinel::getRoleRepository()->createModel()->create([
     'name' => 'Student',
