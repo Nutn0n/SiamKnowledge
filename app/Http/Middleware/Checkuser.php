@@ -13,15 +13,11 @@ class Checkuser
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next)
+    public function handle($request, Closure $next, $role)
     {
-        if(Sentinel::check()){
-            if(Sentinel::check()->hasAccess(['Addcourse'])){
-                return $next($request);
-            }
+        if(!(Sentinel::check() && Sentinel::getUser()->roles->first()->name == $role)){
+         return redirect()->route('welcome');   
         }
-        else{
-            return redirect()->route('welcome');
-          }
-        }
+        return $next($request);
+}
 }

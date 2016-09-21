@@ -1,10 +1,10 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Sentinel;
 use App\Http\Requests;
+use App\Credit;
 
 class RegisterController extends Controller
 {
@@ -16,6 +16,9 @@ class RegisterController extends Controller
 		$user = Sentinel::registerAndActivate($credentials);
 		$role = Sentinel::findRoleByName('Student');
 		$role->users()->attach($user);
+		$credit = new credit;
+		$credit->user_id = Sentinel->getUser()->id;
+		$credit->save();
 		Sentinel::loginAndRemember($user);
 		return "registered";
     }
@@ -27,6 +30,9 @@ class RegisterController extends Controller
 		$user = Sentinel::registerAndActivate($credentials);
 		$role = Sentinel::findRoleByName('Tutor');
 		$role->users()->attach($user);
+		$credit = new credit;
+		$credit->user_id = Sentinel->getUser()->id;
+		$credit->save();
 		Sentinel::loginAndRemember($user);
 		return "registered";
     }
