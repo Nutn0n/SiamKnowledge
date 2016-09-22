@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,7 +9,8 @@
 | to using a Closure or controller method. Build something great!
 |
 */
-Route::group(['middleware' => ['Checkuser']], function () {
+
+Route::group(['middleware' => ['Checkuser:Student']], function () {
     Route::get('/addcourse', function(){return view('addcourse');});
     Route::post('/addcourse', 'JobController@addcourse');
     Route::get('/addcredit', function(){return view('addcredit');});

@@ -29,8 +29,11 @@ class User extends Authenticatable
     public function interests()
     {
         return $this->hasMany('App\interest');
+    }
+    public function credit(){
         return $this->hasOne('App\Credit');
+    }
+    public function  profile(){
         return $this->hasOne('App\Profile');
     }
-
 }

@@ -7,7 +7,8 @@ use App\Http\Requests;
 
 use Sentinel;
 use App\log;
-use Credit;
+use App\Credit;
+use App\User;
 
 class CreditController extends Controller
 {
@@ -30,6 +31,9 @@ class CreditController extends Controller
         $log->status = 'approve';
         //$log->by = approve by who. Need Implement
         $log->save();
+        $credit = Credit::where('user_id', $log->user_id)->first();
+        $credit->credit = $log->credit;
+        $credit->save();
         
     }
 }
