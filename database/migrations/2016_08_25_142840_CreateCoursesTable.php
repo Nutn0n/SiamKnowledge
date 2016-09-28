@@ -25,7 +25,7 @@ class CreateCoursesTable extends Migration
             $table->string('startdate')->nullable(); //วันเริ่ม
             $table->string('grade')->nullable();
             $table->string('topic')->nullable();
-            $table->string('tutor')->nullable();
+            $table->string('tutor_id')->nullable();
             $table->string('place')->nullable();
             $table->boolean('available')->nullable();
             $table->timestamps();

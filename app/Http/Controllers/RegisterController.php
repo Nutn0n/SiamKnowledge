@@ -59,7 +59,7 @@ class RegisterController extends Controller
 		];
 		$login = Sentinel::authenticateAndRemember($credentials);
     	if($login != False){
-    	return "loggedin";
+    	return view('welcome');
     	}
     	else{
     		return "wrong passwd";

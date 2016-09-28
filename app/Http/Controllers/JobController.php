@@ -57,4 +57,20 @@ class JobController extends Controller
 		$Course = Course::find($id);
 		return view('managecourse')->with('data', ['course'=>$Course]);
 	}
+	public function selecttutor($id, $tutorid){
+		$User = User::find(Sentinel::getUser()->id);
+		$Course = Course::find($id);
+		if($User->credit->credit >= $Course->credit){
+			$Course->tutor_id = $tutorid;
+			$Course->available = 0;
+			$Course->save();
+			$User->credit->reservedcredit += $Course->credit;
+			$User->credit->credit = $User->credit->credit - $Course->credit;
+			$User->credit->save();
+			return "success";
+		}
+		else{
+			return "not enough credit";
+		}
+	}
 }
