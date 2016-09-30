@@ -16,10 +16,17 @@ class CreateProfilesTable extends Migration
         Schema::create('profiles', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
-            $table->string('firstname');
-            $table->string('lastname');
-            $table->string('grade');
-            $table->string('school');
+            $table->string('name');
+            $table->string('calledname');
+            $table->integer('birthdate');
+            $table->string('gender');
+            $table->string('school')->nullable();
+            $table->string('university')->nullable();
+            $table->string('field');
+            $table->string('inter-or-not');
+            $table->string('email');
+            $table->string('phone');
+            $table->string('lineid')->nullable();
             $table->string('status'); //whether user is parent tutor or student or whatever.
             $table->integer('teachhours')->nullable();
             $table->integer('tutorgrade')->nullable();

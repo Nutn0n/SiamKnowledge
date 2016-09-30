@@ -45,7 +45,7 @@
 
 Route::get('/course/{id}', 'JobController@showcoursepage');
 Route::get('/login', function(){
-    return view('register');
+    return view('login');
 });
 Route::post('/login', 'RegisterController@login');
 Route::get('/logout', function(){

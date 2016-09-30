@@ -22,9 +22,16 @@ class RegisterController extends Controller
 		$usermodel = User::find(Sentinel::getUser()->id);
 		$usermodel->Credit()->save(new Credit);
 		$profile = new Profile;
-		$profile->firstname = $request->firstname;
-		$profile->lastname = $request->lastname;
-		$profile->grade = $request->grade;
+		$profile->name = $request->name;
+		$profile->calledname = $request->calledname;
+		$profile->birthdate = $request->birthdate;
+		$profile->gender  = $request->gender;
+		$profile->school  = $request->school;
+		$profile->university  = $request->university;
+		$profile->field  = $request->field;
+		$profile->inter  = $request->inter;
+		$profile->email  = $request->email;
+		$profile->lineid  = $request->lineid;
 		$profile->status = 'student';
 		$profile->school  = $request->school;
 		$usermodel->Profile()->save($profile);
@@ -42,10 +49,16 @@ class RegisterController extends Controller
 		$usermodel = User::find(Sentinel::getUser()->id);
 		$usermodel->Credit()->save(new Credit);
 		$profile = new Profile;
-		$profile->firstname = $request->firstname;
-		$profile->lastname = $request->lastname;
-		$profile->grade = $request->grade;
+		$profile->name = $request->name;
+		$profile->calledname = $request->calledname;
+		$profile->birthdate = $request->birthdate;
+		$profile->gender  = $request->gender;
 		$profile->school  = $request->school;
+		$profile->university  = $request->university;
+		$profile->field  = $request->field;
+		$profile->inter  = $request->inter;
+		$profile->email  = $request->email;
+		$profile->lineid  = $request->lineid;
 		$profile->status = 'tutor';
 		$profile->teachhours = 0;
 		$profile->tutorgrade = 1;
@@ -59,7 +72,7 @@ class RegisterController extends Controller
 		];
 		$login = Sentinel::authenticateAndRemember($credentials);
     	if($login != False){
-    	return view('welcome');
+    	return redirect()->route('welcome');
     	}
     	else{
     		return "wrong passwd";

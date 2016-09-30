@@ -1,0 +1,372 @@
+@import url(http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+@import 'https://fonts.googleapis.com/css?family=Prompt:100,200,300,400&subset=thai';
+
+
+body {
+font-family: 'Sukhumvit Set','Prompt', sans-serif;
+background: #fafafa;
+text-rendering: optimizeLegibility;
+}
+
+.minor {
+  opacity: 0.7;
+  padding-left: 7px;
+}
+
+hr {
+  margin-top: 10px;
+ opacity: 0.6;
+}
+
+.login {
+  text-align: center;
+}
+
+.register .name {
+  width: 100%;
+}
+
+.hero {
+  margin-top: 10%;
+}
+
+.blub {
+  /* Real iamge size 375 × 563 */
+  display: inline-block;
+  background-image: url(blub.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80px;
+  height: 120px;
+  width:100px;
+  text-align: center;
+}
+
+.hero h1{
+  font-family: "Helvetica",sans-serif;
+  margin-top: 0px;
+  font-size: 60px;
+  color:#FF9200;
+  font-weight: 800;
+}
+.hero h2{
+  margin-top: -50px;
+  font-size: 24px;
+  color:#333;
+  font-weight: 300;
+}
+
+.enterplace {
+  cursor:default;
+  font-weight: 300;
+  color:#333;
+  outline: none;
+  padding-left:10px;
+  height: 35px;
+  width: 260px;
+  border: none;
+  margin-top: 15px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 4px 4px 10px;
+-moz-box-shadow: rgba(0,0,0,0.1) 4px 4px 10px;
+box-shadow: rgba(0, 0, 0, 0.1) 4px 4px 10px;
+transition: .2s ease;
+}
+
+.enterplace:hover {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 4px 4px 20px;
+-moz-box-shadow: rgba(0,0,0,0.2) 4px 4px 20px;
+box-shadow: rgba(0, 0, 0, 0.2) 4px 4px 20px;
+ transform: scale(1.05);
+ transition: .2s ease;
+}
+
+input:focus {
+  transition: .2s ease;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.2) 4px 4px 20px;
+  -moz-box-shadow: rgba(0,0,0,0.2) 4px 4px 20px;
+  box-shadow: rgba(0, 0, 0, 0.2) 4px 4px 20px;
+   transform: scale(1.05);
+}
+
+
+
+.sign-in-button {
+    margin-top: 40px;
+    border: none;
+    color:#fff;
+    display: inline-block;
+    font-size:20px;
+    width: 170px;
+    height: 40px;
+    background-color: #FF9200;
+    margin-bottom: 20px;
+      transition: .2s ease;
+}
+
+.sign-in-button:hover {
+  transition: .2s ease;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.2) 4px 4px 20px;
+  -moz-box-shadow: rgba(0,0,0,0.2) 4px 4px 20px;
+  box-shadow: rgba(0, 0, 0, 0.2) 4px 4px 20px;
+ transform: scale(1.05);
+}
+
+.forgot {
+  display: inline;
+  text-decoration: none;
+  color:#FF9200;
+}
+
+.forgot:hover {
+  color:#E88600;
+}
+
+.register-button {
+  cursor: pointer;
+  position: fixed;
+  top:40px;
+  right:10%;
+  display: inline-block;
+  height: 170px;
+  width: 170px;
+  background-color: #ff9a00;
+  border-radius: 360px;
+  color:#fff;
+  transition: .2s ease;
+  border: solid 0px #ff9a00;
+}
+
+.register-button:hover {
+  transition: .2s ease;
+  border: solid 3px #ff9a00;
+}
+
+.register-button h4 {
+  margin-top: 15px;
+  bottom:-30px;
+  position: relative;
+  font-size: 17px;
+}
+.register-button h1 {
+  font-size: 30px;
+}
+
+.register-button .ion-ios-arrow-right {
+   display: inline-block;
+    font-size: 40px;
+   margin-top: -40px;
+    z-index: 99;
+}
+
+@media screen and (max-width:800px) {
+
+
+  .register-button {
+    left:0;
+    position: relative;
+    cursor: pointer;
+    top:0px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 0px;
+    height: 70px;
+    width:100%;
+    background-color: #FF9200;
+    color:#fff;
+    transition: .2s ease;
+  }
+  .register-button:hover {
+      border: none;
+  }
+
+  .register p {
+    color:#777;
+  }
+
+  .register-button h4 {
+    margin-top:-25px;
+    position: relative;
+    font-size: 17px;
+  }
+  .register-button h1 {
+    font-size: 30px;
+  }
+
+  .register-button .ion-ios-arrow-right {
+     display: inline-block;
+      font-size: 40px;
+     margin-top: -40px;
+      z-index: 99;
+  }
+
+  .register-button .ion-ios-arrow-right {
+     display: none;
+  }
+
+  .register {
+    text-align: left;
+    padding: 0 5% 0 5%!important;
+  }
+
+  #radios {
+    font-size: 13px;
+  }
+
+}
+
+
+
+.register {
+  text-align: left;
+  padding: 0 30% 0 30%;
+}
+
+.register .hero {
+  margin-top: 200px;
+}
+
+.register .enterplace {
+  margin: 0 0 0 0;
+}
+
+.register-logo {
+  text-align: center;
+  margin: -100px 0 100px 0;
+}
+
+.register h2 {
+  color:#666;
+  font-size:25px;
+}
+
+
+.register h3 {
+  color:#666;
+  font-size: 20px;
+  font-weight: 200;
+  margin: 20px 0 0 0;
+  padding-left: 7px;
+}
+
+.register h3 span.reject {
+  color:#B74425;
+  font-size: 15px;
+  margin-left: 5px;
+}
+
+
+#radios label {
+	cursor: pointer;
+	position: relative;
+}
+
+#radios label + label {
+	margin-left: 15px;
+}
+
+input[type="radio"] {
+	opacity: 0; /* hidden but still tabable */
+	position: absolute;
+}
+
+input[type="radio"] + span {
+	color: #666;
+	border-radius: 50%;
+	padding: 12px;
+	transition: all 0.4s;
+	-webkit-transition: all 0.4s;
+  height: 35px;
+}
+
+input[type="radio"]:checked + span {
+	color: #fff;
+  background-color: #FF9200;
+}
+
+input[type="radio"]:focus + span {
+	color: #FF9200;
+}
+
+.edu-info , .contact-info {
+  margin-top: 140px;
+}
+
+.social-account {
+  margin-top: 20px;
+    padding-left: 14px;
+  font-size: 30px;
+  letter-spacing: 20px;
+  height: 50px;
+}
+
+
+.facebook-connect {
+  color:#999;
+}
+
+.facebook-connect:hover {
+  color:#333;
+  transition: .2s ease;
+}
+
+.twitter-connect {
+  color:#999;
+}
+
+.twitter-connect:hover {
+  color:#333;
+  transition: .2s ease;
+}
+
+.facebook-connected {
+  color:#3B539A;
+}
+
+.facebook-connected:hover {
+  color:#3B539A;
+    cursor:default;
+}
+
+.twitter-connected {
+  color:#39A9F1;
+}
+
+.twitter-connected:hover {
+  color:#39A9F1;
+  cursor:default;;
+}
+
+.finish-button {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.finish-register-button {
+
+    margin-top: 40px;
+    border: none;
+    color:#fff;
+    display: inline-block;
+    font-size:24px;
+    width: 190px;
+    height: 50px;
+    background-color: #FF9200;
+    margin-bottom: 20px;
+      transition: .2s ease;
+}
+
+.finish-register-button:hover {
+  transition: .2s ease;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.2) 4px 4px 20px;
+  -moz-box-shadow: rgba(0,0,0,0.2) 4px 4px 20px;
+  box-shadow: rgba(0, 0, 0, 0.2) 4px 4px 20px;
+ transform: scale(1.05);
+}
+
+footer {
+  color:#666;
+  margin-top: 200px;
+  width: 100%;
+  display: inline-block;
+  text-align: center!important;
+}
