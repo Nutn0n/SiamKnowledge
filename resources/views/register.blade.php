@@ -47,6 +47,13 @@
   			<span><span class="ion-transgender"></span> อื่น ๆ</span>
   		</label>
   	</div>
+    <h3>Email</h3> <!--<span class="ion-ios-minus-outline"></span> ข้อมูลไม่ถูกต้องกรุณาตรวจสอบใหม่</span></h3> -->
+  <input name='email' class="enterplace email"  placeholder="your@email.com" type="email"  autocomplete="on"></input>
+  </section>
+   <h3>รหัสผ่าน</h3> <!--<span class="ion-ios-minus-outline"></span> ข้อมูลไม่ถูกต้องกรุณาตรวจสอบใหม่</span></h3> -->
+  <input name='password' class="enterplace pass"  placeholder="ตั้งรหัสผ่านของคุณ" type="password"  autocomplete="off"></input>
+   <h3>ยืนยันรหัสผ่าน<h3> <!--<span class="ion-ios-minus-outline"></span> ข้อมูลไม่ถูกต้องกรุณาตรวจสอบใหม่</span></h3> -->
+  <input name='password' class="enterplace pass"  placeholder="ตั้งรหัสผ่านของคุณ" type="password"  autocomplete="off"></input>
   </section>
 
   <section class="edu-info">
@@ -99,8 +106,6 @@
 
   <section class="contact-info">
   <h2><span class="ion-ios-paperplane"></span> ข้อมูลติดต่อ</h2><hr/>
-  <h3>Email</h3> <!--<span class="ion-ios-minus-outline"></span> ข้อมูลไม่ถูกต้องกรุณาตรวจสอบใหม่</span></h3> -->
-  <input name='email' class="enterplace email"  placeholder="your@email.com" type="email"  autocomplete="on"></input>
   <h3>โทรศัพท์มือถือ</h3> <!--<span class="ion-ios-minus-outline"></span> ข้อมูลไม่ถูกต้องกรุณาตรวจสอบใหม่</span></h3> -->
   <input name='phone' class="enterplace phone"  placeholder="หมายเลขโทรศัพท์" type="tel"></input>
   <h3>ID LINE</h3> <!--<span class="ion-ios-minus-outline"></span> ข้อมูลไม่ถูกต้องกรุณาตรวจสอบใหม่</span></h3> -->
