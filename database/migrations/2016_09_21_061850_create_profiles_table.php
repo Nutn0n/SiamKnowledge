@@ -23,7 +23,7 @@ class CreateProfilesTable extends Migration
             $table->string('school')->nullable();
             $table->string('university')->nullable();
             $table->string('field');
-            $table->string('inter-or-not');
+            $table->string('inter');
             $table->string('email');
             $table->string('phone');
             $table->string('lineid')->nullable();

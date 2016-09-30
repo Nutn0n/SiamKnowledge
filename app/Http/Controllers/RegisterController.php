@@ -31,6 +31,7 @@ class RegisterController extends Controller
 		$profile->field  = $request->field;
 		$profile->inter  = $request->inter;
 		$profile->email  = $request->email;
+		$profile->phone  = $request->phone;
 		$profile->lineid  = $request->lineid;
 		$profile->status = 'student';
 		$profile->school  = $request->school;

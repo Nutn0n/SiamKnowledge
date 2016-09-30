@@ -35,7 +35,7 @@
 /*Register */
     Route::get('/studentregister', function(){
         return view('register');
-    });
+    })->name('register');
     Route::post('/studentregister','RegisterController@registerStudent');
     Route::post('/tutorregister', 'RegisterController@registerTutor');
     Route::get('/tutorregister', function(){

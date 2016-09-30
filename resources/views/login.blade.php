@@ -12,7 +12,7 @@
   <body>
 
   <div class="login">
-    <a href="#">
+    <a href="{{route('register')}}">
     <div class="register-button">
       <h4>ไม่ได้เป็นสมาชิก ?</h4>
       <h1>สมัครเรียน</h1>
