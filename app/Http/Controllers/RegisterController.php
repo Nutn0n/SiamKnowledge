@@ -11,6 +11,18 @@ use App\User;
 class RegisterController extends Controller
 {
     public function registerStudent(Request $request){
+    	$this->validate($request, [
+  			'name' => 'required',
+    		'calledname' => 'required',
+    		'birthdate' => 'required',
+    		'gender' => 'required',
+    		'field' => 'required',
+    		'inter' => 'required',
+    		'email' => 'required|unique:users,email',
+    		'phone' => 'required|numeric',
+    		'lineid' => 'required',
+    		'password' => 'required|confirmed',
+    		]);
     	$credentials = [
 		    'email'    => $request->email,
 		    'password' => $request->password,
@@ -39,6 +51,18 @@ class RegisterController extends Controller
 		return "registered";
     }
     public function registerTutor(Request $request){
+    	 $this->validate($request, [
+    		'name' => 'required',
+    		'calledname' => 'required',
+    		'birthdate' => 'required',
+    		'gender' => 'required',
+    		'field' => 'required',
+    		'inter' => 'required',
+    		'email' => 'required|unique:users,email',
+    		'phone' => 'required|numeric',
+    		'lineid' => 'required',
+    		'password' => 'required|confirmed',
+    		]);
     	$credentials = [
 		    'email'    => $request->email,
 		    'password' => $request->password,
@@ -67,6 +91,10 @@ class RegisterController extends Controller
 		return "registered";
     }
     public function login(Request $request){
+    	$this->validate($request, [
+    		'email' => 'required',
+    		'password' => 'required',
+    		]);
     	$credentials = [
 		    'email'    => $request->email,
 		    'password' => $request->password,
