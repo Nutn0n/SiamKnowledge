@@ -19,41 +19,39 @@
         Route::get('/viewmycourse', 'JobController@viewmycourse');
         Route::get('/viewmycourse/{id}', 'JobController@manage');
         Route::get('/viewmycourse/{id}/select/{tutorid}', 'JobController@selecttutor');
+        Route::get('/profile/{id}', 'JobController@viewprofile');
     });
 /*Tutor Middleware*/
     Route::group(['middleware'=>['Checkuser:Tutor']], function(){
         Route::get('/course/{id}/uninterest', 'JobController@uninterest');
-        
-
+        Route::get('/course/{id}/interest', 'JobController@interest');
     });
 /*Admin middleware*/
     Route::group(['middleware' => ['Checkuser:Admin']], function () {
         Route::get('/admin/credit/approve/{id}', 'CreditController@approvecredit');
         Route::get('/admin', 'AdminController@dashboard');
     });
-    Route::get('/', 'JobController@showcourse')->name('welcome');
-/*Register */
-    Route::get('/studentregister', function(){
-        return view('register');
-    })->name('register');
-    Route::post('/studentregister','RegisterController@registerStudent');
-    Route::post('/tutorregister', 'RegisterController@registerTutor');
-    Route::get('/tutorregister', function(){
-        return view('register');
+/*Guest middleware*/
+    Route::group(['middleware' => ['Guest']], function () {
+        /*Register */
+            Route::get('/studentregister', function(){return view('register');})->name('register');
+            Route::post('/studentregister','RegisterController@registerStudent');
+            Route::post('/tutorregister', 'RegisterController@registerTutor');
+            Route::get('/tutorregister', function(){return view('register');});
+            Route::get('/login', function(){return view('login');});
+            Route::post('/login', 'RegisterController@login');
+        /*End Register */
     });
-/*End Register */
+/*Not protected route*/
+    Route::get('/', 'JobController@showcourse')->name('welcome');
+    Route::get('/course/{id}', 'JobController@showcoursepage');
+/*End not protected route*/
 
-Route::get('/course/{id}', 'JobController@showcoursepage');
-Route::get('/login', function(){
-    return view('login');
-});
-Route::post('/login', 'RegisterController@login');
 Route::get('/logout', function(){
     Sentinel::logout();
     return redirect()->route('welcome');
 });
 
-Route::get('/course/{id}/interest', 'JobController@interest');
 
 /*-------------------------*/
 //Below here is for Debugging Purpose
@@ -93,10 +91,29 @@ Route::get('/course/{id}/interest', 'JobController@interest');
         ),
     ]);
     Sentinel::getRoleRepository()->createModel()->create([
-        'name' => 'Staff',
-        'slug' => 'Staff',
+        'name' => 'Reception',
+        'slug' => 'Reception',
         'permissions'   => array(
             'dashboard.view' => true,
+            'profile.view' =>true,
+
+        ),
+    ]);
+    Sentinel::getRoleRepository()->createModel()->create([
+        'name' => 'Support',
+        'slug' => 'Support',
+        'permissions'   => array(
+            'dashboard.view' => true,
+            'support.panel' =>true,
+
+        ),
+    ]);
+    Sentinel::getRoleRepository()->createModel()->create([
+        'name' => 'Business',
+        'slug' => 'Business',
+        'permissions'   => array(
+            'dashboard.money.view' => true,
+            'credit.edit' =>true,
 
         ),
     ]);

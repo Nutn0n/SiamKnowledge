@@ -83,6 +83,7 @@ class RegisterController extends Controller
 		$profile->field  = $request->field;
 		$profile->inter  = $request->inter;
 		$profile->email  = $request->email;
+		$profile->phone = $request->phone;
 		$profile->lineid  = $request->lineid;
 		$profile->status = 'tutor';
 		$profile->teachhours = 0;
@@ -104,7 +105,8 @@ class RegisterController extends Controller
     	return redirect()->route('welcome');
     	}
     	else{
-    		return "wrong passwd";
+    		$request->flash();
+    		return back()->with('errors', collect(['loginfail']));
     	}
     }
 }

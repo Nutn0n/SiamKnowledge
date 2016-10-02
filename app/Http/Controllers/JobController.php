@@ -57,6 +57,15 @@ class JobController extends Controller
 		$Course = Course::find($id);
 		return view('managecourse')->with('data', ['course'=>$Course]);
 	}
+	public function viewprofile($id){
+		$User = User::find($id);
+		if($User->profile->status=='tutor'){
+			return $User->profile->name;
+		}
+		else{
+			return 'what the fuck are you doing here???? fuckoffffff';
+		}
+	}
 	public function selecttutor($id, $tutorid){
 		$User = User::find(Sentinel::getUser()->id);
 		$Course = Course::find($id);
