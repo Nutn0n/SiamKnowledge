@@ -15,8 +15,13 @@ class JobController extends Controller
 		$Course->subject = $request->input('subject');
 		$Course->credit = 3;
 		$Course->length = $request->input('length');
+		$Course->startdate = $request->input('date');
 		$Course->place = $request->input('place');
 		$Course->objective = $request->input('objective');
+		$Course->time = $request->input('time');
+		$Course->topic = $request->input('topic');
+		$Course->inter = $request->input('inter');
+		$Course->group = $request->input('group');
 		$Course->available = true;
 		if($Course->save()){
 			return Carbon::now();
