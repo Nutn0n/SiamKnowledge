@@ -26,8 +26,6 @@
 
 
 
-
-
 </head>
 
 <body>
@@ -100,6 +98,7 @@
       <div id="datepicker"></div><br/>
       <h2 class="topic">เลือกเวลา</h2>
     <input type="time" class="normal-input">
+    <input type="text" id='datepickervalue'  hidden name="something" value="thevalue" />
       <h2 class="topic">จำนวนชั่วโมง</h2>
       <input type="time" name='length' class="number-spin-input">
       <h2 class="topic">ใส่สถานที่</h2>
@@ -112,10 +111,19 @@
     </div>
 </form>
 
-
   </section>
   <script src="../assets/js/jquery-3.1.1.js" type="text/javascript"></script>
   <script src="../assets/js/jquery-ui.js"></script>
   <script src="../assets/js/script.js" type="text/javascript"></script>
+  <script>
+  $(document).ready(function(){
+    $( "#datepicker" ).datepicker( "option", "dateFormat", "dd-mm-yy" );
+  })
+$("#datepicker").datepicker({
+  onSelect: function(dateText) {
+    $("#datepickervalue").val(dateText);
+  }
+});
+  </script>
 </body>
 </html>
