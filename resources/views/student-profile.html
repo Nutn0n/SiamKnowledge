@@ -65,54 +65,24 @@
     <img src="../assets/img/siam-knowledge-logo.svg" class="logo" />
 
     <!-- Content Area -->
-    <form action='' method='post'>
     <div class="content-area">
-      <h1 class="heading">จองเรียน</h1><br>
-      <select name='subject' class="dropdown-orange">
-        <option value="" disabled selected hidden>เลือกวิชา</option>
-        <option>choice one</option>
-        <option>choice two</option>
-        <option>choice three</option>
-      </select>
-      <ul class="select">
-        <li class="selection">
-          <input type="radio" id="a-option" name="type" checked="checked">
-          <label for="a-option"><span class="ion-ios-world-outline"></span>อินเตอร์</label>
-        </li>
-        <li class="selection">
-          <input type="radio" id="b-option" name="type">
-          <label for="b-option"><span class="ion-ios-chatbubble-outline"></span>ธรรมดา</label>
-        </li>
-      </ul>
-      <h2 class="topic">วัตถุประสงค์</h2>
-      <textarea name='objective' class="text-input" placeholder="Placeholder Text"></textarea>
-      <ul class="select">
-        <li class="selection">
-          <input type="radio" id="a-option" name="amount" checked="checked">
-          <label for="a-option">แบบเดี่ยว</label>
-        </li>
-        <li class="selection">
-          <input type="radio" id="b-option" name="amount">
-          <label for="b-option">แบบกลุ่ม</label>
-        </li>
-      </ul>
-      <h2 class="topic">เลือกวันที่</h2>
-      <div id="datepicker"></div><br/>
-      <h2 class="topic">เลือกเวลา</h2>
-    <input type="time" class="normal-input">
-      <h2 class="topic">จำนวนชั่วโมง</h2>
-      <input type="time" name='length' class="number-spin-input">
-      <h2 class="topic">ใส่สถานที่</h2>
-    <input type="text" name='place' class="normal-input">
-
-      <br/>      <br/>      <br/>      <br/>
-      {{ csrf_field() }}
-      <button type='submit' class="button button-orange">เพิ่มคอร์ส</button>
-
+      <h1 class="heading">ข้อมูลของฉัน</h1><br>
+      <h2 class="large-topic">ชื่อ - นามสกุล</h2>
+      <input type="text" class="large-normal-input normal-input">
+      <h2 class="large-topic">ชื่อเล่น</h2>
+      <input type="text" class="normal-input">
+      <h2 class="large-topic">อายุ</h2>
+      <input type="number" class="number-spin-input">
+      <h2 class="large-topic">โรงเรียน</h2>
+      <input type="text" class="large-normal-input normal-input">
+      <h1 class="sub-heading">ข้อมูลติดต่อ</h1><br>
+      <h2 class="large-topic">E-mail</h2>
+      <input type="text" class="normal-input">
+      <h2 class="large-topic">โทรศัพท์มือถือ</h2>
+      <input type="text" class="normal-input">
+      <br/>      <br/>
+   <a href="#" class="button button-orange">บันทึกการแก้ไข</a>
     </div>
-</form>
-
-
   </section>
   <script src="../assets/js/jquery-3.1.1.js" type="text/javascript"></script>
   <script src="../assets/js/jquery-ui.js"></script>

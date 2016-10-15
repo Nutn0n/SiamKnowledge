@@ -6,17 +6,24 @@ use App\Course;
 use App\interest;
 use Sentinel;
 use App\User;
+use Carbon;
 class JobController extends Controller
 {
     public function addcourse(Request $request){
 		$Course = new Course;
 		$Course->user_id = Sentinel::getUser()->id;
 		$Course->subject = $request->input('subject');
-		$Course->credit = $request->input('credit');
-		$Course->time = $request->input('time');
+		$Course->credit = 3;
+		$Course->length = $request->input('length');
+		$Course->place = $request->input('place');
+		$Course->objective = $request->input('objective');
 		$Course->available = true;
-		$Course->save();
-		return 'successful';
+		if($Course->save()){
+			return Carbon::now();
+		}
+		else{
+			return 'error';
+		}
 	}
 	public function viewmycourse(){
 		$Courses = Course::where('user_id', Sentinel::getUser()->id)->get();

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 
 use App\log;
+use App\Course;
 
 class AdminController extends Controller
 {
@@ -15,4 +16,7 @@ class AdminController extends Controller
     	$data = log::where('status', 'confirm')->get();
     	return view('admin.dashboard')->with('data', $data);
     }
+    public function coursedashboard(){
+
+    } 
 }

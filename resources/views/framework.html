@@ -29,7 +29,6 @@
 
 
 </head>
-
 <body>
   <section class="ui-wrapper">
     <!-- Left Sidebar -->
@@ -52,7 +51,7 @@
       <!-- Main Menu -->
       <ul class="menu">
         <li class="menu-button"><a href="#"><span class="menu-icon ion-person"></span>ข้อมูลของฉัน</a></li>
-        <li class="menu-button"><a href="#"><span class="menu-icon ion-ios-bookmarks"></span>กิจกรรมล่าสุด</a></li>
+        <li class="menu-button"><a href="#"><span class="menu-icon ion-ios-bookmarks"></span>กิจกรรม</a></li>
         <li class="menu-button"><a href="#"><span class="menu-icon ion-ios-calendar"></span>คอร์สที่เลือกเรียน</a></li>
         <li class="menu-button"><a href="#"><span class="menu-icon ion-card"></span>เครดิต</a></li>
       </ul>
@@ -65,15 +64,50 @@
     <img src="../assets/img/siam-knowledge-logo.svg" class="logo" />
 
     <!-- Content Area -->
-    <form action='' method='post'>
     <div class="content-area">
-      <h1 class="heading">จองเรียน</h1><br>
-      <select name='subject' class="dropdown-orange">
-        <option value="" disabled selected hidden>เลือกวิชา</option>
+
+      <div class="float-button">
+        <span>MENU</span>
+      </div>
+      <!-- Typography -->
+      <h1 class="framework-topic">//Typography</h1>
+      <h1 class="heading">Heading Text</h1><br>
+      <h1 class="sub-heading">Sub-Heading Text</h1><br>
+      <h2 class="large-topic">Large Topic Text</h2>
+      <h2 class="topic">Topic Text</h2>
+      <h3 class="description">Description Text</h3>
+      <h2 class="result">Search Result Text with <span class="bold-orange">Bold Text</span></h2>
+
+      <!-- Dropdown Selection -->
+      <br>
+      <h1 class="framework-topic">//Dropdown Selection</h1>
+      <select class="dropdown-orange">
+        <option value="" disabled selected hidden>Selection Box</option>
         <option>choice one</option>
         <option>choice two</option>
         <option>choice three</option>
       </select>
+
+      <select class="dropdown-outerspace">
+        <option value="" disabled selected hidden>Selection Box</option>
+        <option>choice one</option>
+        <option>choice two</option>
+        <option>choice three</option>
+      </select>
+
+      <!-- Selection -->
+      <br>
+      <h1 class="framework-topic">//Selection</h1>
+      <!--<ul class="select">
+        <li class="selection"><a href="#">อินเตอร์</a></li>
+        <li class="selection select-active"><a href="#">ธรรมดา</a></li>
+      </ul>
+
+      <ul class="select">
+        <li class="selection"><a href="#">แบบเดี่ยว</a></li>
+        <li class="selection select-active"><a href="#">แบบกลุ่ม</a></li>
+      </ul>-->
+
       <ul class="select">
         <li class="selection">
           <input type="radio" id="a-option" name="type" checked="checked">
@@ -84,8 +118,7 @@
           <label for="b-option"><span class="ion-ios-chatbubble-outline"></span>ธรรมดา</label>
         </li>
       </ul>
-      <h2 class="topic">วัตถุประสงค์</h2>
-      <textarea name='objective' class="text-input" placeholder="Placeholder Text"></textarea>
+
       <ul class="select">
         <li class="selection">
           <input type="radio" id="a-option" name="amount" checked="checked">
@@ -96,23 +129,53 @@
           <label for="b-option">แบบกลุ่ม</label>
         </li>
       </ul>
-      <h2 class="topic">เลือกวันที่</h2>
-      <div id="datepicker"></div><br/>
-      <h2 class="topic">เลือกเวลา</h2>
-    <input type="time" class="normal-input">
-      <h2 class="topic">จำนวนชั่วโมง</h2>
-      <input type="time" name='length' class="number-spin-input">
-      <h2 class="topic">ใส่สถานที่</h2>
-    <input type="text" name='place' class="normal-input">
 
-      <br/>      <br/>      <br/>      <br/>
-      {{ csrf_field() }}
-      <button type='submit' class="button button-orange">เพิ่มคอร์ส</button>
+      <!-- Text box -->
+      <h1 class="framework-topic">//Text Box</h1>
 
+      <input type="number" class="number-spin-input">
+      <input type="text" class="normal-input">
+      <textarea class="text-input" placeholder="Placeholder Text"></textarea>
+
+      <!-- Buttons -->
+      <h1 class="framework-topic">//Buttons</h1>
+      <a href="#" class="button button-orange">Button</a>
+      <a href="#" class="button button-grey">Button</a>
+
+      <!-- Datepicker -->
+      <h1 class="framework-topic">//Calendar</h1>
+      <div id="datepicker"></div>
+
+      <!-- Cards Layout -->
+      <h1 class="framework-topic">//Cards</h1>
+      <div class="card-large">
+        <div class="card-divider">
+          <div class="date"><h1>25<br><span>Dec</span></h1></div>
+          <div class="subject-detail">
+            <div class="subject-name"><h1>Subject Name<br><span>Condition...</span></h1></div>
+            <div class="subject-description"><h2 class="subject-time">13:00 - 14:00</h2><h2 class="subject-location">Siam Discovery</h2></div>
+          </div>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus maximus pellentesque nunc, vel vestibulum metus bibendum consequat. Donec congue ex sit amet dui vehicula vehicula. Etiam quis metus lectus. Sed quis sagittis nunc, et ullamcorper dolor. Sed non purus tempus, feugiat lacus at, tincidunt felis. Fusce viverra sem ipsum, ac ultrices odio elementum at. Sed quis luctus tortor. Integer varius pellentesque laoreet. Curabitur urna lectus, condimentum eget lectus pellentesque, bibendum rhoncus diam.</p>
+      </div>
+      <div class="card-small-wrapper">
+        <div class="card-small">
+          <div class="date"><h1>25<br><span>Dec</span></h1></div>
+          <div class="subject-detail">
+            <div class="subject-name"><h1>Subject Name<br><span>Condition...</span></h1></div>
+            <div class="subject-description"><h2 class="subject-time">13:00 - 14:00</h2><br class="card-breaker"><h2 class="subject-location">Siam Discovery</h2></div>
+          </div>
+        </div>
+        <div class="card-small">
+          <div class="date"><h1>25<br><span>Dec</span></h1></div>
+          <div class="subject-detail">
+            <div class="subject-name"><h1>Subject Name<br><span>Condition...</span></h1></div>
+            <div class="subject-description"><h2 class="subject-time">13:00 - 14:00</h2><h2 class="subject-location">Siam Discovery</h2></div>
+          </div>
+        </div>
+        <a href="#" class="reload-button"><span class="ion-ios-refresh-empty reload-icon"></span>reload</a>
+      </div>
     </div>
-</form>
-
-
   </section>
   <script src="../assets/js/jquery-3.1.1.js" type="text/javascript"></script>
   <script src="../assets/js/jquery-ui.js"></script>
