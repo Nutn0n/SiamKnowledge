@@ -75,7 +75,7 @@
         <option>ชีวะ</option>
       </select>
       <h2 class="topic">หัวข้อที่ต้องการเรียน</h2>
-      <input type="time" name='subject' class="normal-input">
+      <input type="text" name='subject' class="normal-input">
       <ul class="select">
         <li class="selection">
           <input name='inter' value='yes-inter' type="radio" id="a-option" checked>

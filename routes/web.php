@@ -20,6 +20,7 @@
         Route::get('/viewmycourse/{id}', 'JobController@manage');
         Route::get('/viewmycourse/{id}/select/{tutorid}', 'JobController@selecttutor');
         Route::get('/profile/{id}', 'JobController@viewprofile');
+        Route::get('/myprofile', function(){return view('student-profile');});
     });
 /*Tutor Middleware*/
     Route::group(['middleware'=>['Checkuser:Tutor']], function(){
