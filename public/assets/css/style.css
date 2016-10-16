@@ -750,7 +750,7 @@ a{
   }
 
   .card-large > p{
-    text-align: justify;
+    text-align: left;
     font-weight: 200;
     color: #666;
     padding-bottom: 150px;
@@ -866,7 +866,7 @@ a{
   }
 
   .card-large > p{
-    text-align: justify;
+    text-align: left;
     font-weight: 200;
     color: #666;
     padding-bottom: 50px;
