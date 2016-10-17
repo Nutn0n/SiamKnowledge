@@ -19,7 +19,7 @@ html, body{
 
 a{
   text-decoration: none;
-  color:inherit;
+  color: inherit;
 }
 
 /*------------------------*/
@@ -761,7 +761,7 @@ a{
   }
 
   .card-large > p{
-    text-align: left;
+    text-align: justify;
     font-weight: 200;
     color: #666;
     padding-bottom: 20px;
@@ -968,7 +968,7 @@ a{
   }
 
   .card-large > p{
-    text-align: left;
+    text-align: justify;
     font-weight: 200;
     color: #666;
     padding-bottom: 50px;
