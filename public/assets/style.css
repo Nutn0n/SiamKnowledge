@@ -19,8 +19,7 @@ html, body{
 
 a{
   text-decoration: none;
-  color: inherit;
-  font-size:  inherit;
+  color:inherit;
 }
 
 /*------------------------*/
@@ -1200,7 +1199,3 @@ a{
   height: auto;
   padding-top: 40px;
 }
-
-
-/* 
-.fuckelementnocachefoundlol{}*/
