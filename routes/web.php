@@ -27,6 +27,7 @@
         Route::get('/course/{id}/uninterest', 'JobController@uninterest');
         Route::get('/course/{id}/interest', 'JobController@interest');
         Route::get('/course', 'JobController@showcourse');
+        Route::get('/course/{id}', 'JobController@showcoursepage')->name('courseinfo');
 
     });
 /*Admin middleware*/
@@ -49,7 +50,6 @@
     Route::get('/', function(){
         return 'welcome';
     })->name('welcome');
-    //Route::get('/course/{id}', 'JobController@showcoursepage');
 /*End not protected route*/
 
 Route::get('/logout', function(){

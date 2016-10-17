@@ -10,7 +10,7 @@
 
     <h1 class="heading">เลือกคอร์สที่จะสอน</h1><br>
 @foreach($Courses as $Course)
-      <a href="/course/{{$Course->id}}">
+      <a href="{{route('courseinfo', ['id' => $Course->id])}}">
       <div class="card-small-wrapper">
         <div class="card-small">
           <div class="date"><h1>25<br><span>Dec</span></h1></div>
