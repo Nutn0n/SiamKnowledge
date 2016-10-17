@@ -19,7 +19,7 @@ html, body{
 
 a{
   text-decoration: none;
-  color:inherit;   
+  color: inherit;
 }
 
 /*------------------------*/
@@ -725,6 +725,17 @@ a{
 /*------------------------*/
 
 
+.back-large{
+  font-size: 23px;
+  font-weight: 200;
+  color: #333;
+}
+
+.back-large > span{
+  font-weight: 300;
+  color: orange;
+}
+
 @media screen and (min-width: 500px){
 
   .card-large{
@@ -750,10 +761,10 @@ a{
   }
 
   .card-large > p{
-    text-align: left;
+    text-align: justify;
     font-weight: 200;
     color: #666;
-    padding-bottom: 150px;
+    padding-bottom: 20px;
   }
 
   .card-divider{
@@ -766,7 +777,29 @@ a{
     flex-wrap: wrap;
   }
 
-  .subject-detail{
+  .card-divider:nth-of-type(2){
+    margin-bottom: 0;
+  }
+
+  .card-divider:nth-of-type(2) > div:nth-of-type(2){
+    height: auto;
+  }
+
+  .card-divider:nth-of-type(2) .card-time{
+    top: 0;
+    transform: none;
+  }
+
+  .card-request-divider{
+    display: flex;
+    height: 100px;
+    width: 100%;
+    min-width: 350px;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  .card-detail{
     flex-grow: 1;
     height: 100%;
   }
@@ -784,24 +817,24 @@ a{
     font-size: 20px;
   }
 
-  .subject-detail > div{
+  .card-detail > div{
     height: 50%;
     width: 100%;
   }
 
-  .subject-name > h1{
+  .card-name > h1{
     font-size: 22px;
     position: relative;
     font-weight: 200;
     line-height: 25px;
   }
 
-  .subject-name > h1 > span{
+  .card-name > h1 > span{
     font-size: 15px;
     font-weight: 200;
   }
 
-  .subject-description h2{
+  .card-description h2{
     display: inline-block;
     position: relative;
     top: 50%;
@@ -810,12 +843,12 @@ a{
     font-size: 16px;
   }
 
-  .subject-time{
+  .card-time{
     float: left;
     position: relative;
   }
 
-  .subject-location{
+  .card-location{
     float: right;
     margin-right: 25px;
     text-transform: uppercase;
@@ -851,6 +884,75 @@ a{
   .card-breaker{
     display: none;
   }
+
+  .card-request > p{
+    padding: 20px 0;
+  }
+
+  .teacher-pic{
+    width: 90px;
+    height: 90px;
+    border-radius: 200px;
+    background: #333;
+    margin-right: 10px;
+  }
+
+  .teacher-name > h1{
+    font-size: 22px;
+    position: relative;
+    font-weight: 200;
+    line-height: 25px;
+  }
+
+  .teacher-name > h1 > span{
+    font-size: 15px;
+    font-weight: 300;
+    padding-left: 20px;
+    color: #acacac;
+  }
+
+  .teacher-skills{
+    line-height: 50px;
+  }
+
+  .card-request .card-description h2{
+    top: 0;
+    transform: none;
+  }
+
+  .card-request-small > div:nth-of-type(1){
+    height: 90px;
+  }
+
+  .card-request-small > div{
+    height: auto;
+  }
+
+  .card-request-small .card-description h2{
+    top: 0;
+    transform: none;
+  }
+
+  .card-description > .card-school{
+    top: 0;
+    transform: none;
+    font-size: 13px;
+  }
+
+  .card-name.student-name > h1 > span {
+    font-weight: 400;
+    padding-left: 10px;
+    color: orange;
+    font-size: 20px;
+  }
+  .card-name.student-name > h1 {
+    font-size: 20px;
+  }
+
+  .card-request-divider > .card-detail > .card-name {
+    height: auto;
+    margin-bottom: 10px;
+  }
 }
 
 @media screen and (max-width: 500px){
@@ -866,13 +968,20 @@ a{
   }
 
   .card-large > p{
-    text-align: left;
+    text-align: justify;
     font-weight: 200;
     color: #666;
     padding-bottom: 50px;
   }
 
   .card-divider{
+    display: block;
+    height: auto;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .card-request-divider{
     display: block;
     height: auto;
     width: 100%;
@@ -891,44 +1000,45 @@ a{
     position: relative;
     text-align: center;
     padding: 20px 0;
+    margin-right: 10px;
   }
 
   .date > h1 > span{
     font-size: 20px;
   }
 
-  .subject-detail > div{
+  .card-detail > div{
     width: 100%;
   }
 
-  .subject-name > h1{
+  .card-name > h1{
     font-size: 22px;
     position: relative;
     font-weight: 200;
     line-height: 25px;
   }
 
-  .subject-name > h1 > span{
+  .card-name > h1 > span{
     font-size: 15px;
     font-weight: 200;
   }
 
-  .subject-description{
+  .card-description{
     padding-top: 15px;
   }
 
-  .subject-description h2{
+  .card-description h2{
     display: inline-block;
     position: relative;
     font-weight: 200;
     font-size: 16px;
   }
 
-  .subject-time{
+  .card-time{
     position: relative;
   }
 
-  .subject-location{
+  .card-location{
     padding-left: 0;
     text-transform: uppercase;
   }
@@ -961,6 +1071,73 @@ a{
 
   .card-breaker{
     display: block;
+  }
+
+  .card-request > p{
+    padding: 20px 0;
+  }
+
+  .teacher-pic{
+    width: 90px;
+    height: 90px;
+    border-radius: 200px;
+    background: #333;
+    display: block;
+    margin: auto;
+    margin-bottom: 20px;
+  }
+
+  .teacher-name > h1{
+    font-size: 22px;
+    position: relative;
+    font-weight: 200;
+    line-height: 25px;
+  }
+
+  .teacher-name > h1 > span{
+    font-size: 15px;
+    font-weight: 100;
+    padding-left: 20px;
+  }
+
+  .teacher-skills{
+    line-height: 50px;
+  }
+
+  .card-request-small > div:nth-of-type(1){
+    height: 90px;
+  }
+
+  .card-request-small > div{
+    height: auto;
+  }
+
+  .card-request-small .card-description h2{
+    transform: none;
+  }
+
+  .student-name span {
+    padding-left: 10px;
+    font-weight: 300;
+    color: orange;
+  }
+
+  .card-name.student-name > h1 > span {
+      font-weight: 400;
+      padding-left: 10px;
+      color: orange;
+  }
+
+  .card-name.student-name > h1 {
+    font-size: 20px;
+  }
+
+  .student-name{
+    text-align: center;
+  }
+
+  .student-description{
+    text-align: center;
   }
 }
 
