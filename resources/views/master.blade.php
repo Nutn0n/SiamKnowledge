@@ -73,5 +73,7 @@
   <script src="../assets/js/jquery-3.1.1.js" type="text/javascript"></script>
   <script src="../assets/js/jquery-ui.js"></script>
   <script src="../assets/js/script.js" type="text/javascript"></script>
+  @yield('postscript');
+  </script>
 </body>
 </html>

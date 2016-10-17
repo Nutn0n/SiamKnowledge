@@ -36,6 +36,10 @@ class JobController extends Controller
 	}
 	public function showcourse(){
 		$Courses = Course::where('available', True)->get();
+		foreach ($Courses as $Course) {
+			$Course->date = Carbon::parse($Course->startdate)->day;
+			$Course->month = Carbon::parse($Course->startdate)->format('M');
+		}
 		return view('showcourse')->with('Courses', $Courses);
 	}
 	public function interest($id){
@@ -47,6 +51,8 @@ class JobController extends Controller
 	}
 	public function showcoursepage($id){
 		$Course = Course::find($id);
+		$Course->date = Carbon::parse($Course->startdate)->day;
+		$Course->month = Carbon::parse($Course->startdate)->format('M');
 		$tutor = false;
 		$haveinterest = true;
 		if(Sentinel::check()){

@@ -40,7 +40,7 @@
       <div id="datepicker"></div><br/>
       <h2 class="topic">เลือกเวลา</h2>
     <input name='time' type="time" class="normal-input">
-    <input type="text" id='datepickervalue'  hidden name="date" value="hidden" />
+    <input type="text" id='datepickervalue' hidden name="date" />
       <h2 class="topic">จำนวนชั่วโมง</h2>
       <select name='length' class="dropdown-orange">
         <option value="" disabled selected hidden>เลือกชั่วโมง</option>
@@ -61,15 +61,17 @@
 
     </div>
 </form>
-  <script>
-  $(document).ready(function(){
-    $( "#datepicker" ).datepicker( "option", "dateFormat", "dd-mm-yy" );
-  })
-$("#datepicker").datepicker({
-  onSelect: function(dateText) {
-    $("#datepickervalue").val(dateText);
-  }
-});
-  </script>
 
+@endsection
+
+@section('postscript')
+    <script>
+      $(document).ready(function(){
+        $( "#datepicker" ).datepicker( "option", "dateFormat", "dd-mm-yy" );
+      })
+    $("#datepicker").datepicker({
+      onSelect: function(dateText) {
+        $("#datepickervalue").val(dateText);
+      }
+    });
 @endsection
