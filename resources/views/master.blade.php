@@ -19,7 +19,7 @@
   <link rel="icon" href="../assets/img/favi.ico" type="image/x-icon"/>
   <link rel="shortcut icon" href="../assets/img/favi.ico" type="image/x-icon"/>
 
-  <title>Siam Knowledge</title>
+  <title>Siam Knowledge - @yield('title')</title>
   <link rel="stylesheet" href="../assets/css/style.css">
   <link href="https://fonts.googleapis.com/css?family=Kanit:100,200,300,400,500,600&amp;subset=thai" rel="stylesheet">
   <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
@@ -65,24 +65,10 @@
     <img src="../assets/img/siam-knowledge-logo.svg" class="logo" />
 
     <!-- Content Area -->
-    <div class="content-area">
-      <h1 class="heading">ข้อมูลของฉัน</h1><br>
-      <h2 class="large-topic">ชื่อ - นามสกุล</h2>
-      <input type="text" class="large-normal-input normal-input">
-      <h2 class="large-topic">ชื่อเล่น</h2>
-      <input type="text" class="normal-input">
-      <h2 class="large-topic">อายุ</h2>
-      <input type="number" class="number-spin-input">
-      <h2 class="large-topic">โรงเรียน</h2>
-      <input type="text" class="large-normal-input normal-input">
-      <h1 class="sub-heading">ข้อมูลติดต่อ</h1><br>
-      <h2 class="large-topic">E-mail</h2>
-      <input type="text" class="normal-input">
-      <h2 class="large-topic">โทรศัพท์มือถือ</h2>
-      <input type="text" class="normal-input">
-      <br/>      <br/>
-   <a href="#" class="button button-orange">บันทึกการแก้ไข</a>
-    </div>
+
+      @yield('content')
+
+    <!-- End Content Area -->
   </section>
   <script src="../assets/js/jquery-3.1.1.js" type="text/javascript"></script>
   <script src="../assets/js/jquery-ui.js"></script>
