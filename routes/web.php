@@ -11,12 +11,12 @@
 */
 /*Student Middleware*/
     Route::group(['middleware' => ['Checkuser:Student']], function () {
-        Route::get('/addcourse', function(){return view('addcourse');});
+        Route::get('/addcourse', function(){return view('addcourse');})->name('addcourse');
         Route::post('/addcourse', 'JobController@addcourse');
-        Route::get('/addcredit', function(){return view('addcredit');});
+        Route::get('/addcredit', function(){return view('addcredit');})->name('addcredit');
         Route::post('/addcredit', 'CreditController@addcredit');
         Route::post('/confirmcredit', 'CreditController@confirmcredit');
-        Route::get('/viewmycourse', 'JobController@viewmycourse');
+        Route::get('/viewmycourse', 'JobController@viewmycourse')->name('viewmycourse');
         Route::get('/viewmycourse/{id}', 'JobController@manage');
         Route::get('/viewmycourse/{id}/select/{tutorid}', 'JobController@selecttutor');
         Route::get('/profile/{id}', 'JobController@viewprofile');
@@ -44,8 +44,10 @@
         /*End Register */
     });
 /*Not protected route*/
-    Route::get('/', 'JobController@showcourse')->name('welcome');
-    Route::get('/course/{id}', 'JobController@showcoursepage');
+    Route::get('/', function(){
+        return 'welcome';
+    })->name('welcome');
+    //Route::get('/course/{id}', 'JobController@showcoursepage');
 /*End not protected route*/
 
 Route::get('/logout', function(){

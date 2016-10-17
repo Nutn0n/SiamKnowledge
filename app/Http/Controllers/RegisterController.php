@@ -45,7 +45,7 @@ class RegisterController extends Controller
 		$profile->email  = $request->email;
 		$profile->phone  = $request->phone;
 		$profile->lineid  = $request->lineid;
-		$profile->status = 'student';
+		$profile->status = 'Student';
 		$profile->school  = $request->school;
 		$usermodel->Profile()->save($profile);
 		return "registered";
@@ -85,7 +85,7 @@ class RegisterController extends Controller
 		$profile->email  = $request->email;
 		$profile->phone = $request->phone;
 		$profile->lineid  = $request->lineid;
-		$profile->status = 'tutor';
+		$profile->status = 'Tutor';
 		$profile->teachhours = 0;
 		$profile->tutorgrade = 1;
 		$usermodel->Profile()->save($profile);
