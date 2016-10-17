@@ -26,7 +26,7 @@
     Route::group(['middleware'=>['Checkuser:Tutor']], function(){
         Route::get('/course/{id}/uninterest', 'JobController@uninterest');
         Route::get('/course/{id}/interest', 'JobController@interest');
-        Route::get('/course', 'JobController@showcoursepage');
+        Route::get('/course', 'JobController@showcourse');
 
     });
 /*Admin middleware*/
