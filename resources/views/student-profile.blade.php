@@ -1,4 +1,4 @@
-    @extends('master')
+    @extends('student-master')
 
     @section('title', 'Student Profile')
     @section('content')

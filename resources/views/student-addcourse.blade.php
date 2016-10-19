@@ -1,4 +1,4 @@
-@extends('master')
+@extends('student-master')
 @section('content')
     <!-- Content Area -->
     <form action='' method='post'>

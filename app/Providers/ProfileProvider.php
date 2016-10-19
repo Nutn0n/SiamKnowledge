@@ -15,7 +15,7 @@ class ProfileProvider extends ServiceProvider
      */
     public function boot()
     {
-        View::composer('master', function ($view) {
+        View::composer( ['student-master', 'tutor-master'], function ($view) {
             $user = User::find(Sentinel::getUser()->id);
             $view->with('User', $user);
         });

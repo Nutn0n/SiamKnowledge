@@ -1,4 +1,4 @@
-@extends('master')
+@extends('student-master')
 @section('content')
 <div class="content-area">
 	<h1 class="heading">ส่วนสนับสนุนผู้ใช้</h1><br>
