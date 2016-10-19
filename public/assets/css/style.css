@@ -288,6 +288,10 @@ a{
   background: #F09133;
 }
 
+.button-red{
+  background: #E78C8A;
+}
+
 .button-grey{
   background: #D6D6D6;
   color: #666;
@@ -520,6 +524,11 @@ a{
   display: inline-block;
   color:#fff;
   transform:translateY(16px);
+}
+
+.ion-checkmark-circled {
+  color:#5CB766;
+  transform: translateZ(1.2);
 }
 
 /*------------------------*/
@@ -1198,4 +1207,8 @@ a{
   transition: .5s ease-in-out;
   height: auto;
   padding-top: 40px;
+}
+
+.sub-menu-button-wrapper > .button:nth-of-type(1){
+  margin-right: 20px;
 }
