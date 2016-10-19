@@ -13,6 +13,6 @@ class SupportController extends Controller
     //
     public function contact($courseid){
     	$coursesubject = Course::where('id', $courseid)->first()->subject;
-    	return view('support')->with('data', ['coursesubject'=>$coursesubject]);
+    	return view('student-support')->with('data', ['coursesubject'=>$coursesubject]);
     }
 }

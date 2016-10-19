@@ -32,7 +32,7 @@ class JobController extends Controller
 	}
 	public function viewmycourse(){
 		$Courses = Course::where('user_id', Sentinel::getUser()->id)->get();
-		return view('viewmycourse')->with('data', ['course'=>$Courses]);
+		return view('student-viewmycourse')->with('data', ['course'=>$Courses]);
 	}
 	public function showcourse(){
 		$Courses = Course::where('available', True)->get();
@@ -40,7 +40,7 @@ class JobController extends Controller
 			$Course->date = Carbon::parse($Course->startdate)->day;
 			$Course->month = Carbon::parse($Course->startdate)->format('M');
 		}
-		return view('showcourse')->with('Courses', $Courses);
+		return view('tutor-showcourse')->with('Courses', $Courses);
 	}
 	public function interest($id){
 		$interest = new interest;
@@ -64,7 +64,7 @@ class JobController extends Controller
 			}
 			}
 		
-		return view('showcoursepage')->with('data', ['Course'=>$Course, 'tutor'=>$tutor, 'haveinterest'=>$haveinterest]);
+		return view('tutor-showcoursepage')->with('data', ['Course'=>$Course, 'tutor'=>$tutor, 'haveinterest'=>$haveinterest]);
 	}
 	public function uninterest($id){
 		interest::where([['course_id', $id], ['user_id', Sentinel::getUser()->id]])->delete();
@@ -73,7 +73,7 @@ class JobController extends Controller
 	}
 	public function manage($id){
 		$Course = Course::find($id);
-		return view('managecourse')->with('data', ['course'=>$Course]);
+		return view('student-managecourse')->with('data', ['course'=>$Course]);
 	}
 	public function viewprofile($id){
 		$User = User::find($id);

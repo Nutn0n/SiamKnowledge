@@ -1,4 +1,4 @@
-@extends('master')
+@extends('tutor-master')
 @section('title', 'Choose Course')
 @section('content')
     <div class="content-area">

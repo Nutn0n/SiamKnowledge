@@ -11,9 +11,9 @@
 */
 /*Student Middleware*/
     Route::group(['middleware' => ['Checkuser:Student']], function () {
-        Route::get('/addcourse', function(){return view('addcourse');})->name('addcourse');
+        Route::get('/addcourse', function(){return view('student-addcourse');})->name('addcourse');
         Route::post('/addcourse', 'JobController@addcourse');
-        Route::get('/addcredit', function(){return view('addcredit');})->name('addcredit');
+        Route::get('/addcredit', function(){return view('student-addcredit');})->name('addcredit');
         Route::post('/addcredit', 'CreditController@addcredit');
         Route::post('/confirmcredit', 'CreditController@confirmcredit');
         Route::get('/viewmycourse', 'JobController@viewmycourse')->name('viewmycourse');
