@@ -21,6 +21,9 @@
         Route::get('/viewmycourse/{id}/select/{tutorid}', 'JobController@selecttutor');
         Route::get('/profile/{id}', 'JobController@viewprofile');
         Route::get('/myprofile', function(){return view('student-profile');});
+        //Support need implement!
+        //Route::get('/support/{courseid}' ,'SupportController@contact');
+        //Route::post('/support/{courseid}', 'SupportController@submit');
     });
 /*Tutor Middleware*/
     Route::group(['middleware'=>['Checkuser:Tutor']], function(){
@@ -48,7 +51,7 @@
     });
 /*Not protected route*/
     Route::get('/', function(){
-        return 'welcome';
+        return 'welcome baby';
     })->name('welcome');
 /*End not protected route*/
 
