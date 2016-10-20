@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 
 use Sentinel;
+use App\creditlog;
 use App\log;
 use App\Credit;
 use App\User;
@@ -14,19 +15,14 @@ class CreditController extends Controller
 {
     //Control about adding credit etc.
     public function addcredit(Request $request){
-    	$log = new log;
-    	$log->type = 'credit';
-    	$log->credit = $request->credit;
+    	$log = new creditlog;
+    	$log->amount = $request->amount;
     	$log->user_id = Sentinel::getUser()->id;
-    	$log->status = 'pending';
+    	$log->time = $request->time;
+        $log->bank = $request->bank;
     	$log->save();
     }
-    public function confirmcredit(){
-    	$log = log::where([['user_id', Sentinel::getUser()->id], ['status', 'pending']])->first();
-    	$log->status = 'confirm';
-    	$log->save();
-    }
-    public function approvecredit($id){
+    /*public function approvecredit($id){
         $log = log::find($id);
         $log->status = 'approve';
         //$log->by = approve by who. Need Implement
@@ -35,5 +31,5 @@ class CreditController extends Controller
         $credit->credit = $log->credit;
         $credit->save();
         
-    }
+    }*/
 }

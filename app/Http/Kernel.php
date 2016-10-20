@@ -54,5 +54,6 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'Checkuser' =>  \App\Http\Middleware\Checkuser::Class,
         'Guest' =>  \App\Http\Middleware\Guest::Class,
+        'Checkprivilege' => \App\Http\Middleware\Checkprivilege::class,
     ];
 }

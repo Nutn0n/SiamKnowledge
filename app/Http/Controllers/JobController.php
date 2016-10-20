@@ -32,7 +32,12 @@ class JobController extends Controller
 	}
 	public function viewmycourse(){
 		$Courses = Course::where('user_id', Sentinel::getUser()->id)->get();
-		return view('student-viewmycourse')->with('data', ['course'=>$Courses]);
+		foreach ($Courses as $Course) {
+			$Course->date = Carbon::parse($Course->startdate)->day;
+			$Course->month = Carbon::parse($Course->startdate)->format('M');
+		}
+		
+		return view('student-viewmycourse')->with('data', ['courses'=>$Courses]);
 	}
 	public function showcourse(){
 		$Courses = Course::where('available', True)->get();
@@ -72,6 +77,7 @@ class JobController extends Controller
 
 	}
 	public function manage($id){
+		
 		$Course = Course::find($id);
 		return view('student-managecourse')->with('data', ['course'=>$Course]);
 	}

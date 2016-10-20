@@ -9,6 +9,12 @@
 | to using a Closure or controller method. Build something great!
 |
 */
+/*Student specific route Middleware*/
+    Route::group(['middleware' => ['Checkuser:Student', 'Checkprivilege']], function () {
+        Route::get('/viewmycourse/{id}', 'JobController@manage')->name('viewmycoursepage');
+        Route::get('/viewmycourse/{id}/select/{tutorid}', 'JobController@selecttutor');
+
+    });
 /*Student Middleware*/
     Route::group(['middleware' => ['Checkuser:Student']], function () {
         Route::get('/addcourse', function(){return view('student-addcourse');})->name('addcourse');
@@ -17,8 +23,6 @@
         Route::post('/addcredit', 'CreditController@addcredit');
         Route::post('/confirmcredit', 'CreditController@confirmcredit');
         Route::get('/viewmycourse', 'JobController@viewmycourse')->name('viewmycourse');
-        Route::get('/viewmycourse/{id}', 'JobController@manage');
-        Route::get('/viewmycourse/{id}/select/{tutorid}', 'JobController@selecttutor');
         Route::get('/profile/{id}', 'JobController@viewprofile');
         Route::get('/myprofile', function(){return view('student-profile');});
         //Support need implement!
