@@ -17,7 +17,7 @@ class CreateInterestTable extends Migration
             $table->increments('id');
             $table->integer('user_id');
             $table->integer('course_id');
-            $table->integer('tutor_id');
+            $table->integer('tutor_id')->nullable();
             $table->timestamps();
         });
     }

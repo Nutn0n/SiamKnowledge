@@ -89,7 +89,7 @@ class JobController extends Controller
 	public function viewprofile($id, $tutorid){
 		$Course = Course::find($id);
 		$User = User::find($tutorid);
-		if($User->profile->status=='tutor'){
+		if($User->profile->status=='Tutor'){
 			return view('student-managecourse-tutorprofile')->with('data', ['profile'=>$User->profile, 'course'=>$Course, 'id'=>$id, 'tutorid'=>$tutorid, 'haveinterest'=>$this->haveinterest($id)]);
 		}
 		else{
