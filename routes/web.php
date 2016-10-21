@@ -12,7 +12,8 @@
 /*Student specific route Middleware*/
     Route::group(['middleware' => ['Checkuser:Student', 'Checkprivilege']], function () {
         Route::get('/viewmycourse/{id}', 'JobController@manage')->name('viewmycoursepage');
-        Route::get('/viewmycourse/{id}/select/{tutorid}', 'JobController@selecttutor');
+        Route::get('/viewmycourse/{id}/select/{tutorid}', 'JobController@selecttutor')->name('selecttutor');
+        Route::get('/viewmycourse/{id}/profile/{tutorid}', 'JobController@viewprofile')->name('tutorprofile');
 
     });
 /*Student Middleware*/
@@ -23,8 +24,8 @@
         Route::post('/addcredit', 'CreditController@addcredit');
         Route::post('/confirmcredit', 'CreditController@confirmcredit');
         Route::get('/viewmycourse', 'JobController@viewmycourse')->name('viewmycourse');
-        Route::get('/profile/{id}', 'JobController@viewprofile');
-        Route::get('/myprofile', function(){return view('student-profile');});
+        Route::get('/myprofile', 'RegisterController@myprofile');
+        Route::put('/myprofile', 'RegisterController@updatemyprofile');
         //Support need implement!
         //Route::get('/support/{courseid}' ,'SupportController@contact');
         //Route::post('/support/{courseid}', 'SupportController@submit');

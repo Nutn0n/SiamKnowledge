@@ -109,4 +109,21 @@ class RegisterController extends Controller
     		return back()->with('errors', collect(['loginfail']));
     	}
     }
+
+    public function myprofile(){
+    	$profile = Profile::find(Sentinel::getUser()->id);
+    	return view('student-profile')->with('profile', $profile);
+    }
+
+    public function updatemyprofile(Request $request){
+    	$profile = Profile::find(Sentinel::getUser()->id);
+    	$profile->name = $request->name;
+    	$profile->calledname = $request->calledname;
+    	$profile->birthdate = $request->birthdate;
+    	$profile->school = $request->school;
+    	$profile->email = $request->email;
+    	$profile->phone = $request->phone;
+    	$profile->save();
+    	return 'success';
+    }
 }
