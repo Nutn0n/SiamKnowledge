@@ -21,6 +21,7 @@
 
   <title>Siam Knowledge - @yield('title')</title>
   <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/sweetalert.css">
   <link href="https://fonts.googleapis.com/css?family=Kanit:100,200,300,400,500,600&amp;subset=thai" rel="stylesheet">
   <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
 </head>
@@ -68,6 +69,7 @@
   <script src="/assets/js/jquery-3.1.1.js" type="text/javascript"></script>
   <script src="/assets/js/jquery-ui.js"></script>
   <script src="/assets/js/script.js" type="text/javascript"></script>
+  <script src="/assets/js/sweetalert.js" type="text/javascript"></script>
   @yield('postscript');
   </script>
 </body>
