@@ -5,7 +5,7 @@
       <h2 class="large-topic noanswer">คอร์สที่ยังไม่ได้ตอบรับ</h2>
       <h2 class="large-topic happening">คอร์สที่จะเกิดขึ้น</h2>
       <h2 class="large-topic passed">คอร์สที่ผ่านไปแล้ว</h2>
- 
+
 @endsection
 @section('postscript')
   <script type="text/javascript">
@@ -39,13 +39,13 @@
   @endforeach
   <script type="text/javascript">
     if(noanswer == 0){
-      $(".noanswer").append('<h2 class="large-topic noanswer">ไม่มีข้อมูล</h2>');
+      $(".noanswer").append('<div  class="null-card"><h1> <span class="ion-ios-albums-outline"></span> ไม่มีข้อมูลให้แสดง</h1></div>');
     }
     if (happening ==0){
-      $(".happening").append('<h2 class="large-topic noanswer">ไม่มีข้อมูล</h2>');
+      $(".happening").append(' <div  class="null-card"><h1> <span class="ion-ios-albums-outline"></span> ไม่มีข้อมูลให้แสดง</h1></div>  ');
     }
     if (passed ==0){
-      $(".passed").append('<br><h2 class="large-topic noanswer">ไม่มีข้อมูล</h2>');
+      $(".passed").append('<div  class="null-card"><h1> <span class="ion-ios-albums-outline"></span> ไม่มีข้อมูลให้แสดง</h1></div>');
     }
   </script>
 @endsection
