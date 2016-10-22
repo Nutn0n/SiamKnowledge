@@ -91,7 +91,7 @@ class RegisterController extends Controller
 		$profile->tutorgrade = 1;
 		$usermodel->Profile()->save($profile);
         $request->session()->flash('status', 'เพิ่มคอร์สเรียบร้อยแล้ว');
-		return 'fuck';
+		return redirect()->route('course');
 
     }
     public function login(Request $request){
