@@ -14,11 +14,16 @@ body.stop-scrolling {
   top: 0;
   bottom: 0;
   display: none;
-  z-index: 10000; }
+  z-index: 10000;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 4px 4px 20px;
+  -moz-box-shadow: rgba(0,0,0,0.2) 4px 4px 20px;
+  box-shadow: rgba(0, 0, 0, 0.2) 4px 4px 20px;
+
+}
 
 .sweet-alert {
   background-color: white;
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: "Kanit", sans-serif;
   width: 478px;
   padding: 17px;
   border-radius: 5px;
@@ -38,6 +43,7 @@ body.stop-scrolling {
       margin-right: 0;
       left: 15px;
       right: 15px; } }
+
   .sweet-alert h2 {
     color: #575757;
     font-size: 30px;
@@ -49,6 +55,7 @@ body.stop-scrolling {
     padding: 0;
     line-height: 40px;
     display: block; }
+
   .sweet-alert p {
     color: #797979;
     font-size: 16px;
@@ -60,9 +67,11 @@ body.stop-scrolling {
     margin: 0;
     padding: 0;
     line-height: normal; }
+
   .sweet-alert fieldset {
     border: none;
     position: relative; }
+
   .sweet-alert .sa-error-container {
     background-color: #f1f1f1;
     margin-left: -17px;
@@ -102,6 +111,7 @@ body.stop-scrolling {
     transform-origin: 50% 50%;
     -webkit-transition: all 0.1s;
     transition: all 0.1s; }
+
     .sweet-alert .sa-input-error::before, .sweet-alert .sa-input-error::after {
       content: "";
       width: 20px;
@@ -123,6 +133,7 @@ body.stop-scrolling {
       opacity: 1;
       -webkit-transform: scale(1);
       transform: scale(1); }
+
   .sweet-alert input {
     width: 100%;
     box-sizing: border-box;
