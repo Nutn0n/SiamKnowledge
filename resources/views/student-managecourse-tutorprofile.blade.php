@@ -16,7 +16,7 @@
         <h2 class="large-topic teacher-skills"><span class="ion-university"></span> {{$data['profile']->university}}</h2>
         <h2 class="large-topic teacher-skills"><span class="ion-ios-chatboxes"></span> ประสบการสอน 6 ปี</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus maximus pellentesque nunc, vel vestibulum metus bibendum consequat. Donec congue ex sit amet dui vehicula vehicula. Etiam quis metus lectus.</p>
-        @if($data['haveinterest']==false)<a href="{{route('selecttutor', ['id'=>$data['id'], 'tutorid'=>$data['tutorid']])}}" class="button button-orange">เลือกคนนี้</a>@endif
+        @if($data['available']==true)<a href="{{route('selecttutor', ['id'=>$data['id'], 'tutorid'=>$data['tutorid']])}}" class="button button-orange">เลือกคนนี้</a>@endif
         <a href="{{route('viewmycourse')}}" class="button button-grey">ย้อนกลับ</a>
       </div>
 @endsection

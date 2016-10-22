@@ -36,6 +36,7 @@
         Route::get('/course/{id}/interest', 'JobController@interest');
         Route::get('/course', 'JobController@showcourse')->name('course');
         Route::get('/course/{id}', 'JobController@showcoursepage')->name('courseinfo');
+        Route::get('/notify', 'JobController@notifytutor');
 
     });
 /*Admin middleware*/

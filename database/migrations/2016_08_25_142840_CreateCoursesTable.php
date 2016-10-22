@@ -30,6 +30,7 @@ class CreateCoursesTable extends Migration
             $table->integer('user_id'); //สำหรับอ้างอิงว่าใคร
             $table->integer('class_id')->nullable();
             $table->boolean('available')->nullable();
+            $table->boolean('verified')->default(false);
             $table->timestamps();
         });
     }

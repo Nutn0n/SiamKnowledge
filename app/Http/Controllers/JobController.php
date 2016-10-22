@@ -84,13 +84,13 @@ class JobController extends Controller
 		$Course = Course::find($id);
 		$Course->date = Carbon::parse($Course->startdate)->day;
 		$Course->month = Carbon::parse($Course->startdate)->format('M');
-		return view('student-managecourse')->with('data', ['course'=>$Course, 'haveinterest'=>$this->haveinterest($id), ]);
+		return view('student-managecourse')->with('data', ['course'=>$Course, 'haveinterest'=>$this->haveinterest($id), 'available'=>$Course->available ]);
 	}
 	public function viewprofile($id, $tutorid){
 		$Course = Course::find($id);
 		$User = User::find($tutorid);
 		if($User->profile->status=='Tutor'){
-			return view('student-managecourse-tutorprofile')->with('data', ['profile'=>$User->profile, 'course'=>$Course, 'id'=>$id, 'tutorid'=>$tutorid, 'haveinterest'=>$this->haveinterest($id)]);
+			return view('student-managecourse-tutorprofile')->with('data', ['profile'=>$User->profile, 'course'=>$Course, 'id'=>$id, 'tutorid'=>$tutorid, 'available'=>$Course->available]);
 		}
 		else{
 			return 'what the fuck are you doing here???? fuckoffffff';
@@ -103,18 +103,23 @@ class JobController extends Controller
 		}
 		return $haveinterest;
 	}
+	public function notifytutor(){
+		$data = 0;
+		return view('tutor-notify')->with('data', $data);
+	}
 	public function selecttutor($id, $tutorid){
 		$User = User::find(Sentinel::getUser()->id);
 		$Course = Course::find($id);
-		if(!interest::where([['user_id', Sentinel::getUser()->id], ['course_id', $id], ['tutor_id', $tutorid]])->first()){
+		
 			if($User->credit->credit >= $Course->credit){
-				/*$Course->tutor_id = $tutorid;
+				$Course->tutor_id = $tutorid;
 				$Course->available = 0;
 				$Course->save();
 				$User->credit->reservedcredit += $Course->credit;
 				$User->credit->credit = $User->credit->credit - $Course->credit;
-				$User->credit->save();*/
-				$interest = new interest;
+				$User->credit->save();
+				return "success";
+				/*$interest = new interest;
 				$interest->user_id = Sentinel::getUser()->id;
 				$interest->course_id = $id;
 				$interest->tutor_id = $tutorid;
@@ -122,14 +127,10 @@ class JobController extends Controller
 				$User->credit->reservedcredit += $Course->credit;
 				$User->credit->credit = $User->credit->credit - $Course->credit;
 				$User->credit->save();
-				return "success";
+				return "success";*/
 			}
 			else{
 				return "not enough credit";
 			}
-		}
-	else{
-		return 'dupplicate';
-	}
 }
 }

@@ -24,6 +24,18 @@
         $( ".noanswer" ).append(long);
     </script>
     @endif
+    @if($Course->available == false and $Course->verified == false)
+      <script type="text/javascript">
+        var happening = 1;
+        $(".happening").append(long);
+      </script>
+    @endif
+    @if($Course->available == false and $Course->verified == true)
+      <script type="text/javascript">
+        var passed = 1;
+        $(".passed").append(long);
+      </script>
+    @endif
   @endforeach
   <script type="text/javascript">
     if(noanswer == 0){

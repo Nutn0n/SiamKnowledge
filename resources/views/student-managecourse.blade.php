@@ -30,7 +30,7 @@
           <div class="card-name teacher-name"><h1>{{$interest->user->profile->name}}</h1></div>
           <div class="card-description">
             <h2 class="card-time">พี่{{$interest->user->profile->calledname}}</h2><br>
-            @if($data['haveinterest']==false)<a href="/viewmycourse/{{$data['course']->id}}/select/{{$interest->user_id}}" class="button button-orange">เลือกคนนี้</a>@endif
+            @if($data['available']==true)<a href="/viewmycourse/{{$data['course']->id}}/select/{{$interest->user_id}}" class="button button-orange">เลือกคนนี้</a>@endif
             <a href="{{route('tutorprofile', ['id'=>$data['course']->id,'tutorid'=>$interest->user_id])}}" class="button button-grey">ดูประวัติ</a>
           </div>
         </div>
