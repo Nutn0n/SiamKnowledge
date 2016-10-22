@@ -59,6 +59,7 @@ a{
 /*       Typography       */
 /*------------------------*/
 
+
 .heading{
   font-size: 45px;
   font-weight: 100;
@@ -115,6 +116,10 @@ a{
   color: #fff;
   padding-right: 20px;
   vertical-align: middle;
+}
+
+.menu-button .ion-checkmark-circled {
+  color:#fff!important;
 }
 
 /*------------------------*/
