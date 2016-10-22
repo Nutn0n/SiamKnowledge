@@ -32,7 +32,6 @@ class CreateCoursesTable extends Migration
             $table->integer('class_id')->nullable();
             $table->boolean('available')->nullable();
             $table->boolean('verified')->default(false);
-            $table->integer('verificationcode');
             $table->timestamps();
         });
     }
