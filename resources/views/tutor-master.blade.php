@@ -54,7 +54,7 @@
         <li class="menu-button"><a href="#"><span class="menu-icon ion-person"></span>ข้อมูลของฉัน</a></li>
         <li class="menu-button"><a href="#"><span class="menu-icon ion-ios-bookmarks"></span>กิจกรรม</a></li>
         <li class="menu-button"><a href="{{route('course')}}"><span class="menu-icon ion-ios-calendar"></span>คอร์สที่จะสอน</a></li>
-        <li class="menu-button"><a href="#"><span class="menu-icon ion-checkmark-circled"></span>ได้รับการตอบรับแล้ว</a></li>
+        <li class="menu-button"><a href="{{route('tutoranswered')}}"><span class="menu-icon ion-checkmark-circled"></span>ได้รับการตอบรับแล้ว</a></li>
         <li class="menu-button"><a href="#"><span class="menu-icon ion-card"></span>เครดิต</a></li>
       </ul>
 

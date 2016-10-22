@@ -48,4 +48,7 @@
       $(".passed").append('<div  class="null-card"><h1> <span class="ion-ios-albums-outline"></span> ไม่มีข้อมูลให้แสดง</h1></div>');
     }
   </script>
+  @if(session('status'))
+      <script type="text/javascript">swal('เรียบร้อย', '{{session('status')}}', 'success');</script>
+  @endif
 @endsection

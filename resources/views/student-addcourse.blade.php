@@ -74,4 +74,6 @@
         $("#datepickervalue").val(dateText);
       }
     });
+    </script>
+    
 @endsection

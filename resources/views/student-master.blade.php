@@ -50,7 +50,7 @@
         <li class="menu-button"><a href="/myprofile"><span class="menu-icon ion-person"></span>ข้อมูลของฉัน</a></li>
         <li class="menu-button"><a href="#"><span class="menu-icon ion-ios-bookmarks"></span>กิจกรรมล่าสุด</a></li>
         <li class="menu-button"><a href="{{route('viewmycourse')}}"><span class="menu-icon ion-ios-calendar"></span>คอร์สที่เลือกเรียน</a></li>
-        <li class="menu-button"><a href="#"><span class="menu-icon ion-card"></span>เครดิต</a></li>
+        <li class="menu-button"><a href="{{route('addcredit')}}"><span class="menu-icon ion-card"></span>เครดิต</a></li>
       </ul>
       <a href="#" class="class-register"><span class="ion-plus"></span>จองคอร์สเรียนใหม่</a>
     </div>
@@ -63,6 +63,7 @@
     <!-- Content Area -->
 
       @yield('content')
+
 
     <!-- End Content Area -->
   </section>

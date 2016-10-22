@@ -24,7 +24,8 @@ class JobController extends Controller
 		$Course->group = $request->input('group');
 		$Course->available = true;
 		if($Course->save()){
-			return Carbon::now();
+			$request->session()->flash('status', 'เพิ่มคอร์สเรียบร้อยแล้ว');
+			return redirect()->route('viewmycourse');
 		}
 		else{
 			return 'error';
@@ -103,9 +104,17 @@ class JobController extends Controller
 		}
 		return $haveinterest;
 	}
-	public function notifytutor(){
-		$data = 0;
-		return view('tutor-notify')->with('data', $data);
+	public function tutoranswered(){
+		$Courses = Course::where([['tutor_id', Sentinel::getUser()->id], ['available', false], ['verified', false]])->get();
+		foreach ($Courses as $Course) {
+			$Course->date = Carbon::parse($Course->startdate)->day;
+			$Course->month = Carbon::parse($Course->startdate)->format('M');
+		}
+		return view('tutor-answered')->with('Courses', $Courses);
+	}
+	public function verify($id){
+		//input course $ID to check verification code
+		return view('tutor-verify');
 	}
 	public function selecttutor($id, $tutorid){
 		$User = User::find(Sentinel::getUser()->id);

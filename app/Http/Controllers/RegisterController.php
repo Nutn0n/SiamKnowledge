@@ -48,7 +48,8 @@ class RegisterController extends Controller
 		$profile->status = 'Student';
 		$profile->school  = $request->school;
 		$usermodel->Profile()->save($profile);
-		return "registered";
+		$request->session()->flash('status', 'สมัครสมาชิกเรียบร้อย');
+        return redirect()->route('viewmycourse');
     }
     public function registerTutor(Request $request){
     	 $this->validate($request, [
@@ -89,7 +90,9 @@ class RegisterController extends Controller
 		$profile->teachhours = 0;
 		$profile->tutorgrade = 1;
 		$usermodel->Profile()->save($profile);
-		return "registered";
+        $request->session()->flash('status', 'เพิ่มคอร์สเรียบร้อยแล้ว');
+		return 'fuck';
+
     }
     public function login(Request $request){
     	$this->validate($request, [
