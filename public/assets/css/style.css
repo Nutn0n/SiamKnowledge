@@ -266,6 +266,18 @@ a{
 /*         Button         */
 /*------------------------*/
 
+button {
+  font-family: inherit;
+  border: 0;
+  padding: 5px 15px;
+  color: #fff;
+  font-weight: 200;
+  margin: 20px 0;
+  display: inline-block;
+  font-size: 18px;
+  transition: .3s ease-in-out;
+}
+
 .button{
   padding: 5px 15px;
   color: #fff;

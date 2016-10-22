@@ -199,6 +199,13 @@ input:focus {
       z-index: 99;
   }
 
+  .register-button .ion-ios-arrow-left {
+     display: inline-block;
+      font-size: 40px;
+     margin-top: -40px;
+      z-index: 99;
+  }
+
   .register-button .ion-ios-arrow-right {
      display: none;
   }
