@@ -52,7 +52,7 @@
         <li class="menu-button"><a href="{{route('viewmycourse')}}"><span class="menu-icon ion-ios-calendar"></span>คอร์สที่เลือกเรียน</a></li>
         <li class="menu-button"><a href="{{route('addcredit')}}"><span class="menu-icon ion-card"></span>เครดิต</a></li>
       </ul>
-      <a href="#" class="class-register"><span class="ion-plus"></span>จองคอร์สเรียนใหม่</a>
+      <a href="{{route('addcourse')}}" class="class-register"><span class="ion-plus"></span>จองคอร์สเรียนใหม่</a>
     </div>
 
     <!-- End of Left Sidebar, Start of Main Content -->
@@ -72,6 +72,5 @@
   <script src="/assets/js/script.js" type="text/javascript"></script>
   <script src="/assets/js/sweetalert.js" type="text/javascript"></script>
   @yield('postscript');
-  </script>
 </body>
 </html>

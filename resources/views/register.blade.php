@@ -4,8 +4,9 @@
     <meta charset="utf-8">
     <title>SIAM KNOWLEDGE</title>
 
-    <link rel="stylesheet" href="assets/login.css">
-    <link rel="stylesheet" href="assets/reset.css">
+    <link rel="stylesheet" href="/assets/login.css">
+    <link rel="stylesheet" href="/assets/reset.css">
+    <link rel="stylesheet" href="/assets/css/sweetalert.css">
 
 
   </head>
@@ -137,4 +138,11 @@
 <footer><p>Copyright 2016. All Rights Reserved.</p></footer>
 
   </body>
+  <script src="/assets/js/script.js" type="text/javascript"></script>
+  <script src="/assets/js/sweetalert.js" type="text/javascript"></script>
+  @if(count($errors)!=0)
+    <script type="text/javascript">
+    swal('ข้อมูลไม่ถูกต้องกรุณาตรวจสอบใหม่');
+    </script>
+  @endif
 </html>

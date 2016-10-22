@@ -26,11 +26,13 @@ class CreateCoursesTable extends Migration
             $table->string('place')->nullable();
             $table->string('group');
             $table->string('inter');
+            $table->integer('verificationcode');
             $table->string('tutor_id')->nullable();
             $table->integer('user_id'); //สำหรับอ้างอิงว่าใคร
             $table->integer('class_id')->nullable();
             $table->boolean('available')->nullable();
             $table->boolean('verified')->default(false);
+            $table->integer('verificationcode');
             $table->timestamps();
         });
     }

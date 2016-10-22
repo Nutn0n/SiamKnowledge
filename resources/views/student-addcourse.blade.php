@@ -7,7 +7,7 @@
       <select name='topic' class="dropdown-orange">
         <option value="" disabled selected hidden>เลือกวิชา</option>
         <option>ภาษาอังกฤษ</option>
-        <option>เลช</option>
+        <option>เลข</option>
         <option>ฟิสิกส์</option>
         <option>เคมี</option>
         <option>ชีวะ</option>

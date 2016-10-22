@@ -38,6 +38,7 @@
         Route::get('/course/{id}', 'JobController@showcoursepage')->name('courseinfo');
         Route::get('/answered', 'JobController@tutoranswered')->name('tutoranswered');
         Route::get('/verify/{id}', 'JobController@verify')->name('verify');
+        Route::get('/verify/{courseid}/{code}', 'JobController@doverify')->name('doverify');
 
     });
 /*Admin middleware*/
@@ -58,7 +59,7 @@
     });
 /*Not protected route*/
     Route::get('/', function(){
-        return 'welcome baby';
+        return mt_rand(100000, 999999);
     })->name('welcome');
 /*End not protected route*/
 

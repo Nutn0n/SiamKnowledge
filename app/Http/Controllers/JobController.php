@@ -22,6 +22,7 @@ class JobController extends Controller
 		$Course->topic = $request->input('topic');
 		$Course->inter = $request->input('inter');
 		$Course->group = $request->input('group');
+		$Course->verificationcode = mt_rand(100000, 999999);
 		$Course->available = true;
 		if($Course->save()){
 			$request->session()->flash('status', 'เพิ่มคอร์สเรียบร้อยแล้ว');
@@ -114,7 +115,21 @@ class JobController extends Controller
 	}
 	public function verify($id){
 		//input course $ID to check verification code
-		return view('tutor-verify');
+		$Course = Course::find($id);
+		return view('tutor-verify')->with('Course', $Course);
+	}
+	public function doverify(Request $request){
+		$Course = Course::find($request->courseid);
+		if($Course->verificationcode == $request->code){
+			$request->session()->flash('status', true);
+			$Course->verified = true;
+			$Course->save();
+			return redirect()->route('verify', ['id'=>$request->courseid]);
+		}
+		else{
+			$request->session()->flash('status', false);
+			return redirect()->route('verify', ['id'=>$request->courseid]);
+		}
 	}
 	public function selecttutor($id, $tutorid){
 		$User = User::find(Sentinel::getUser()->id);
