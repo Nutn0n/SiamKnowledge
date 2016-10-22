@@ -35,12 +35,12 @@
     <!-- Left Sidebar -->
     <div class="left-sidebar">
       <a href="#" class="close-button"></a>
-      <div class="profile">
+      <div style="background-image: url('https://api.adorable.io/avatars/100/{{$User->profile->email}}');background-size: cover;background-position: center;background-repeat: no-repeat;" class="profile-pic"></div>
         <div class="profile-wrapper">
           <div class="profile-pic"></div>
           <div class="profile-name">
             <h1 id="name">{{$User->profile->name}}</h1>
-            <h2 id="type">{{$User->profile->status}}</h2>
+            <h2 id="type">{{$User->profile->tutorgrade}} Tutor</h2>
           </div>
         </div>
       </div>
@@ -51,7 +51,7 @@
 
       <!-- Main Menu -->
       <ul class="menu">
-        <li class="menu-button"><a href="#"><span class="menu-icon ion-person"></span>ข้อมูลของฉัน</a></li>
+        <li class="menu-button"><a href="/myprofile"><span class="menu-icon ion-person"></span>ข้อมูลของฉัน</a></li>
         <li class="menu-button"><a href="#"><span class="menu-icon ion-ios-bookmarks"></span>กิจกรรม</a></li>
         <li class="menu-button"><a href="{{route('course')}}"><span class="menu-icon ion-ios-calendar"></span>คอร์สที่จะสอน</a></li>
         <li class="menu-button"><a href="{{route('tutoranswered')}}"><span class="menu-icon ion-checkmark-circled"></span>ได้รับการตอบรับแล้ว</a></li>

@@ -30,3 +30,9 @@
 
     </div>
     @endsection
+  @section('postscript')
+    @if(session('status'))
+        <script type="text/javascript">swal('เรียบร้อย', '{{session('status')}}', 'success');</script>
+    @endif
+
+  @endsection

@@ -24,8 +24,8 @@
         Route::post('/addcredit', 'CreditController@addcredit');
         Route::post('/confirmcredit', 'CreditController@confirmcredit');
         Route::get('/viewmycourse', 'JobController@viewmycourse')->name('viewmycourse');
-        Route::get('/myprofile', 'RegisterController@myprofile');
-        Route::put('/myprofile', 'RegisterController@updatemyprofile');
+        Route::get('/updateprofile', 'RegisterController@myprofile');
+        Route::put('/updateprofile', 'RegisterController@updatemyprofile');
         //Support need implement!
         //Route::get('/support/{courseid}' ,'SupportController@contact');
         //Route::post('/support/{courseid}', 'SupportController@submit');
@@ -39,7 +39,8 @@
         Route::get('/answered', 'JobController@tutoranswered')->name('tutoranswered');
         Route::get('/verify/{id}', 'JobController@verify')->name('verify');
         Route::get('/verify/{courseid}/{code}', 'JobController@doverify')->name('doverify');
-
+        Route::get('/myprofile', 'RegisterController@myprofiletutor');
+        Route::put('/myprofile', 'RegisterController@updatemyprofiletutor');
     });
 /*Admin middleware*/
     Route::group(['middleware' => ['Checkuser:Admin']], function () {

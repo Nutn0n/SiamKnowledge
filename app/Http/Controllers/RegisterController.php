@@ -88,9 +88,9 @@ class RegisterController extends Controller
 		$profile->lineid  = $request->lineid;
 		$profile->status = 'Tutor';
 		$profile->teachhours = 0;
-		$profile->tutorgrade = 1;
+		$profile->tutorgrade = 'White';
 		$usermodel->Profile()->save($profile);
-        $request->session()->flash('status', 'เพิ่มคอร์สเรียบร้อยแล้ว');
+        $request->session()->flash('status', 'สมัครสมาชิกเรียบร้อย');
 		return redirect()->route('course');
 
     }
@@ -117,6 +117,10 @@ class RegisterController extends Controller
     	$profile = Profile::find(Sentinel::getUser()->id);
     	return view('student-profile')->with('profile', $profile);
     }
+    public function myprofiletutor(){
+        $profile = Profile::find(Sentinel::getUser()->id);
+        return view('tutor-myprofile')->with('profile', $profile);
+    }
 
     public function updatemyprofile(Request $request){
     	$profile = Profile::find(Sentinel::getUser()->id);
@@ -128,5 +132,16 @@ class RegisterController extends Controller
     	$profile->phone = $request->phone;
     	$profile->save();
     	return 'success';
+    }
+    public function updatemyprofiletutor(Request $request){
+        $profile = Profile::find(Sentinel::getUser()->id);
+        $profile->name = $request->name;
+        $profile->calledname = $request->calledname;
+        $profile->birthdate = $request->birthdate;
+        $profile->university = $request->university;
+        $profile->email = $request->email;
+        $profile->phone = $request->phone;
+        $profile->save();
+        return 'success';
     }
 }

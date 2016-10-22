@@ -121,8 +121,13 @@ class JobController extends Controller
 	public function doverify(Request $request){
 		$Course = Course::find($request->courseid);
 		if($Course->verificationcode == $request->code){
+			$Tutor = User::find(Sentinel::getUser()->id);
+			$User = $Course->user;
+			$User->credit->reservedcredit -= $Course->credit;
+			$Tutor->credit->credit += $Course->credit;
 			$request->session()->flash('status', true);
 			$Course->verified = true;
+			$Tutor->credit->save();
 			$Course->save();
 			return redirect()->route('verify', ['id'=>$request->courseid]);
 		}
@@ -131,7 +136,7 @@ class JobController extends Controller
 			return redirect()->route('verify', ['id'=>$request->courseid]);
 		}
 	}
-	public function selecttutor($id, $tutorid){
+	public function selecttutor(Request $request, $id, $tutorid){
 		$User = User::find(Sentinel::getUser()->id);
 		$Course = Course::find($id);
 		
@@ -142,16 +147,8 @@ class JobController extends Controller
 				$User->credit->reservedcredit += $Course->credit;
 				$User->credit->credit = $User->credit->credit - $Course->credit;
 				$User->credit->save();
-				return "success";
-				/*$interest = new interest;
-				$interest->user_id = Sentinel::getUser()->id;
-				$interest->course_id = $id;
-				$interest->tutor_id = $tutorid;
-				$interest->save();
-				$User->credit->reservedcredit += $Course->credit;
-				$User->credit->credit = $User->credit->credit - $Course->credit;
-				$User->credit->save();
-				return "success";*/
+				$request->session()->flash('status', 'เลือกติวเตอร์สำเร็จ');
+				return redirect()->route('viewmycourse', ['id'=>$id]);
 			}
 			else{
 				return "not enough credit";

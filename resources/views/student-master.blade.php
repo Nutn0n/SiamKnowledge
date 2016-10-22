@@ -33,7 +33,7 @@
       <a href="#" class="close-button"></a>
       <div class="profile">
         <div class="profile-wrapper">
-          <div class="profile-pic"></div>
+          <div style="background-image: url('https://api.adorable.io/avatars/100/{{$User->profile->email}}');background-size: cover;background-position: center;background-repeat: no-repeat;" class="profile-pic"></div>
           <div class="profile-name">
             <h1 id="name">{{$User->profile->name}}</h1>
             <h2 id="type">{{$User->profile->status}}</h2>
@@ -47,7 +47,7 @@
 
       <!-- Main Menu -->
       <ul class="menu">
-        <li class="menu-button"><a href="/myprofile"><span class="menu-icon ion-person"></span>ข้อมูลของฉัน</a></li>
+        <li class="menu-button"><a href="/updateprofile"><span class="menu-icon ion-person"></span>ข้อมูลของฉัน</a></li>
         <li class="menu-button"><a href="#"><span class="menu-icon ion-ios-bookmarks"></span>กิจกรรมล่าสุด</a></li>
         <li class="menu-button"><a href="{{route('viewmycourse')}}"><span class="menu-icon ion-ios-calendar"></span>คอร์สที่เลือกเรียน</a></li>
         <li class="menu-button"><a href="{{route('addcredit')}}"><span class="menu-icon ion-card"></span>เครดิต</a></li>

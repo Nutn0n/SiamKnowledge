@@ -9,6 +9,7 @@
       </div>
 
     <h1 class="heading">ได้รับการตอบรับแล้ว</h1><br>
+@if(count($Courses)!=0)
 @foreach($Courses as $Course)
       <a href="{{route('verify', ['id' => $Course->id])}}">
       <div class="card-small-wrapper">
@@ -21,7 +22,9 @@
         </div>
       </a>
 @endforeach
-
+@else
+<div  class="null-card"><h1> <span class="ion-ios-albums-outline"></span> ไม่มีข้อมูลให้แสดง</h1></div>
+@endif
 
       </div>
 

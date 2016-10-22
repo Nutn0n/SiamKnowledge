@@ -25,11 +25,12 @@ class CreateProfilesTable extends Migration
             $table->string('field');
             $table->string('inter');
             $table->string('email');
+            $table->text('bio')->nullable();
             $table->string('phone');
             $table->string('lineid')->nullable();
             $table->string('status'); //whether user is parent tutor or student or whatever.
             $table->integer('teachhours')->nullable();
-            $table->integer('tutorgrade')->nullable();
+            $table->string('tutorgrade')->nullable();
             $table->timestamps();
         });
     }
