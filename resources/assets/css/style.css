@@ -914,9 +914,9 @@ a{
   }
 
   .teacher-name > h1 > span{
-    font-size: 15px;
+    font-size: 13px;
     font-weight: 300;
-    padding-left: 20px;
+    padding-left: 0px;
     color: #acacac;
   }
 
