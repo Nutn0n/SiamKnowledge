@@ -745,6 +745,17 @@ button {
 /*          Cards         */
 /*------------------------*/
 
+.null-card {
+  display: block;
+  height: 200px;
+  margin-top: 130px;
+}
+
+.null-card h1 {
+  font-size: 30px;
+  font-weight: 100;
+  color:#999999;
+}
 
 .back-large{
   font-size: 23px;
