@@ -18,6 +18,7 @@ class CreateCreditLogTable extends Migration
             $table->integer('user_id');
             $table->integer('amount');
             $table->string('time');
+            $table->string('bank');
             $table->timestamps();
         });
     }

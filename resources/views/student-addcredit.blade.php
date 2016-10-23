@@ -22,3 +22,8 @@
     </form>
     </div>
 @endsection
+@section('postscript')
+  @if(session('status'))
+    <script type="text/javascript">swal("แจ้งโอนเงินสำเร็จ", "กรุณารอเจ้าหน้าตรวจสอบเพื่อเพิ่มเครดิต", "success");</script>
+  @endif
+@endsection

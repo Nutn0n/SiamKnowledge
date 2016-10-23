@@ -105,7 +105,15 @@ class RegisterController extends Controller
 		];
 		$login = Sentinel::authenticateAndRemember($credentials);
     	if($login != False){
-    	return redirect()->route('welcome');
+            if(Sentinel::getUser()->roles->first()->name == 'Student'){
+    	       return redirect()->route('viewmycourse');
+            }
+            elseif (Sentinel::getUser()->roles->first()->name == 'Tutor') {
+                return redirect()->route('course');
+            }
+            else{
+                return redirect()->route('welcome');
+            }
     	}
     	else{
     		$request->flash();
@@ -123,6 +131,9 @@ class RegisterController extends Controller
     }
 
     public function updatemyprofile(Request $request){
+        $this->validate($request, [
+            'avatar' => 'max:2000|image'
+            ]);
     	$profile = Profile::find(Sentinel::getUser()->id);
     	$profile->name = $request->name;
     	$profile->calledname = $request->calledname;
@@ -130,6 +141,10 @@ class RegisterController extends Controller
     	$profile->school = $request->school;
     	$profile->email = $request->email;
     	$profile->phone = $request->phone;
+        if ($request->file('avatar')->isValid()) {
+            $path = $request->avatar->store('public/avatars');
+            $profile->avatar = $path;
+        }
     	$profile->save();
     	return 'success';
     }

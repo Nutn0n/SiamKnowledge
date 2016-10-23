@@ -11,7 +11,7 @@
 */
 /*Student specific route Middleware*/
     Route::group(['middleware' => ['Checkuser:Student', 'Checkprivilege']], function () {
-        Route::get('/viewmycourse/{id}', 'JobController@manage')->name('viewmycoursepage');
+        Route::get('/viewmycourse/{id}', 'JobController@manage')->name('viewmycoursepage'); //need implement view code
         Route::get('/viewmycourse/{id}/select/{tutorid}', 'JobController@selecttutor')->name('selecttutor');
         Route::get('/viewmycourse/{id}/profile/{tutorid}', 'JobController@viewprofile')->name('tutorprofile');
 

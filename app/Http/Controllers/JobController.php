@@ -95,7 +95,7 @@ class JobController extends Controller
 			return view('student-managecourse-tutorprofile')->with('data', ['profile'=>$User->profile, 'course'=>$Course, 'id'=>$id, 'tutorid'=>$tutorid, 'available'=>$Course->available]);
 		}
 		else{
-			return 'what the fuck are you doing here???? fuckoffffff';
+			abort(404);
 		}
 	}
 	public function haveinterest($id){

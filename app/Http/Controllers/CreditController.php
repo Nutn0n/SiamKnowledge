@@ -21,6 +21,8 @@ class CreditController extends Controller
     	$log->time = $request->time;
         $log->bank = $request->bank;
     	$log->save();
+        $request->session()->flash('status', 'complete');
+        return redirect()->back();
     }
     /*public function approvecredit($id){
         $log = log::find($id);

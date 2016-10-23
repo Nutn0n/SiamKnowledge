@@ -6,7 +6,8 @@
 
       <div class="card-large card-request">
         <div class="card-request-divider">
-          <div class="teacher-pic"></div>
+          <div style="background-image: url('@if($data['profile']->avatar!=NULL) {{Storage::url($data['profile']->avatar)}}@else https://api.adorable.io/avatars/100/{{$data['profile']->email}} @endif');background-size: cover;background-position: center;background-repeat: no-repeat;" class="teacher-pic"></div>
+
           <div class="card-detail">
             <div class="card-name teacher-name"><h1>{{$data['profile']->name}}</h1></div>
             <div class="card-description"><h2 class="card-time">{{$data['profile']->calledname}}</h2></div>

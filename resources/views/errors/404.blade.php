@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <title>SIAM KNOWLEDGE</title>
 
-    <link rel="stylesheet" href="assets/login.css">
-    <link rel="stylesheet" href="assets/reset.css">
+    <link rel="stylesheet" href="/assets/login.css">
+    <link rel="stylesheet" href="/assets/reset.css">
 
 
   </head>

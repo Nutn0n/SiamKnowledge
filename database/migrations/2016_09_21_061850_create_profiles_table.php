@@ -31,6 +31,7 @@ class CreateProfilesTable extends Migration
             $table->string('status'); //whether user is parent tutor or student or whatever.
             $table->integer('teachhours')->nullable();
             $table->string('tutorgrade')->nullable();
+            $table->string('avatar')->nullable();
             $table->timestamps();
         });
     }
