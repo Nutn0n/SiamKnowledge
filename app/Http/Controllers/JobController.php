@@ -50,7 +50,7 @@ class JobController extends Controller
 		return view('tutor-showcourse')->with('Courses', $Courses);
 	}
 	public function interest($id){
-		if(!interest::where([['user_id', Sentinel::getUser()->id], ['course_id', $id], ['tutor_id', NULL]])->first()){
+		if(!interest::where([['user_id', Sentinel::getUser()->id], ['course_id', $id]])->first()){
 		$interest = new interest;
 		$interest->user_id = Sentinel::getUser()->id;
 		$interest->course_id = $id;
