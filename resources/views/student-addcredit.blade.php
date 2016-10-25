@@ -1,6 +1,14 @@
 @extends('student-master')
 @section('content')
     <div class="content-area">
+      <h1 class="heading">เครดิต</h1><br>
+      <h1 class="sub-heading"><span class="ion-ios-pie"></span> เครดิตปัจจุบัน</h1><br>
+      <h2 class="large-topic">เครดิตทั้งหมด</h2>
+      <span class="credits-show">1,200</span>
+      <h2 class="large-topic">เครดิตจากการจอง</h2>
+      <span class="credits-show">200</span>
+
+      <br><br><br><br><br>
     <form action='' method="post">
       <h1 class="heading">เครดิต</h1><br>
       <h1 class="sub-heading"><span class="ion-card"></span> แจ้งโอนผ่านธนาคาร</h1><br><br>
