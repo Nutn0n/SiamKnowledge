@@ -388,6 +388,12 @@ button {
   vertical-align: middle;
 }
 
+.hovernothing:hover {
+  box-shadow: none!important;
+  background-color: #fafafa!important;
+}
+
+
 #name{
   font-weight: 200;
   font-size: 30px;
