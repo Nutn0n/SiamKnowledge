@@ -20,7 +20,7 @@
     Route::group(['middleware' => ['Checkuser:Student']], function () {
         Route::get('/addcourse', function(){return view('student-addcourse');})->name('addcourse');
         Route::post('/addcourse', 'JobController@addcourse');
-        Route::get('/addcredit', function(){return view('student-addcredit');})->name('addcredit');
+        Route::get('/addcredit', 'CreditController@studentcredit')->name('addcredit');
         Route::post('/addcredit', 'CreditController@addcredit');
         Route::post('/confirmcredit', 'CreditController@confirmcredit');
         Route::get('/viewmycourse', 'JobController@viewmycourse')->name('viewmycourse');
@@ -41,6 +41,7 @@
         Route::get('/verify/{courseid}/{code}', 'JobController@doverify')->name('doverify');
         Route::get('/myprofile', 'RegisterController@myprofiletutor');
         Route::put('/myprofile', 'RegisterController@updatemyprofiletutor');
+        Route::get('/earning', 'CreditController@earning');
     });
 /*Admin middleware*/
     Route::group(['middleware' => ['Checkuser:Admin']], function () {
@@ -63,7 +64,8 @@
         return mt_rand(100000, 999999);
     })->name('welcome');
 /*End not protected route*/
-
+    Route::get('/mail', 'EmailController@verify');
+    
 Route::get('/logout', function(){
     Sentinel::logout();
     return redirect()->route('welcome');

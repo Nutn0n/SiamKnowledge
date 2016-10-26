@@ -34,4 +34,12 @@ class CreditController extends Controller
         $credit->save();
         
     }*/
+    public function studentcredit(){
+        $user = User::find(Sentinel::getUser()->id);
+        return view('student-addcredit')->with('User', $user);
+    }
+    public function earning(){
+        $user = User::find(Sentinel::getUser()->id);
+        return view('tutor-credit')->with('Data', $user);
+    }
 }

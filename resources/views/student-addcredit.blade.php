@@ -4,9 +4,9 @@
       <h1 class="heading">เครดิต</h1><br>
       <h1 class="sub-heading"><span class="ion-ios-pie"></span> เครดิตปัจจุบัน</h1><br>
       <h2 class="large-topic">เครดิตทั้งหมด</h2>
-      <span class="credits-show">1,200</span>
+      <span class="credits-show">{{$User->credit->credit}}</span>
       <h2 class="large-topic">เครดิตจากการจอง</h2>
-      <span class="credits-show">200</span>
+      <span class="credits-show">{{$User->credit->reservedcredit}}</span>
 
       <br><br><br><br><br>
     <form action='' method="post">
