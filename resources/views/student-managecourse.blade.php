@@ -22,7 +22,7 @@
       <!-- Start  loop -->
       @foreach($data['course']->interests as $interest)
       @if($interest->user->id == $data['course']->tutor_id)
-      <h2 class="large-topic">รัหสยืนยันการสอน {{$data['course']->verificationcode}}</h2>
+      <h2 class="large-topic">รหัสยืนยันการสอน {{$data['course']->verificationcode}}</h2>
 		<br>
       <div class="card-small card-request-small">
       <div style="background-image: url('@if($interest->user->profile->avatar!=NULL) {{Storage::url($interest->user->profile->avatar)}}@else https://api.adorable.io/avatars/100/{{$interest->user->profile->email}} @endif');background-size: cover;background-position: center;background-repeat: no-repeat;" class="teacher-pic"></div>
