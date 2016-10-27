@@ -10,7 +10,7 @@
           <div class="date"><h1>{{$data['course']->date}}<br><span>{{$data['course']->month}}</span></h1></div>
           <div class="card-detail">
             <div class="card-name"><h1>{{$data['course']->topic}}<br><span>{{$data['course']->subject}}</span></h1></div>
-            <div class="card-description"><h2 class="card-time">13:00 - 14:00</h2><h2 class="card-location">{{$data['course']->place}}</h2></div>
+            <div class="card-description"><h2 class="card-time">{{$data['course']->timestring}}</h2><h2 class="card-location">{{$data['course']->place}}</h2></div>
           </div>
         </div>
         <p>{{$data['course']->objective}}</p>

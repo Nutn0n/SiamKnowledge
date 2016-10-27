@@ -16,7 +16,7 @@
           <div class="date"><h1>{{$Course->date}}<br><span>{{$Course->month}}</span></h1></div>
           <div class="card-detail">
             <div class="card-name"><h1>{{$Course->topic}}<br><span>{{$Course->subject}}</span></h1></div>
-            <div class="card-description"><h2 class="card-time">{{$Course->time}}</h2><br class="card-breaker"><h2 class="card-location">{{$Course->place}}</h2></div>
+            <div class="card-description"><h2 class="card-time">{{$Course->timestring}}</h2><br class="card-breaker"><h2 class="card-location">{{$Course->place}}</h2></div>
           </div>
         </div>
       </a>

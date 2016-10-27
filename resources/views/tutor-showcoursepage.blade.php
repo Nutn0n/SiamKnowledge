@@ -13,7 +13,7 @@
         <div class="date"><h1>{{$data['Course']->date}}<br><span>{{$data['Course']->month}}</span></h1></div>
         <div class="card-detail">
           <div class="card-name"><h1>{{$data['Course']->subject}}<br><span>Condition...</span></h1></div>
-          <div class="card-description"><h2 class="card-time">{{$data['Course']->time}}</h2><h2 class="card-location">{{$data['Course']->place}}</h2></div>
+          <div class="card-description"><h2 class="card-time">{{$data['Course']->timestring}}</h2><h2 class="card-location">{{$data['Course']->place}}</h2></div>
         </div>
       </div>
       <p>{{$data['Course']->objective}}</p>

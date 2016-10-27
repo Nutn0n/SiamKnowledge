@@ -7,7 +7,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class EmailVerify extends Mailable
+class notification extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -16,11 +16,9 @@ class EmailVerify extends Mailable
      *
      * @return void
      */
-    public $fuckyoutext;
-
     public function __construct()
     {
-        $this->fuckyoutext = 'fuckyou';
+        //
     }
 
     /**
@@ -30,6 +28,6 @@ class EmailVerify extends Mailable
      */
     public function build()
     {
-        return $this->from('siamknowledge@siamknowledgedev.com')->view('email.verify');
+        return $this->from('notification@siamknowledgedev.com')->view('email.notification');
     }
 }

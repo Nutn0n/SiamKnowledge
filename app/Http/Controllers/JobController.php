@@ -37,6 +37,8 @@ class JobController extends Controller
 		foreach ($Courses as $Course) {
 			$Course->date = Carbon::parse($Course->startdate)->day;
 			$Course->month = Carbon::parse($Course->startdate)->format('M');
+			$Course->month = Carbon::parse($Course->startdate)->format('M');
+			$Course->timestring = Carbon::parse($Course->time)->format('H:i') . '-' . Carbon::parse($Course->time)->addHours($Course->length)->format('H:i');
 		}
 		
 		return view('student-viewmycourse')->with('data', ['courses'=>$Courses]);
@@ -46,6 +48,7 @@ class JobController extends Controller
 		foreach ($Courses as $Course) {
 			$Course->date = Carbon::parse($Course->startdate)->day;
 			$Course->month = Carbon::parse($Course->startdate)->format('M');
+			$Course->timestring = Carbon::parse($Course->time)->format('H:i') . '-' . Carbon::parse($Course->time)->addHours($Course->length)->format('H:i');
 		}
 		return view('tutor-showcourse')->with('Courses', $Courses);
 	}
@@ -65,6 +68,7 @@ class JobController extends Controller
 		$Course = Course::find($id);
 		$Course->date = Carbon::parse($Course->startdate)->day;
 		$Course->month = Carbon::parse($Course->startdate)->format('M');
+		$Course->timestring = Carbon::parse($Course->time)->format('H:i') . '-' . Carbon::parse($Course->time)->addHours($Course->length)->format('H:i');
 		$tutor = false;
 		$haveinterest = true;
 		if(Sentinel::check()){
@@ -86,6 +90,7 @@ class JobController extends Controller
 		$Course = Course::find($id);
 		$Course->date = Carbon::parse($Course->startdate)->day;
 		$Course->month = Carbon::parse($Course->startdate)->format('M');
+		$Course->timestring = Carbon::parse($Course->time)->format('H:i') . '-' . Carbon::parse($Course->time)->addHours($Course->length)->format('H:i');
 		return view('student-managecourse')->with('data', ['course'=>$Course, 'haveinterest'=>$this->haveinterest($id), 'available'=>$Course->available ]);
 	}
 	public function viewprofile($id, $tutorid){
@@ -110,6 +115,7 @@ class JobController extends Controller
 		foreach ($Courses as $Course) {
 			$Course->date = Carbon::parse($Course->startdate)->day;
 			$Course->month = Carbon::parse($Course->startdate)->format('M');
+			$Course->timestring = Carbon::parse($Course->time)->format('H:i') . '-' . Carbon::parse($Course->time)->addHours($Course->length)->format('H:i');
 		}
 		return view('tutor-answered')->with('Courses', $Courses);
 	}
