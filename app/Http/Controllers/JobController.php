@@ -134,7 +134,7 @@ class JobController extends Controller
 			$request->session()->flash('status', true);
 			$Course->verified = true;
 			$Tutor->credit->save();
-			$User->save();
+			$User->credit->save();
 			$Course->save();
 			return redirect()->route('verify', ['id'=>$request->courseid]);
 		}
