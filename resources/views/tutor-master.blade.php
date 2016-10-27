@@ -58,7 +58,7 @@
         <li class="menu-button"><a href="{{route('tutoranswered')}}"><span class="menu-icon ion-checkmark-circled"></span>ได้รับการตอบรับแล้ว</a></li>
         <li class="menu-button"><a href="#"><span class="menu-icon ion-card"></span>เครดิต</a></li>
       </ul>
-
+      <a href="/logout" class="class-register"><span class="ion-plus"></span>logout</a>
     </div>
 
     <!-- End of Left Sidebar, Start of Main Content -->
