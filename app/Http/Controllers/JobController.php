@@ -129,11 +129,12 @@ class JobController extends Controller
 		if($Course->verificationcode == $request->code){
 			$Tutor = User::find(Sentinel::getUser()->id);
 			$User = $Course->user;
-			$User->credit->reservedcredit = $User->credit->reservedcredit - $Course->credit;
+			$User->credit->reservedcredit -= $Course->credit;
 			$Tutor->credit->credit += $Course->credit;
 			$request->session()->flash('status', true);
 			$Course->verified = true;
 			$Tutor->credit->save();
+			$User->save();
 			$Course->save();
 			return redirect()->route('verify', ['id'=>$request->courseid]);
 		}
