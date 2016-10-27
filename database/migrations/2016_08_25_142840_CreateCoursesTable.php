@@ -18,7 +18,7 @@ class CreateCoursesTable extends Migration
             $table->string('subject')->nullable();
             $table->string('topic')->nullable();
             $table->integer('length')->nullable(); //เรียนครั้งละกี่ชม
-            $table->integer('time')->nullable(); //กี่ครั้ง
+            $table->string('time')->nullable(); //กี่ครั้ง
             $table->string('objective')->nullable(); //เป้าหมาย
             $table->string('startdate')->nullable(); //วันเริ่ม
             $table->string('grade')->nullable();

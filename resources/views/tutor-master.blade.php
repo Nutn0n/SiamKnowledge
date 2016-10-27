@@ -35,6 +35,7 @@
     <!-- Left Sidebar -->
     <div class="left-sidebar">
       <a href="#" class="close-button"></a>
+      <div class="profile">
       <div style="background-image: url('https://api.adorable.io/avatars/100/{{$User->profile->email}}');background-size: cover;background-position: center;background-repeat: no-repeat;" class="profile-pic"></div>
         <div class="profile-wrapper">
           <div class="profile-pic"></div>
