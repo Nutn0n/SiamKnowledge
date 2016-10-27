@@ -36,9 +36,8 @@
     <div class="left-sidebar">
       <a href="#" class="close-button"></a>
       <div class="profile">
-      <div style="background-image: url('https://api.adorable.io/avatars/100/{{$User->profile->email}}');background-size: cover;background-position: center;background-repeat: no-repeat;" class="profile-pic"></div>
         <div class="profile-wrapper">
-          <div class="profile-pic"></div>
+                <div style="background-image: url('https://api.adorable.io/avatars/100/{{$User->profile->email}}');background-size: cover;background-position: center;background-repeat: no-repeat;" class="profile-pic"></div>
           <div class="profile-name">
             <h1 id="name">{{$User->profile->name}}</h1>
             <h2 id="type">{{$User->profile->tutorgrade}} Tutor</h2>
@@ -58,7 +57,6 @@
         <li class="menu-button"><a href="{{route('tutoranswered')}}"><span class="menu-icon ion-checkmark-circled"></span>ได้รับการตอบรับแล้ว</a></li>
         <li class="menu-button"><a href="#"><span class="menu-icon ion-card"></span>เครดิต</a></li>
       </ul>
-      <a href="/logout" class="class-register"><span class="ion-plus"></span>logout</a>
     </div>
 
     <!-- End of Left Sidebar, Start of Main Content -->
