@@ -20,7 +20,19 @@
       <input type="text" class="normal-input" name='phone' value='{{$profile->phone}}'>
       <h2 class="large-topic">อัพโหลดภาพประจำตัวใหม่</h2>
       @if(count($errors->get('avatar')) > 0)<br><span class="ion-ios-minus-outline"></span>ไฟล์ไม่ใช่รูปภาพหรือมีขนาดเกิน 2mb</span></h3>@endif
-      <input type="file" class="normal-input" name='avatar'>
+      <!--<input type="file" class="normal-input" name='avatar'>-->
+
+      <div class="upload" upload-image="">
+        <input type="file" id="files" name='avatar' >
+        <label for="files">
+          <span class="add-image">
+            เลือกภาพ
+          </span>
+          <output id="list"></output>
+        </label>
+      </div>
+
+
       <br/>      <br/>
       <input type="hidden" name="_method" value="PUT">
       {{ csrf_field() }}
