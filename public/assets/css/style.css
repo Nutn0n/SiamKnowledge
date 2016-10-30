@@ -369,7 +369,9 @@ button {
   height: auto;
   display: block;
   position: relative;
-  text-align: center;
+  text-align: left;
+  margin-left: 20px;
+  padding: 0 10%;
 }
 
 .profile-pic{
