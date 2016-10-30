@@ -21,15 +21,10 @@
       <h2 class="large-topic">อัพโหลดภาพประจำตัวใหม่</h2>
       @if(count($errors->get('avatar')) > 0)<br><span class="ion-ios-minus-outline"></span>ไฟล์ไม่ใช่รูปภาพหรือมีขนาดเกิน 2mb</span></h3>@endif
       <!--<input type="file" class="normal-input" name='avatar'>-->
-      <br/>   
-      <div class="upload" upload-image="">
-        <label for="files">
-          <span class="add-image">
+      <br/>
+
             <input type="file" id="files" name='avatar' >
-          </span>
-          <output id="list"></output>
-        </label>
-      </div>
+
 
 
       <br/>      <br/>
