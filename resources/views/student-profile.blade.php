@@ -23,10 +23,9 @@
       <!--<input type="file" class="normal-input" name='avatar'>-->
 
       <div class="upload" upload-image="">
-        <input type="file" id="files" name='avatar' >
         <label for="files">
           <span class="add-image">
-            เลือกภาพ
+                  <input type="file" id="files" name='avatar' >
           </span>
           <output id="list"></output>
         </label>
