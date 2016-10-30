@@ -126,6 +126,10 @@ a{
 /*          Input         */
 /*------------------------*/
 
+input {
+  font-weight: 300;
+}
+
 @media screen and (min-width: 500px){
   .text-input{
     resize: none;
