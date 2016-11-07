@@ -143,6 +143,17 @@ class JobController extends Controller
 			return redirect()->route('verify', ['id'=>$request->courseid]);
 		}
 	}
+	public function forward(){
+		if (Sentinel::getUser()->roles->first()->name=='Student'){
+			return redirect()->route('addcourse');
+		}
+		else if(Sentinel::getUser()->roles->first()->name=='Tutor'){
+			return redirect()->route('course');
+		}
+		else{
+			return redirect()->route('register');
+		}
+	}
 	public function selecttutor(Request $request, $id, $tutorid){
 		$User = User::find(Sentinel::getUser()->id);
 		$Course = Course::find($id);

@@ -61,9 +61,7 @@
         /*End Register */
     });
 /*Not protected route*/
-    Route::get('/', function(){
-        return mt_rand(100000, 999999);
-    })->name('welcome');
+    Route::get('/', 'JobController@forward')->name('welcome');
 /*End not protected route*/
     Route::get('/mail', 'EmailController@verify');
     
