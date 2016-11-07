@@ -24,16 +24,16 @@ class CreditController extends Controller
         $request->session()->flash('status', 'complete');
         return redirect()->back();
     }
-    /*public function approvecredit($id){
-        $log = log::find($id);
-        $log->status = 'approve';
+    public function approvecredit($id){
+        $log = creditlog::find($id);
+        $log->confirmed = true;
         //$log->by = approve by who. Need Implement
         $log->save();
         $credit = Credit::where('user_id', $log->user_id)->first();
-        $credit->credit = $log->credit;
+        $credit->credit += $log->credit;
         $credit->save();
         
-    }*/
+    }
     public function studentcredit(){
         $user = User::find(Sentinel::getUser()->id);
         return view('student-addcredit')->with('User', $user);

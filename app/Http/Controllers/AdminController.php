@@ -6,17 +6,28 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-use App\log;
+use App\creditlog;
 use App\Course;
+use App\Profile;
+use DB;
+use Sentinel;
 
 class AdminController extends Controller
 {
     //Control Everything about admin and staff thing.
     public function dashboard(){
-    	$data = log::where('status', 'confirm')->get();
-    	return view('admin.dashboard')->with('data', $data);
+        $user = Profile::find(Sentinel::getUser()->id);
+    	$creditlog = creditlog::where('confirmed', false)->get();
+        $tutorprofile = Profile::where('status', 'Tutor')->take(10)->get();
+        $studentprofile = Profile::where('status', 'Student')->take(10)->get();
+    	return view('admin.admin')->with('data', ['creditlog'=>$creditlog,
+            'tutorprofiles'=>$tutorprofile,
+            'studentprofiles'=>$studentprofile,
+            'user'=>$user,
+            ]);
     }
-    public function coursedashboard(){
-
-    } 
+    public function search($keyword){
+    	$result = Profile::where('name', 'LIKE', '%'.$keyword.'%')->get();
+    	return view('admin.search')->with('results', $result);
+    }
 }

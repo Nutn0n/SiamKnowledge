@@ -1,0 +1,406 @@
+/*------------------------*
+
+     Siam Knowledge - Online
+    © 2016 Siam Knowledge,  All rights reserved
+
+     MVC Programming : @innneang
+     Front-end Design UI/UX  : @Nutn0n
+     CSS framework: @wonderbright
+
+*------------------------*/
+
+
+/* CSS RESET */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* Global */
+
+body {
+-webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  margin: 0;
+  background-color: #22323B;
+  font-family: "Kanit", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Nav */
+
+nav {
+  width:100%;
+  height:200px;
+  text-align: center;
+  margin-left: -140px;
+  margin-bottom: 50px;
+}
+
+.nav-logo {
+    display: inline-block;
+    margin: 50px 10px;
+    width:100px;
+    height:100px;
+}
+
+.nav-logo .logo{
+  width: 100%;
+  height: 100%;
+}
+
+.nav-text {
+    margin: 50px 0px;
+    display: inline-block;
+    height:100px;
+    border-left: 1px solid #fff;
+    text-align: left;
+    position: absolute;
+    padding-left: 20px;
+    line-height: 34px;
+}
+
+.nav-text h2 {
+  color:#999999;
+  font-size:20px;
+  font-weight: 200;
+}
+
+.nav-text h3 {
+  color:#fff;
+  font-size:24px;
+  font-weight: 300;
+}
+
+.nav-text h4 {
+  color:#fff;
+  font-size:20px;
+  font-weight: 400;
+}
+
+.logout {
+  color:#999999;
+  margin-left: 20px;
+  font-weight: 200;
+  font-size:18px;
+}
+
+.logout:hover {
+  color:#F86363;
+}
+
+/* Block */
+
+section.block {
+	margin-top:30px;
+  color:#fff;
+  display: block;
+  height: 400px;
+  padding: 10px 15% 10px 15%;
+}
+
+.tutorial {
+	display: inline-block;
+  width: 200px;
+}
+
+section.block h1 {
+  font-size: 27px;
+  font-weight: 200;
+}
+
+section.block p {
+  margin-left: 35px;
+  margin-top: 10px;
+  font-size: 17px;
+  font-weight: 200;
+  color: #858B8E;
+  line-height: 22px;
+}
+
+.window {
+	position: absolute;
+	display: inline-block;
+	width: 700px;
+	height: 300px;
+}
+
+.profile-list  {
+	padding: 0 10px 0 10px;
+}
+
+.window .tutor{
+	margin: 4px 4px;
+	display: inline-block;
+	width: 50%;
+	height: 100%;
+}
+
+.window .student{
+	margin: 4px 4px;
+	width: 50%;
+	position: absolute;
+	display: inline-block;
+	height: 100%;
+}
+
+.profile-list h2 {
+	font-size: 25px;
+	font-weight: 200;
+	padding: 0 5px 0 10px;
+}
+
+.profile-list .list {
+	display: inline-block;
+	margin: 10px 5px 5px 5px;
+	width: 100%;
+	height: 100%;
+	background-color: #253842;
+  transition: .1s ease-in-out;
+	border-radius: 2px;
+}
+
+.profile-list .list:hover {
+	-webkit-box-shadow: rgba(0, 0, 0, 0.1) 4px 4px 20px;
+  -moz-box-shadow: rgba(0,0,0,0.1) 4px 4px 20px;
+  box-shadow: rgba(0, 0, 0, 0.1) 4px 4px 20px;
+	transition: .1s ease-in-out;
+	 transform: scale(1.03);
+}
+
+.search-wrapper{
+	width: 100%;
+	height: 25px;
+}
+
+.search-wrapper span {
+	font-size: 24px;
+	color:#fafafa;
+	margin-left: 20px;
+}
+
+.search {
+	margin-top: 8px;
+	display: inline-block;
+  font-family: "Kanit", sans-serif;
+	text-align: center;
+	font-weight: 200;
+	font-size: 18px;
+	margin-left: 20px;
+	background: none;
+	color:#fafafa;
+	border: none;
+	outline: none;
+}
+
+.search:focus {
+	border: none;
+	outline: none;
+}
+
+.scroll-list {
+	margin-top: 20px;
+	display: inline-block;
+	overflow-y: scroll;
+	width: 100%;
+	height: 255px;
+}
+
+.profile-item {
+	padding: 10px 0 10px 0;
+	cursor: pointer;
+}
+
+.profile-item:hover {
+	background-color: #1E323C;
+}
+
+.profile-picture {
+	margin-left: 15px;
+	width: 50px;
+	height:50px;
+	background-color: #fff;
+	display: inline-block;
+	border-radius: 360px;
+}
+
+.profile-text {
+	display: inline-block;
+	height: 100%;
+	transform: translateY(-8px);
+}
+
+.profile-text h2 {
+	font-size: 18px;
+	margin-left: 10px;
+	line-height: 25px;
+}
+
+.profile-text h3 {
+	font-size: 200;
+	line-height: 20px;
+	font-size: 14px;
+	margin-left: 20px;
+}
+
+.full-width-window {
+	margin-left: 20px;
+	background-color: #253842;
+	width: 104%;
+	height:300px;
+  transition: .1s ease-in-out;
+	overflow-y: scroll;
+}
+
+.full-width-window:hover {
+	-webkit-box-shadow: rgba(0, 0, 0, 0.1) 4px 4px 20px;
+  -moz-box-shadow: rgba(0,0,0,0.1) 4px 4px 20px;
+  box-shadow: rgba(0, 0, 0, 0.1) 4px 4px 20px;
+  transition: .1s ease-in-out;
+	 transform: scale(1.03);
+}
+
+.credit-request {
+	width: 100%;
+	height: 80px;
+}
+
+.credit-request:hover {
+	background-color: #1E323C;
+}
+
+.name-info {
+	display: inline-block;
+	margin-left: 20px;
+	padding-top: 20px;
+}
+
+.name-info h3 {
+	font-weight: 200;
+	font-size: 19px;
+}
+
+.name-info h4 {
+	margin-top: 5px;
+	font-weight: 200;
+	font-size: 15px;
+}
+
+.bank-info {
+	width: 200px;
+	display: inline-block;
+	text-align: right;
+	margin-left: 20px;
+	padding-top: 20px;
+}
+
+.bank-info h3 {
+	font-weight: 300;
+	font-size: 19px;
+}
+
+.bank-info h4 {
+	margin-top: 5px;
+	font-weight: 200;
+	font-size: 15px;
+}
+
+.amount-info {
+	display: inline-block;
+	text-align: right;
+	font-size: 23px;
+	margin-left: 20px;
+	padding-top: 15px;
+}
+
+.unit {
+	font-weight: 200;
+}
+
+.action-info {
+	display: inline-block;
+	text-align: center;
+	margin-left: 25px;
+	transform: translateY(-8px);
+}
+
+.action-info button {
+	  font-family: "Kanit", sans-serif;
+		width: 80px;
+		margin-right: 5px;
+}
+
+.action-info button:hover {
+	cursor: pointer;
+	transition: .1s ease-in-out;
+  transform: scale(1.03);
+}
+
+.action-info button.confirm-button {
+	font-size: 18px;
+	color: #2E3D44;
+	border: none;
+	background-color: #fff;
+}
+
+.action-info button.confirm-button:hover {
+	background-color: #fff;
+	color:#2E3D44;
+}
+
+.action-info button.delete-button {
+	background: none;
+	color: #fff;
+	font-size: 18px;
+	border: none;
+}
+
+.action-info button.delete-button:hover {
+	background-color: #18282F;
+}
