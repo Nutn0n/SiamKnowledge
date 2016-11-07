@@ -19,9 +19,9 @@
       {{ csrf_field() }}
       <select name='bank' class="dropdown-outerspace">
         <option value="" disabled selected hidden>เลือกธาคาร</option>
-        <option value='bangkok bank'>กรุงเทพ - 123456</option>
-        <option value='scb'>ไทยพานิชย์ - 123456</option>
-        <option value='ktc'>กรุงไทย - 123456</option>
+        <option value='ธนาคารกรุงเทพ'>กรุงเทพ - 123456</option>
+        <option value='ธนาคารไทยพานิชย์'>ไทยพานิชย์ - 123456</option>
+        <option value='ธนาคารกรุงไทย'>กรุงไทย - 123456</option>
       </select>
       <h3 class="description">เลือกบัญชีธนาคารที่ได้โอนเงิน</h3>
 

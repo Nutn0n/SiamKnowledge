@@ -29,10 +29,9 @@ class CreditController extends Controller
         $log->confirmed = true;
         //$log->by = approve by who. Need Implement
         $log->save();
-        $credit = Credit::where('user_id', $log->user_id)->first();
-        $credit->credit += $log->credit;
+        $credit = Credit::find($log->user_id);
+        $credit->credit += $log->amount;
         $credit->save();
-        
     }
     public function studentcredit(){
         $user = User::find(Sentinel::getUser()->id);
