@@ -146,7 +146,7 @@ class RegisterController extends Controller
             $profile->avatar = $path;
         }
     	$profile->save();
-    	return 'success';
+    	return back();
     }
     public function updatemyprofiletutor(Request $request){
         $profile = Profile::find(Sentinel::getUser()->id);
@@ -157,6 +157,6 @@ class RegisterController extends Controller
         $profile->email = $request->email;
         $profile->phone = $request->phone;
         $profile->save();
-        return 'success';
+        return back();
     }
 }
