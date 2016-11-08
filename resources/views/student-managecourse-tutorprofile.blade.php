@@ -20,7 +20,10 @@
         @if($data['available']==true)<a href="{{route('selecttutor', ['id'=>$data['id'], 'tutorid'=>$data['tutorid']])}}" class="button button-orange">เลือกคนนี้</a>@endif
         <a href="{{url()->previous()}}" class="button button-grey">ย้อนกลับ</a>
       </div>
-        @if(session('status'))
+@endsection
+
+@section('postscript')
+  @if(session('status'))
       <script type="text/javascript">swal('เครดิตไม่เพียงพอ', 'กรุณาเติมเครดิต');</script>
   @endif
 @endsection
