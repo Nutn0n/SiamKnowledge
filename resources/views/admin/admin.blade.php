@@ -19,7 +19,7 @@
       <span class="nav-text">
         <h2>I AM</h2>
         <h3>{{$data['user']->name}}</h3>
-        <h4>Admin <a href=""><span class="logout"><span class="ion-log-out"></span> Logout</span></a></h4>
+        <h4>Admin <a href="/logout"><span class="logout"><span class="ion-log-out"></span> Logout</span></a></h4>
       </span>
     </nav>
     <!-- end static -->

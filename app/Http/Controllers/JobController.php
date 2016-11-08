@@ -169,6 +169,9 @@ class JobController extends Controller
 		else if(Sentinel::getUser()->roles->first()->name=='Tutor'){
 			return redirect()->route('course');
 		}
+		else{
+			return redirect()->route('admin');
+		}
 		
 	}
 	public function selecttutor(Request $request, $id, $tutorid){

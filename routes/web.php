@@ -46,7 +46,7 @@
 /*Admin middleware*/
     Route::group(['middleware' => ['Admin']], function () {
         Route::get('/admin/credit/approve/{id}', 'CreditController@approvecredit')->name('approvecredit');
-        Route::get('/admin', 'AdminController@dashboard');
+        Route::get('/admin', 'AdminController@dashboard')->name('admin');
         Route::get('/admin/search/{keyword}', 'AdminController@search');
     });
 /*Guest middleware*/
