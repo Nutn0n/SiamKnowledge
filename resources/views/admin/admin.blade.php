@@ -41,7 +41,7 @@
             <!--- start loop -->
 
             <div class='tutorresult'>
-              
+
               @foreach($data['tutorprofiles'] as $tutorprofile)
              <div class="profile-item">
               <span class="profile-picture" style="background-image: url('@if($tutorprofile->avatar!=NULL) {{Storage::url($tutorprofile->avatar)}}@else https://api.adorable.io/avatars/100/{{$tutorprofile->email}} @endif');background-size: cover;background-position: center;background-repeat: no-repeat;"></span>
@@ -110,7 +110,7 @@
             </span>
             <span  class="action-info">
               <a href="{{route('approvecredit', ['id'=>$log->id])}}" class="confirm-button">ยืนยัน</a>
-              <button class="delete-button">ลบ</button>
+              <a class="delete-button">ลบ</a>
             </span>
           </div>
           @endforeach

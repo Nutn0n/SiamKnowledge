@@ -370,37 +370,39 @@ section.block p {
 	transform: translateY(-8px);
 }
 
-.action-info button {
+.action-info a {
 	  font-family: "Kanit", sans-serif;
 		width: 80px;
+		display: inline-block;
 		margin-right: 5px;
+		line-height: 30px;
 }
 
-.action-info button:hover {
+.action-info a:hover {
 	cursor: pointer;
 	transition: .1s ease-in-out;
-  transform: scale(1.03);
+  transform: scale(1.05);
 }
 
-.action-info button.confirm-button {
+.action-info a.confirm-button {
 	font-size: 18px;
 	color: #2E3D44;
 	border: none;
 	background-color: #fff;
 }
 
-.action-info button.confirm-button:hover {
+.action-info a.confirm-button:hover {
 	background-color: #fff;
 	color:#2E3D44;
 }
 
-.action-info button.delete-button {
+.action-info a.delete-button {
 	background: none;
 	color: #fff;
 	font-size: 18px;
 	border: none;
 }
 
-.action-info button.delete-button:hover {
+.action-info a.delete-button:hover {
 	background-color: #18282F;
 }
