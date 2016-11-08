@@ -124,6 +124,7 @@
 
 
   </body>
+  <script src="/assets/js/sweetalert.js" type="text/javascript"></script>
  <script src="/assets/js/jquery-3.1.1.js" type="text/javascript"></script>
   @if(session('status'))
       <script type="text/javascript">swal("{{session('status')}}");</script>
