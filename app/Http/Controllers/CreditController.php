@@ -38,6 +38,7 @@ class CreditController extends Controller
         $credit->credit += $log->amount;
         $credit->save();
         $request->session()->flash('status', 'เพิ่มเครดิตสำเร็จ');
+        return back();
     }
     public function studentcredit(){
         $user = User::find(Sentinel::getUser()->id);
