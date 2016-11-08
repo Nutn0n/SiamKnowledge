@@ -67,10 +67,12 @@
 @endsection
 
 @section('postscript')
-    
     <script src='/assets/js/picker.js' type='text/javascript'></script>
     <script src='/assets/js/picker.time.js' type='text/javascript'></script>
     <script>
+    @if(count($errors)!=0)
+      swal("มีข้อผิดพลาด!", "กรุณาตรวจสอบข้อมูลอีกครั้ง")
+    @endif
       $(document).ready(function(){
         $( "#datepicker" ).datepicker( "option", "dateFormat", "dd-mm-yy" );
       })

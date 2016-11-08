@@ -10,6 +10,16 @@ use Carbon;
 class JobController extends Controller
 {
     public function addcourse(Request $request){
+    	$this->validate($request, [
+    		'subject'=>'required',
+    		'length'=>'required',
+    		'date'=>'required',
+    		'place'=>'required',
+    		'objective'=>'required',
+    		'topic'=>'required',
+    		'group'=>'required',
+    		'time'=>'required',
+    		]);
 		$Course = new Course;
 		$Course->user_id = Sentinel::getUser()->id;
 		$Course->subject = $request->input('subject');
@@ -25,10 +35,12 @@ class JobController extends Controller
 		$Course->verificationcode = mt_rand(100000, 999999);
 		$Course->available = true;
 		if($Course->save()){
+			\App\log::create(['status' => 'เพิ่มคอร์ส', 'user_id' => Sentinel::getUser()->id]);
 			$request->session()->flash('status', 'เพิ่มคอร์สเรียบร้อยแล้ว');
 			return redirect()->route('viewmycourse');
 		}
 		else{
+			\App\log::create(['status' => 'เพิ่มคอร์สไม่สำเร็จ', 'user_id' => Sentinel::getUser()->id]);
 			return 'error';
 		}
 	}
@@ -40,7 +52,6 @@ class JobController extends Controller
 			$Course->month = Carbon::parse($Course->startdate)->format('M');
 			$Course->timestring = Carbon::parse($Course->time)->format('H:i') . '-' . Carbon::parse($Course->time)->addHours($Course->length)->format('H:i');
 		}
-		
 		return view('student-viewmycourse')->with('data', ['courses'=>$Courses]);
 	}
 	public function showcourse(){
@@ -58,9 +69,11 @@ class JobController extends Controller
 		$interest->user_id = Sentinel::getUser()->id;
 		$interest->course_id = $id;
 		$interest->save();
+		\App\log::create(['status' => 'ให้ความสนใจคอร์ส id: ' . $id, 'user_id' => Sentinel::getUser()->id]);
 		return back();
 		}
 		else{
+			\App\log::create(['status' => 'ให้ความสนใจคอร์สไม่สำเร็จ' . $id, 'user_id' => Sentinel::getUser()->id]);
 			return 'fuckoff';
 		}
 	}
@@ -84,6 +97,7 @@ class JobController extends Controller
 	}
 	public function uninterest($id){
 		interest::where([['course_id', $id], ['user_id', Sentinel::getUser()->id],])->delete();
+		\App\log::create(['status' => 'เลิกให้ความสนใจคอร์ส id: ' . $id, 'user_id' => Sentinel::getUser()->id]);
 		return back();
 	}
 	public function manage($id){
@@ -136,6 +150,7 @@ class JobController extends Controller
 			$Tutor->credit->save();
 			$User->credit->save();
 			$Course->save();
+			\App\log::create(['status' => 'ยืนยันการสอน', 'user_id' => Sentinel::getUser()->id]);
 			return redirect()->route('verify', ['id'=>$request->courseid]);
 		}
 		else{
@@ -144,15 +159,17 @@ class JobController extends Controller
 		}
 	}
 	public function forward(){
-		if (Sentinel::getUser()->roles->first()->name=='Student'){
+		if(!Sentinel::check()){
+			return redirect()->route('login');
+
+		}
+		else if (Sentinel::getUser()->roles->first()->name=='Student'){
 			return redirect()->route('addcourse');
 		}
 		else if(Sentinel::getUser()->roles->first()->name=='Tutor'){
 			return redirect()->route('course');
 		}
-		else{
-			return redirect()->route('register');
-		}
+		
 	}
 	public function selecttutor(Request $request, $id, $tutorid){
 		$User = User::find(Sentinel::getUser()->id);
@@ -166,9 +183,11 @@ class JobController extends Controller
 				$User->credit->credit = $User->credit->credit - $Course->credit;
 				$User->credit->save();
 				$request->session()->flash('status', 'เลือกติวเตอร์สำเร็จ');
+				\App\log::create(['status' => 'เลือกติวเตอร์ ', 'user_id' => Sentinel::getUser()->id]);
 				return redirect()->route('viewmycourse', ['id'=>$id]);
 			}
 			else{
+				\App\log::create(['status' => 'เครดิตไม่เพียงพอในการซื้อคอร์ส', 'user_id' => Sentinel::getUser()->id]);
 				return "not enough credit";
 			}
 }

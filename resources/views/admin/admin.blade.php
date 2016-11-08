@@ -23,7 +23,7 @@
       </span>
     </nav>
     <!-- end static -->
-
+@if($data['sentinel']->hasAccess(['dashboard.view.user']))
     <!-- start block -->
     <section class="block">
       <div class="tutorial">
@@ -84,7 +84,8 @@
       </div>
     </section>
     <!-- end block -->
-
+@endif
+@if($data['sentinel']->hasAccess(['dashboard.view.credit']))
     <!--  start block -->
     <section class="block">
       <div class="tutorial">
@@ -108,7 +109,7 @@
               <h3>{{$log->amount}}<span class="unit">บาท</span></h3>
             </span>
             <span  class="action-info">
-              <button href="{{route('approvecredit', ['id'=>$log->id])}}" class="confirm-button">ยืนยัน</button>
+              <a href="{{route('approvecredit', ['id'=>$log->id])}}" class="confirm-button">ยืนยัน</a>
               <button class="delete-button">ลบ</button>
             </span>
           </div>
@@ -118,6 +119,7 @@
         </div>
     </section>
     <!-- end block -->
+@endif
 
 
 

@@ -1,6 +1,6 @@
     @extends('tutor-master')
 
-    @section('title', 'Student Profile')
+    @section('title', 'Tutor Profile')
     @section('content')
     <div class="content-area">
     <form action='' method='post'>

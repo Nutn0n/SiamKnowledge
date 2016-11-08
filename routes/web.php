@@ -44,11 +44,11 @@
         Route::get('/earning', 'CreditController@earning');
     });
 /*Admin middleware*/
-   // Route::group(['middleware' => ['Checkuser:Admin']], function () {
+    Route::group(['middleware' => ['Checkuser:Admin']], function () {
         Route::get('/admin/credit/approve/{id}', 'CreditController@approvecredit')->name('approvecredit');
         Route::get('/admin', 'AdminController@dashboard');
         Route::get('/admin/search/{keyword}', 'AdminController@search');
-  //  });
+    });
 /*Guest middleware*/
     Route::group(['middleware' => ['Guest']], function () {
         /*Register */
@@ -56,21 +56,18 @@
             Route::post('/studentregister','RegisterController@registerStudent');
             Route::post('/tutorregister', 'RegisterController@registerTutor');
             Route::get('/tutorregister', function(){return view('register');});
-            Route::get('/login', function(){return view('login');});
+            Route::get('/login', function(){return view('login');})->name('login');
             Route::post('/login', 'RegisterController@login');
         /*End Register */
     });
 /*Not protected route*/
     Route::get('/', 'JobController@forward')->name('welcome');
-/*End not protected route*/
     Route::get('/mail', 'EmailController@verify');
-    
-Route::get('/logout', function(){
-    Sentinel::logout();
-    return redirect()->route('welcome');
-});
-
-
+    Route::get('/logout', function(){
+        Sentinel::logout();
+        return redirect()->route('welcome');
+    });
+/*End not protected route*/
 /*-------------------------*/
 //Below here is for Debugging Purpose
 //Not complete need to be implemented ASAP.
@@ -104,7 +101,8 @@ Route::get('/logout', function(){
         'name' => 'Admin',
         'slug' => 'Admin',
         'permissions'   => array(
-            'dashboard.view' => true,
+            'dashboard.view.credit' => true,
+            'dashboard.view.user' => true,
 
         ),
     ]);
@@ -112,8 +110,7 @@ Route::get('/logout', function(){
         'name' => 'Reception',
         'slug' => 'Reception',
         'permissions'   => array(
-            'dashboard.view' => true,
-            'profile.view' =>true,
+            'dashboard.view.user' => true,
 
         ),
     ]);
@@ -121,8 +118,7 @@ Route::get('/logout', function(){
         'name' => 'Support',
         'slug' => 'Support',
         'permissions'   => array(
-            'dashboard.view' => true,
-            'support.panel' =>true,
+            'dashboard.view.user' => true,
 
         ),
     ]);
@@ -130,9 +126,7 @@ Route::get('/logout', function(){
         'name' => 'Business',
         'slug' => 'Business',
         'permissions'   => array(
-            'dashboard.money.view' => true,
-            'credit.edit' =>true,
-
+            'dashboard.view.credit' => true,
         ),
     ]);
     });

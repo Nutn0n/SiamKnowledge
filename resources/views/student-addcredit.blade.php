@@ -34,4 +34,9 @@
   @if(session('status'))
     <script type="text/javascript">swal("แจ้งโอนเงินสำเร็จ", "กรุณารอเจ้าหน้าตรวจสอบเพื่อเพิ่มเครดิต", "success");</script>
   @endif
+  @if(count($errors)!=0))
+    <script>
+    swal("มีข้อผิดพลาด", "กรุณาตรวจสอบข้อมุลอีกครั้ง")
+    </script>
+  @endif
 @endsection

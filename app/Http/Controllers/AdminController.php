@@ -16,14 +16,17 @@ class AdminController extends Controller
 {
     //Control Everything about admin and staff thing.
     public function dashboard(){
-        $user = Profile::find(Sentinel::getUser()->id);
+        $sentineluser = Sentinel::getUser();
+        $user = Profile::find($sentineluser->id);
     	$creditlog = creditlog::where('confirmed', false)->get();
         $tutorprofile = Profile::where('status', 'Tutor')->take(10)->get();
         $studentprofile = Profile::where('status', 'Student')->take(10)->get();
-    	return view('admin.admin')->with('data', ['creditlog'=>$creditlog,
+    	return view('admin.admin')->with('data', [
+            'creditlog'=>$creditlog,
             'tutorprofiles'=>$tutorprofile,
             'studentprofiles'=>$studentprofile,
             'user'=>$user,
+            'sentinel'=>$sentineluser,
             ]);
     }
     public function search($keyword){

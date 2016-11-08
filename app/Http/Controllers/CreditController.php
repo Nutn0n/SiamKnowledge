@@ -15,6 +15,11 @@ class CreditController extends Controller
 {
     //Control about adding credit etc.
     public function addcredit(Request $request){
+        $this->validate($request, [
+            'amount'=>'required|numeric',
+            'time'=>'required',
+            'bank'=>'required',
+            ]);
     	$log = new creditlog;
     	$log->amount = $request->amount;
     	$log->user_id = Sentinel::getUser()->id;
