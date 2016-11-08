@@ -20,7 +20,6 @@ class RegisterController extends Controller
     		'inter' => 'required',
     		'email' => 'required|unique:users,email',
     		'phone' => 'required|numeric',
-    		'lineid' => 'required',
     		'password' => 'required|confirmed',
     		]);
     	$credentials = [
