@@ -44,7 +44,7 @@
         Route::get('/earning', 'CreditController@earning');
     });
 /*Admin middleware*/
-    Route::group(['middleware' => ['Checkuser:Admin']], function () {
+    Route::group(['middleware' => ['Admin']], function () {
         Route::get('/admin/credit/approve/{id}', 'CreditController@approvecredit')->name('approvecredit');
         Route::get('/admin', 'AdminController@dashboard');
         Route::get('/admin/search/{keyword}', 'AdminController@search');

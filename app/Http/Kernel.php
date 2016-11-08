@@ -55,5 +55,6 @@ class Kernel extends HttpKernel
         'Checkuser' =>  \App\Http\Middleware\Checkuser::Class,
         'Guest' =>  \App\Http\Middleware\Guest::Class,
         'Checkprivilege' => \App\Http\Middleware\Checkprivilege::class,
+        'Admin'=> \App\Http\Middleware\Admin::class,
     ];
 }
