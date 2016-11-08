@@ -56,3 +56,10 @@
 
     </div>
   @endsection
+
+  
+@section('postscript')
+  @if(session('status'))
+      <script type="text/javascript">swal('เครดิตไม่เพียงพอ', 'กรุณาเติมเครดิต');</script>
+  @endif
+@endsection

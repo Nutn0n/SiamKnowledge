@@ -21,9 +21,3 @@
         <a href="{{url()->previous()}}" class="button button-grey">ย้อนกลับ</a>
       </div>
 @endsection
-
-@section('postscript')
-  @if(session('status'))
-      <script type="text/javascript">swal('เครดิตไม่เพียงพอ', 'กรุณาเติมเครดิต');</script>
-  @endif
-@endsection
