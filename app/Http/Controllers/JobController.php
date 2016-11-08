@@ -191,7 +191,8 @@ class JobController extends Controller
 			}
 			else{
 				\App\log::create(['status' => 'เครดิตไม่เพียงพอในการซื้อคอร์ส', 'user_id' => Sentinel::getUser()->id]);
-				return "not enough credit";
+				$request->session()->flash('status', 'เครดิตไม่เพียงพอ');
+				return back();
 			}
 }
 }
