@@ -12,7 +12,7 @@
         </div>
         <p>{{$Course->objective}}</p>
         <div class="card-divider">
-          <div class="teacher-pic"></div>
+          <div class="teacher-pic" style="background-image: url('@if($Course->user->profile->avatar!=NULL) {{Storage::url($Course->user->profile->avatar)}}@else https://api.adorable.io/avatars/100/{{$Course->user->profile->email}} @endif');background-size: cover;background-position: center;background-repeat: no-repeat;"></div>
           <div class="card-detail">
             <div class="card-name student-name"><h1>{{$Course->user->profile->name}}<br><span>{{$Course->user->profile->calledname}}</span></h1></div>
             <div class="card-description student-description"><h2 class="card-school">{{$Course->user->profile->school}}</h2><br><h2 class="card-time">{{$Course->user->profile->phone}}</h2></div>
