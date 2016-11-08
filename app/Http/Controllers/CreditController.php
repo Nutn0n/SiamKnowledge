@@ -29,7 +29,7 @@ class CreditController extends Controller
         $request->session()->flash('status', 'complete');
         return redirect()->back();
     }
-    public function approvecredit($id){
+    public function approvecredit(Request $request, $id){
         $log = creditlog::find($id);
         $log->confirmed = true;
         //$log->by = approve by who. Need Implement
