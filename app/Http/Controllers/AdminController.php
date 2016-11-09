@@ -35,4 +35,9 @@ class AdminController extends Controller
     	$result = Profile::where('name', 'LIKE', '%'.$keyword.'%')->get();
     	return view('admin.search')->with('results', $result);
     }
+    public function coursesearch($keyword){
+        $userid = Profile::where('name', 'LIKE', $keyword.'%')->get();
+        $course = Course::where('subject','LIKE', $keyword.'%')->get();
+        return view('admin.coursesearch')->with('data', ['profile'=>$userid, 'course'=>$course]);
+    }
 }

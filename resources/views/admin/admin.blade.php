@@ -134,11 +134,12 @@
         <div class="profile-list course">
           <h2>คอร์สเรียนในระบบ</h2>
           <div class="list">
-          <div class="search-wrapper"><span class="ion-ios-search"></span><input class="search" placeholder="ค้นหา" type="text"></input>
+          <div class="search-wrapper"><span class="ion-ios-search"></span><input id='coursesearch' class="search" placeholder="ค้นหา" type="text"></input>
           </div>
           <div class="scroll-list">
 
             <!--- start loop -->
+            <div class='courseresult'></div>
 @foreach($data['course'] as $course)
             <div class="profile-item">
               <span class="profile-text course-info-list">
@@ -201,6 +202,15 @@
       $.ajax({
       url: "/admin/search/" + search,
       success: function (data) { $('.studentresult').html(data); },
+      dataType: 'html'
+      });
+    });
+  
+  $('#coursesearch').keyup(function(){
+      var search = $('#coursesearch').val();
+      $.ajax({
+      url: "/admin/coursesearch/" + search,
+      success: function (data) { $('.courseresult').html(data); },
       dataType: 'html'
       });
     });
