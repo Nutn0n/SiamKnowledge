@@ -158,6 +158,11 @@ class JobController extends Controller
 			return redirect()->route('verify', ['id'=>$request->courseid]);
 		}
 	}
+	public function cancel($courseid){
+		$request->session()->flash('status', 'Cancel Completed');
+		return redirect()->route('verify', ['id'=>$request->courseid]);
+
+	}
 	public function forward(){
 		if(!Sentinel::check()){
 			return redirect()->route('login');

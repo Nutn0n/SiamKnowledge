@@ -39,6 +39,7 @@
         Route::get('/answered', 'JobController@tutoranswered')->name('tutoranswered');
         Route::get('/verify/{id}', 'JobController@verify')->name('verify');
         Route::get('/verify/{courseid}/{code}', 'JobController@doverify')->name('doverify');
+        Route::get('/cancel/{courseid}/', 'JobController@cancel')->name('cancel');
         Route::get('/myprofile', 'RegisterController@myprofiletutor');
         Route::put('/myprofile', 'RegisterController@updatemyprofiletutor');
         Route::get('/earning', 'CreditController@earning');
