@@ -122,7 +122,7 @@
     <!-- end block -->
 @endif
 
-
+@if($data['sentinel']->hasAccess(['dashboard.view.course']))
     <!-- start block -->
 
     <section class="block">
@@ -205,7 +205,7 @@
     </section>
 
     <!-- end block -->
-
+@endif
 
 
 

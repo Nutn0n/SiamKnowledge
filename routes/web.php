@@ -71,6 +71,8 @@
 /*-------------------------*/
 //Below here is for Debugging Purpose
 //Not complete need to be implemented ASAP.
+
+    Route::get('/test', 'Testcontroller@test');
     Route::get('/assignadmin', function(){
         $user = Sentinel::findById(3);
         $role = Sentinel::findRoleByName('Admin');
@@ -103,6 +105,7 @@
         'permissions'   => array(
             'dashboard.view.credit' => true,
             'dashboard.view.user' => true,
+            'dashboard.view.course' => true,
 
         ),
     ]);
