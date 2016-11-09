@@ -17,7 +17,7 @@ class Testcontroller extends Controller
 {
     public function test(Faker\Generator $faker){
     	
-    	for ($i=1; $i < 26; $i++) {
+    	/*for ($i=1; $i < 26; $i++) {
 	    	$credentials = [
 	    		'email'    => $faker->safeEmail,
 	   			'password' => '12345678',
@@ -65,17 +65,18 @@ class Testcontroller extends Controller
 			$role = Sentinel::findRoleByName('Tutor');
 			$role->users()->attach($user);
 		}
+		*/
 		for ($i=0; $i <25 ; $i++) { 
 		$Course = new Course;
 		$Course->user_id = rand(1,23);
-		$Course->subject = 'เลข';
+		$Course->subject = $faker->sentence($nbWords = 6, $variableNbWords = true);
 		$Course->credit = 3;
 		$Course->length = 2.5;
 		$Course->startdate = '10-11-2016';
 		$Course->place = 'Paragon';
 		$Course->objective = $faker->realText($maxNbChars = 200, $indexSize = 2);
 		$Course->time = '10:00 PM';
-		$Course->topic = $faker->sentence($nbWords = 6, $variableNbWords = true);
+		$Course->topic = 'เลข';
 		$Course->inter = 'no-not-inter';
 		$Course->group = 'group';
 		$Course->verificationcode = mt_rand(100000, 999999);

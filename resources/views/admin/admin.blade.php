@@ -145,7 +145,7 @@
               <h2>{{$course->user->profile->name}}</h2>
               </span>
               <span class="profile-subject course-info-list">
-              <h2>{{$course->subject}}</h2>
+              <h2>{{$course->topic}}</h2>
               </span>
               <span class="profile-date course-info-list">
               <h2>{{$course->startdate}}</h2>
