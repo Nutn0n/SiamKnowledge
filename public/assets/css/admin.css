@@ -276,10 +276,49 @@ section.block p {
 	transform: translateY(-8px);
 }
 
-.profile-text h2 {
+.profile-subject {
+	display: inline-block;
+	height: 100%;
+	transform: translateY(-8px);
+}
+
+.profile-date {
+	display: inline-block;
+	height: 100%;
+	transform: translateY(-8px);
+}
+
+.profile-more-info {
+	display: inline-block;
+	height: 100%;
+	transform: translateY(-8px);
+}
+
+.profile-more-info a {
 	font-size: 18px;
 	margin-left: 10px;
 	line-height: 25px;
+}
+
+
+.profile-date h2 {
+	font-size: 18px;
+	margin-left: 10px;
+	line-height: 25px;
+}
+
+
+.profile-subject h2 {
+	font-size: 22px;
+	margin-left: 10px;
+	line-height: 25px;
+	font-weight: 400;
+}
+
+.profile-text h2 {
+	font-size: 18px;
+	margin-left: 10px;
+	line-height: 20px;
 }
 
 .profile-text h3 {
@@ -405,4 +444,36 @@ section.block p {
 
 .action-info a.delete-button:hover {
 	background-color: #18282F;
+}
+
+.window .course {
+	width: 105%;
+}
+
+.window .course .list .search-wrapper .search {
+	width: 80%;
+}
+
+.status {
+	font-weight: 400;
+}
+
+.only-tutor {
+	transform: translateY(2px);
+}
+
+.status-red {
+	color:#F86363;
+}
+
+.status-green {
+	color:#00FF27;
+}
+
+.status-white {
+	color:#ECF0F5;
+}
+
+.course-info-list {
+	margin-top: 10px;
 }

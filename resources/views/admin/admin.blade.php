@@ -123,6 +123,91 @@
 @endif
 
 
+    <!-- start block -->
+
+    <section class="block">
+      <div class="tutorial">
+        <h1 class="tutorial-header"><span class="tutorial-icon ion-ios-list"></span> คอร์สในระบบ</h1>
+        <p class="tutorial-info">แสดงสถานะของการเรียนทั้งหมดในระบบ</p>
+      </div>
+      <div class="window">
+        <div class="profile-list course">
+          <h2>คอร์สเรียนในระบบ</h2>
+          <div class="list">
+          <div class="search-wrapper"><span class="ion-ios-search"></span><input class="search" placeholder="ค้นหา" type="text"></input>
+          </div>
+          <div class="scroll-list">
+
+            <!--- start loop -->
+
+            <div class="profile-item">
+              <span class="profile-text course-info-list">
+              <h2>ชื่อ นามสกุลนักเรียน</h2>
+              </span>
+              <span class="profile-subject course-info-list">
+              <h2>วิทยาศาสตร์</h2>
+              </span>
+              <span class="profile-date course-info-list">
+              <h2>21/12/2012</h2>
+              </span>
+              <span class="profile-date course-info-list">
+              <h2>เวลา 1 ชั่วโมง 30 นาที</h2>
+              </span>
+              <span class="profile-more-info course-info-list">
+              <h3 class="status status-red">ถูกยกเลิก</h3>
+              </span>
+            </div>
+
+            <div class="profile-item">
+              <span class="profile-text course-info-list">
+              <h2>ชื่อ นามสกุลนักเรียน</h2>
+              </span>
+              <span class="profile-subject course-info-list">
+              <h2>วิทยาศาสตร์</h2>
+              </span>
+              <span class="profile-date course-info-list">
+              <h2>21/12/2012</h2>
+              </span>
+              <span class="profile-date course-info-list">
+              <h2>เวลา 1 ชั่วโมง 30 นาที</h2>
+              </span>
+              <span class="profile-more-info course-info-list">
+              <h3 class="status status-green">เสร็จสิ้น</h3>
+              </span>
+            </div>
+
+            <div class="profile-item">
+              <span class="profile-text course-info-list">
+              <h2>ชื่อ นามสกุลนักเรียน</h2>
+              </span>
+              <span class="profile-subject course-info-list">
+              <h2>วิทยาศาสตร์</h2>
+              </span>
+              <span class="profile-date course-info-list">
+              <h2>21/12/2012</h2>
+              </span>
+              <span class="profile-date course-info-list">
+              <h2>เวลา 1 ชั่วโมง 30 นาที</h2>
+              </span>
+              <span class="profile-more-info course-info-list">
+              <h3 class="status status-normal">รอการตอบรับ</h3>
+              </span>
+            </div>
+
+
+          <!--- end loop -->
+
+          </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- end block -->
+
+
+
 
   </body>
   <script src="/assets/js/sweetalert.js" type="text/javascript"></script>
