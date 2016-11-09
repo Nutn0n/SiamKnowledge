@@ -14,7 +14,7 @@
       <h2 class="large-topic">มหาวิทยาลัย</h2>
       <input type="text" class="large-normal-input normal-input" name='university' value='{{$profile->university}}'>
       <h2 class="large-topic">Bio</h2>
-      <textarea type="text" class="large-normal-input normal-input" name='bio' value='{{$profile->bio}}'></textarea>
+      <textarea type="text" class="large-normal-input normal-input" name='bio' >{{$profile->bio}}</textarea>
       <h1 class="sub-heading">ข้อมูลติดต่อ</h1><br>
       <h2 class="large-topic">E-mail</h2>
       <input type="text" class="normal-input" name='email' value='{{$profile->email}}'>
