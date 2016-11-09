@@ -199,7 +199,6 @@ class JobController extends Controller
 				return redirect()->route('viewmycourse', ['id'=>$id]);
 			}
 			else{
-				\App\log::create(['status' => 'เครดิตไม่เพียงพอในการซื้อคอร์ส', 'user_id' => Sentinel::getUser()->id]);
 				$request->session()->flash('status', 'เครดิตไม่เพียงพอ');
 				return back();
 			}

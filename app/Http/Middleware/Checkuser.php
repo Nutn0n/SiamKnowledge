@@ -16,6 +16,7 @@ class Checkuser
     public function handle($request, Closure $next, $role)
     {
         if(!(Sentinel::check() && Sentinel::getUser()->roles->first()->name == $role)){
+        
          return redirect()->route('welcome');   
         }
         return $next($request);
