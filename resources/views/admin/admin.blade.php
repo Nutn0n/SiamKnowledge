@@ -139,7 +139,7 @@
           <div class="scroll-list">
 
             <!--- start loop -->
-            <div class='courseresult'></div>
+            <div class='courseresult'>
 @foreach($data['course'] as $course)
             <div class="profile-item">
               <span class="profile-text course-info-list">
@@ -165,6 +165,7 @@
               </span>
             </div>
   @endforeach
+  </div>
 
 
           <!--- end loop -->
