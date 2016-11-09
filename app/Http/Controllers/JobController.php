@@ -158,8 +158,12 @@ class JobController extends Controller
 			return redirect()->route('verify', ['id'=>$request->courseid]);
 		}
 	}
-	public function cancel($courseid){
+	public function cancel(Request $request){
 		$request->session()->flash('status', 'Cancel Completed');
+		$Course = Course::find($request->courseid);
+		$Course->cancel = true;
+		$Course->verified = true;
+		$Course->save();
 		return redirect()->route('verify', ['id'=>$request->courseid]);
 
 	}
