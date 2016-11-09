@@ -257,6 +257,10 @@ section.block p {
 	cursor: pointer;
 }
 
+.profile-item .profile-text {
+	width: 200px;
+}
+
 .profile-item:hover {
 	background-color: #1E323C;
 }
