@@ -173,7 +173,7 @@ class JobController extends Controller
 
 		}
 		else if (Sentinel::getUser()->roles->first()->name=='Student'){
-			return redirect()->route('addcourse');
+			return redirect()->route('viewmycourse');
 		}
 		else if(Sentinel::getUser()->roles->first()->name=='Tutor'){
 			return redirect()->route('course');
