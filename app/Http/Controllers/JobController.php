@@ -159,7 +159,7 @@ class JobController extends Controller
 		}
 	}
 	public function cancel(Request $request){
-		$request->session()->flash('status', 'Cancel Completed');
+		$request->session()->flash('cancel', true);
 		$Course = Course::find($request->courseid);
 		$Course->cancel = true;
 		$Course->verified = true;
