@@ -155,6 +155,7 @@ class RegisterController extends Controller
         $profile->university = $request->university;
         $profile->email = $request->email;
         $profile->phone = $request->phone;
+        $profile->bio = $request->bio;
         $profile->save();
         return back();
     }
