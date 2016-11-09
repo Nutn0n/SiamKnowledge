@@ -21,8 +21,10 @@ class AdminController extends Controller
     	$creditlog = creditlog::where('confirmed', false)->get();
         $tutorprofile = Profile::where('status', 'Tutor')->take(10)->get();
         $studentprofile = Profile::where('status', 'Student')->take(10)->get();
+        $course = Course::get();
     	return view('admin.admin')->with('data', [
             'creditlog'=>$creditlog,
+            'course' =>$course,
             'tutorprofiles'=>$tutorprofile,
             'studentprofiles'=>$studentprofile,
             'user'=>$user,

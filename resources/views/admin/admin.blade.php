@@ -139,60 +139,31 @@
           <div class="scroll-list">
 
             <!--- start loop -->
-
+@foreach($data['course'] as $course)
             <div class="profile-item">
               <span class="profile-text course-info-list">
-              <h2>ชื่อ นามสกุลนักเรียน</h2>
+              <h2>{{$course->user->profile->name}}</h2>
               </span>
               <span class="profile-subject course-info-list">
-              <h2>วิทยาศาสตร์</h2>
+              <h2>{{$course->subject}}</h2>
               </span>
               <span class="profile-date course-info-list">
-              <h2>21/12/2012</h2>
+              <h2>{{$course->startdate}}</h2>
               </span>
               <span class="profile-date course-info-list">
-              <h2>เวลา 1 ชั่วโมง 30 นาที</h2>
+              <h2>{{$course->length}} ชั่วโมง</h2>
               </span>
               <span class="profile-more-info course-info-list">
+              @if($course->cancel == 1)
               <h3 class="status status-red">ถูกยกเลิก</h3>
-              </span>
-            </div>
-
-            <div class="profile-item">
-              <span class="profile-text course-info-list">
-              <h2>ชื่อ นามสกุลนักเรียน</h2>
-              </span>
-              <span class="profile-subject course-info-list">
-              <h2>วิทยาศาสตร์</h2>
-              </span>
-              <span class="profile-date course-info-list">
-              <h2>21/12/2012</h2>
-              </span>
-              <span class="profile-date course-info-list">
-              <h2>เวลา 1 ชั่วโมง 30 นาที</h2>
-              </span>
-              <span class="profile-more-info course-info-list">
+              @elseif ($course->verified == 1 && $course->cancel == 0 && $course->available == 0)
               <h3 class="status status-green">เสร็จสิ้น</h3>
-              </span>
-            </div>
-
-            <div class="profile-item">
-              <span class="profile-text course-info-list">
-              <h2>ชื่อ นามสกุลนักเรียน</h2>
-              </span>
-              <span class="profile-subject course-info-list">
-              <h2>วิทยาศาสตร์</h2>
-              </span>
-              <span class="profile-date course-info-list">
-              <h2>21/12/2012</h2>
-              </span>
-              <span class="profile-date course-info-list">
-              <h2>เวลา 1 ชั่วโมง 30 นาที</h2>
-              </span>
-              <span class="profile-more-info course-info-list">
+              @else
               <h3 class="status status-normal">รอการตอบรับ</h3>
+              @endif
               </span>
             </div>
+  @endforeach
 
 
           <!--- end loop -->
@@ -233,8 +204,6 @@
       dataType: 'html'
       });
     });
-
-
  </script>
 
 </html>
