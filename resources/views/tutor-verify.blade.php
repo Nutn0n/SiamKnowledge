@@ -62,13 +62,14 @@
 
 
   </script>
+  @if(Session::has('cancel'))
+<script type="text/javascript">swal("บันทึกเรียบร้อย", "คอร์สนี้ไม่เคยเกิดขึ้นจริง", "success"); </script>
+  @endif
+  
 @if(Session::has('status'))
     @if((session('status')==true))
       <script type="text/javascript">swal('ยืนยันเรียบร้อย', 'ได้แอดเครดิตเข้าสู่ระบบแล้ว', 'success');</script>
     @elseif(session('status')==false) && session('status')!=NULL)
       <script type="text/javascript">swal('รหัสไม่ถูกต้อง', 'กรุณากรอกรหัสใหม่อีกครั้ง');</script>
-      @elseif(session('cancel')==true) && session('cancel')==NULL)
-      <script type="text/javascript">swal("บันทึกเรียบร้อย", "คอร์สนี้ไม่เคยเกิดขึ้นจริง", "success"); </script>
-    @endif
 @endif
 @endsection
