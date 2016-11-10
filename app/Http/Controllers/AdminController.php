@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-
 use App\creditlog;
 use App\Course;
 use App\Profile;
@@ -15,6 +14,16 @@ use Sentinel;
 class AdminController extends Controller
 {
     //Control Everything about admin and staff thing.
+    public function profileedit(Request $request){
+        $user = Profile::find(Sentinel::getUser()->id);
+        $data = Profile::find($request->id);
+        return view('admin.profile-edit')->with('data', ['user'=>$data, 'admin'=>$user]);
+    }
+    public function profiledelete(Request $request){
+        $Profile = Profile::find($request->id);
+        $Profile->delete();
+        return redirect()->route('admin');
+    }
     public function dashboard(){
         $sentineluser = Sentinel::getUser();
         $user = Profile::find($sentineluser->id);

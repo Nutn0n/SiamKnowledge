@@ -40,4 +40,8 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Course');
     }
+    public function creditlog()
+    {
+        return $this->hasMany('App\creditlog');
+    }
 }

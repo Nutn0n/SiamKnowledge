@@ -96,6 +96,7 @@
       <div class="window">
         <div class="full-width-window">
         @foreach($data['creditlog'] as $log)
+        @if($log->User->profile !=Null)
           <!--- start loop -->
           <div class="credit-request">
             <span  class="name-info">
@@ -114,6 +115,7 @@
               <a class="delete-button">ลบ</a>
             </span>
           </div>
+          @endif
           @endforeach
           <!--- end loop -->
 
@@ -141,6 +143,7 @@
             <!--- start loop -->
             <div class='courseresult'>
 @foreach($data['course'] as $course)
+@if($course->user->profile !=Null)
             <div class="profile-item">
               <span class="profile-text course-info-list">
               <h2>{{$course->user->profile->name}}</h2>
@@ -164,6 +167,7 @@
               @endif
               </span>
             </div>
+  @endif
   @endforeach
   </div>
 

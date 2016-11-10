@@ -50,6 +50,9 @@
         Route::get('/admin', 'AdminController@dashboard')->name('admin');
         Route::get('/admin/search/{keyword}', 'AdminController@search');
         Route::get('/admin/coursesearch/{keyword}', 'AdminController@coursesearch');
+        Route::get('/admin/profileedit/{id}', 'AdminController@profileedit');
+        Route::post('/admin/profileedit/{id}', 'RegisterController@updatemyprofileadmin')->name('updateprofileadmin');
+        Route::get('/admin/profileedit/{id}/del', 'AdminController@profiledelete')->name('updateprofileadmindel');
     });
 /*Guest middleware*/
     Route::group(['middleware' => ['Guest']], function () {
