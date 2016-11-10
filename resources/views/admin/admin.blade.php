@@ -44,6 +44,7 @@
             <div class='tutorresult'>
 
               @foreach($data['tutorprofiles'] as $tutorprofile)
+              <a href="">
              <div class="profile-item">
               <span class="profile-picture" style="background-image: url('@if($tutorprofile->avatar!=NULL) {{Storage::url($tutorprofile->avatar)}}@else https://api.adorable.io/avatars/100/{{$tutorprofile->email}} @endif');background-size: cover;background-position: center;background-repeat: no-repeat;"></span>
               <span class="profile-text">
@@ -51,6 +52,7 @@
               <h3>{{$tutorprofile->school}}</h3>
               </span>
             </div>
+          </a>
             @endforeach
 
             </div>
@@ -69,6 +71,7 @@
 
            <div class='studentresult'>
             @foreach($data['studentprofiles'] as $studentprofile)
+            <a href="">
              <div class="profile-item">
               <span class="profile-picture" style="background-image: url('@if($studentprofile->avatar!=NULL) {{Storage::url($studentprofile->avatar)}}@else https://api.adorable.io/avatars/100/{{$studentprofile->email}} @endif');background-size: cover;background-position: center;background-repeat: no-repeat;"></span>
               <span class="profile-text">
@@ -76,6 +79,7 @@
               <h3>{{$studentprofile->school}}</h3>
               </span>
             </div>
+          </a>
             @endforeach
 
            </div>
@@ -210,7 +214,7 @@
       dataType: 'html'
       });
     });
-  
+
   $('#coursesearch').keyup(function(){
       var search = $('#coursesearch').val();
       $.ajax({
