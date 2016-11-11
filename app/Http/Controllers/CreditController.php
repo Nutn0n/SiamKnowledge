@@ -33,9 +33,8 @@ class CreditController extends Controller
         $log = creditlog::find($id);
         $log->confirmed = true;
         $log->save();
-        $credit = Credit::find($log->user_id);
-        $credit->credit += $log->amount;
-        $credit->save();
+        $log->user->credit->credit += $log->amount;
+        $log->user->credit->save();
         $request->session()->flash('status', 'เพิ่มเครดิตสำเร็จ');
         \App\log::create(['status' => 'เพิ่มเครดิตให้ user_id: ' . $log->user_id . ' สำเร็จ', 'user_id' => Sentinel::getUser()->id]);
         return back();
