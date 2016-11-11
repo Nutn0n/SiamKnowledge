@@ -6,6 +6,7 @@ use Sentinel;
 use App\Http\Requests;
 use App\Credit;
 use App\Profile;
+use DB;
 use App\User;
 
 class RegisterController extends Controller
@@ -161,7 +162,9 @@ class RegisterController extends Controller
         $profile->school = $request->school;
         $profile->email = $request->email;
         $profile->phone = $request->phone;
-        $profile->active = $request->active;
+        DB::table('activations')
+            ->where('id', $request->id)
+            ->update(['completed' => $request->active]);
         $profile->tutorgrade = $request->tutorgrade;
         if($request->avatar != Null){
         if ($request->file('avatar')->isValid()) {

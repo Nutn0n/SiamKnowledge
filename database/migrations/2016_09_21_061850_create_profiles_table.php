@@ -32,7 +32,6 @@ class CreateProfilesTable extends Migration
             $table->integer('teachhours')->default(0);
             $table->string('tutorgrade')->nullable();
             $table->string('avatar')->nullable();
-            $table->boolean('active')->default(true);
             $table->softDeletes();
             $table->timestamps();
         });

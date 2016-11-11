@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\creditlog;
 use App\Course;
 use App\Profile;
+use Activation;
 use DB;
 use Sentinel;
 
@@ -21,7 +22,8 @@ class AdminController extends Controller
     public function profileedit(Request $request){
         $user = Profile::find(Sentinel::getUser()->id);
         $data = Profile::find($request->id);
-        return view('admin.profile-edit')->with('data', ['user'=>$data, 'admin'=>$user]);
+        $activation = Activation::completed(Sentinel::findById($request->id));
+        return view('admin.profile-edit')->with('data', ['user'=>$data, 'admin'=>$user, 'activation'=>$activation]);
     }
     public function profiledelete(Request $request){
         $Profile = Profile::find($request->id);

@@ -45,8 +45,8 @@
             <h2 class="large-topic">สถานะ</h2>
             <select  name='active' class="dropdown-outerspace">
               <option  disabled hidden>สถานะของผู้ใช้</option>
-              <option value=1 @if($data['user']->active == true) selected @endif >ACITIVE</option>
-              <option value=0 @if($data['user']->active == false) selected @endif >UNACITIVE</option>
+              <option value=1 @if($data['activation'] == true) selected @endif >ACITIVE</option>
+              <option value=0 @if($data['activation']== false) selected @endif >UNACITIVE</option>
             </select>
             <br/>
             @if($data['user']->status == 'Tutor')
