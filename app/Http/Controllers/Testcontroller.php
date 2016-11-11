@@ -18,8 +18,10 @@ class Testcontroller extends Controller
     public function test(Faker\Generator $faker){
     	
     	/*for ($i=1; $i < 26; $i++) {
+    		$email = $faker->safeEmail;
 	    	$credentials = [
-	    		'email'    => $faker->safeEmail,
+
+	    		'email'    => $email,
 	   			'password' => '12345678',
 			];
 			$user = Sentinel::registerAndActivate($credentials);
@@ -31,7 +33,7 @@ class Testcontroller extends Controller
 		        'university' => $faker->company,
 		        'field' => 'sci-math',
 		        'inter' => 'no-not-inter',
-		        'email' => $faker->safeEmail,
+		        'email' => $email,
 		        'phone' => '020200103',
 		        'lineid' => $faker->name,
 		        'status' => 'Student',]);
@@ -44,9 +46,10 @@ class Testcontroller extends Controller
 		}
 
 		for ($i=0; $i < 10; $i++) {
+			$email = $faker->safeEmail;
 	    	$credentials = [
-	    		'email'    => $faker->safeEmail,
-	   			'password' => bcrypt('12345678'),
+	    		'email'    => $email,
+	   			'password' => '12345678',
 			];
 			$user = Sentinel::registerAndActivate($credentials);
 			$Profile = new Profile(['name' => $faker->name,
@@ -57,7 +60,7 @@ class Testcontroller extends Controller
 		        'university' => $faker->company,
 		        'field' => 'sci-math',
 		        'inter' => 'no-not-inter',
-		        'email' => $faker->safeEmail,
+		        'email' => $email,
 		        'phone' => '020200103',
 		        'lineid' => $faker->name,
 		        'status' => 'Tutor',]);
@@ -68,7 +71,7 @@ class Testcontroller extends Controller
 		*/
 		for ($i=0; $i <25 ; $i++) { 
 		$Course = new Course;
-		$Course->user_id = rand(1,23);
+		$Course->user_id = rand(1,);
 		$Course->subject = $faker->sentence($nbWords = 6, $variableNbWords = true);
 		$Course->credit = 3;
 		$Course->length = 2.5;
