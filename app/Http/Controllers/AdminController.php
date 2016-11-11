@@ -14,6 +14,10 @@ use Sentinel;
 class AdminController extends Controller
 {
     //Control Everything about admin and staff thing.
+    public function creditlogdel(Request $request){
+        creditlog::find($request->id)->delete();
+        return redirect()->back();
+    }
     public function profileedit(Request $request){
         $user = Profile::find(Sentinel::getUser()->id);
         $data = Profile::find($request->id);

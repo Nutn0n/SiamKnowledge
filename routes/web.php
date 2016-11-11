@@ -53,6 +53,7 @@
         Route::get('/admin/profileedit/{id}', 'AdminController@profileedit');
         Route::post('/admin/profileedit/{id}', 'RegisterController@updatemyprofileadmin')->name('updateprofileadmin');
         Route::get('/admin/profileedit/{id}/del', 'AdminController@profiledelete')->name('updateprofileadmindel');
+        Route::get('/admin/creditdel/{id}', 'AdminController@creditlogdel')->name('creditdel');
     });
 /*Guest middleware*/
     Route::group(['middleware' => ['Guest']], function () {

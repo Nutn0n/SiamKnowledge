@@ -20,6 +20,7 @@ class CreateCreditLogTable extends Migration
             $table->string('time');
             $table->string('bank');
             $table->boolean('confirmed')->default(false);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

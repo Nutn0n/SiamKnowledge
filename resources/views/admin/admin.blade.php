@@ -116,7 +116,7 @@
             </span>
             <span  class="action-info">
               <a href="{{route('approvecredit', ['id'=>$log->id])}}" class="confirm-button">ยืนยัน</a>
-              <a class="delete-button">ลบ</a>
+              <a href="{{route('creditdel', ['id'=>$log->id])}}" class="delete-button">ลบ</a>
             </span>
           </div>
           @endif
