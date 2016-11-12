@@ -44,10 +44,6 @@
           </div>
         </div>
       </div>
-      <div class="credits">
-        <h1>{{$User->credit->credit}}</h1>
-        <h2>เครดิตที่ได้รับ</h2>
-      </div>
       <div class="progress-pie-chart" data-percent="50">
       <!-- ใน PHP ใส่หารเอา Percent มาใส่ตรงนี้ได้เลยนะ ที่รัก <3
             เค้าดึงไป Process ใน JavaScript อีกที
@@ -64,7 +60,11 @@
         </div>
       </div>
     </div>
-
+    
+      <div class="credits">
+        <h1>{{$User->credit->credit}}</h1>
+        <h2>เครดิตที่ได้รับ</h2>
+      </div>
       <!-- Main Menu -->
       <ul class="menu">
         <li class="menu-button"><a href="/myprofile"><span class="menu-icon ion-person"></span>ข้อมูลของฉัน</a></li>
