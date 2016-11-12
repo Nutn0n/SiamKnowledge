@@ -1342,7 +1342,6 @@ button {
 
 
 .progress-pie-chart {
-  margin-top: -50px;
   transform: scale(0.7);
   display: inline-block;
   text-align: center;
