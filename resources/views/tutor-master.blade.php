@@ -48,6 +48,22 @@
         <h1>{{$User->credit->credit}}</h1>
         <h2>เครดิตที่ได้รับ</h2>
       </div>
+      <div class="progress-pie-chart" data-percent="50">
+      <!-- ใน PHP ใส่หารเอา Percent มาใส่ตรงนี้ได้เลยนะ ที่รัก <3
+            เค้าดึงไป Process ใน JavaScript อีกที
+      -->
+      <div class="ppc-progress">
+        <div class="ppc-progress-fill"></div>
+      </div>
+      <div class="ppc-percents">
+        <div class="pcc-percents-wrapper">
+          <span class="pecentage-info">%</span>
+          <div class="next-level">ระดับต่อไป<br/>
+            <strong>เกรียนเทพ</strong>
+          </div>
+        </div>
+      </div>
+    </div>
 
       <!-- Main Menu -->
       <ul class="menu">
@@ -71,5 +87,24 @@
   <script src="/assets/js/script.js" type="text/javascript"></script>
   <script src="/assets/js/sweetalert.js" type="text/javascript"></script>
     @yield('postscript');
+
+    <script>
+
+      // JavaScript function that tranform percent into displayable variable.
+
+      $(function(){
+      var $ppc = $('.progress-pie-chart'),
+        percent = parseInt($ppc.data('percent')),
+        deg = 360*percent/100;
+      if (percent > 50) {
+        $ppc.addClass('gt-50');
+      }
+      $('.ppc-progress-fill').css('transform','rotate('+ deg +'deg)');
+      $('.ppc-percents span').html(percent+'%');
+    });
+
+    </script>
+
+
 </body>
 </html>
