@@ -44,7 +44,23 @@
           </div>
         </div>
       </div>
-      <div class="progress-pie-chart" data-percent="30">
+      <div class="progress-pie-chart" data-percent="@if($User->profile->teachhours <= 5)
+      20
+      @elseif(5<$User->profile->teachhours && $User->profile->teachhours <= 10)
+      75
+      @elseif(10<$User->profile->teachhours && $User->profile->teachhours <= 20)
+      10
+      @elseif(20<$User->profile->teachhours && $User->profile->teachhours <= 30)
+      20
+      @elseif(30<$User->profile->teachhours && $User->profile->teachhours <= 40)
+      75
+      @elseif(40<$User->profile->teachhours && $User->profile->teachhours <= 50)
+      10
+      @elseif(50<$User->profile->teachhours && $User->profile->teachhours <= 60)
+      50
+      @elseif(60<$User->profile->teachhours && $User->profile->teachhours <= 100)
+      100
+      @endif">
       <!-- ใน PHP ใส่หารเอา Percent มาใส่ตรงนี้ได้เลยนะ ที่รัก <3
             เค้าดึงไป Process ใน JavaScript อีกที
       -->
