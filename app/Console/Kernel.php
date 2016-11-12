@@ -16,6 +16,7 @@ class Kernel extends ConsoleKernel
         Commands\UpdateTutorGrade::class,
         Commands\init::class,
         Commands\makeadmin::class,
+        Commands\mockup::class,
     ];
 
     /**

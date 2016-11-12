@@ -138,7 +138,7 @@ class RegisterController extends Controller
     	$profile->name = $request->name;
     	$profile->calledname = $request->calledname;
     	$profile->birthdate = $request->birthdate;
-    $profile->university = $request->university;
+        $profile->university = $request->university;
     	$profile->school = $request->school;
     	$profile->email = $request->email;
     	$profile->phone = $request->phone;
