@@ -71,7 +71,7 @@
         <div class="pcc-percents-wrapper">
           <span class="pecentage-info">%</span>
           <div class="next-level">ระดับต่อไป<br/>
-            <strong>@if($User->profile->tutorgrade == 'White') Bronze @elseif($User->profile->tutorgrade == 'Bronze') Silver @elseif($User->profile->tutorgrade == 'Silver') Gold @endif</strong>
+            <strong>@if($User->profile->tutorgrade == 'White') Bronze @elseif($User->profile->tutorgrade == 'Bronze') Silver @elseif($User->profile->tutorgrade == 'Silver') Gold @else เวลตันแล้วจ้าาา @endif</strong>
           </div>
         </div>
       </div>
