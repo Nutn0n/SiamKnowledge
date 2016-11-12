@@ -10,6 +10,7 @@ use factory;
 use App\Profile;
 use App\Credit;
 use App\Course;
+use App\creditlog;
 
 class mockup extends Command
 {
@@ -73,6 +74,18 @@ class mockup extends Command
 
         }
 
+
+        for ($i=1; $i < 26; $i++) {
+            $creditlog = new creditlog;
+            $creditlog->user_id = mt_rand(1, 25);
+            $creditlog->amount = mt_rand(1, 9) * 100;
+            $creditlog->time = $faker->sentence($nbWords = 6, $variableNbWords = true);
+            $creditlog->bank = 'กสิกรไทย';
+            $creditlog->save();
+
+        }
+
+
         for ($i=0; $i < 10; $i++) {
             $email = $faker->safeEmail;
             $credentials = [
@@ -116,6 +129,6 @@ class mockup extends Command
         $Course->available = true;
         $Course->save();
     }
-    
+    $this->info('mockup data added');
     }
 }
