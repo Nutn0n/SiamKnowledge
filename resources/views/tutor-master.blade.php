@@ -44,7 +44,7 @@
           </div>
         </div>
       </div>
-      <div class="progress-pie-chart" data-percent="50">
+      <div class="progress-pie-chart" data-percent="30">
       <!-- ใน PHP ใส่หารเอา Percent มาใส่ตรงนี้ได้เลยนะ ที่รัก <3
             เค้าดึงไป Process ใน JavaScript อีกที
       -->
@@ -55,7 +55,7 @@
         <div class="pcc-percents-wrapper">
           <span class="pecentage-info">%</span>
           <div class="next-level">ระดับต่อไป<br/>
-            <strong>เกรียนเทพ</strong>
+            <strong>@if($User->profile->tutorgrade == 'White') Bronze @elseif($User->profile->tutorgrade == 'Bronze') Silver @elseif($User->profile->tutorgrade == 'Silver') Gold @endif</strong>
           </div>
         </div>
       </div>
@@ -86,7 +86,7 @@
   <script src="/assets/js/jquery-ui.js"></script>
   <script src="/assets/js/script.js" type="text/javascript"></script>
   <script src="/assets/js/sweetalert.js" type="text/javascript"></script>
-    @yield('postscript');
+    @yield('postscript')
 
     <script>
 

@@ -68,7 +68,7 @@ class Testcontroller extends Controller
 			$role = Sentinel::findRoleByName('Tutor');
 			$role->users()->attach($user);
 		}
-		*/
+		
 		for ($i=0; $i <25 ; $i++) { 
 		$Course = new Course;
 		$Course->user_id = rand(1,);
@@ -84,9 +84,9 @@ class Testcontroller extends Controller
 		$Course->group = 'group';
 		$Course->verificationcode = mt_rand(100000, 999999);
 		$Course->available = true;
-		$Course->save();
+		$Course->save();*/
 	}
-	}
+	
 
 }
 

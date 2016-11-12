@@ -29,7 +29,7 @@ class CreateProfilesTable extends Migration
             $table->string('phone');
             $table->string('lineid')->nullable();
             $table->string('status'); //whether user is parent tutor or student or whatever.
-            $table->integer('teachhours')->default(0);
+            $table->decimal('teachhours', 7, 2)->default(0);
             $table->string('tutorgrade')->nullable();
             $table->string('avatar')->nullable();
             $table->softDeletes();

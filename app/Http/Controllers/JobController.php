@@ -31,6 +31,7 @@ class JobController extends Controller
 		$Course->time = $request->input('time');
 		$Course->topic = $request->input('topic');
 		$Course->inter = $request->input('inter');
+		$Course->length = $request->input('length');
 		$Course->group = $request->input('group');
 		$Course->verificationcode = mt_rand(100000, 999999);
 		$Course->available = true;
@@ -145,8 +146,10 @@ class JobController extends Controller
 			$User = $Course->user;
 			$User->credit->reservedcredit -= $Course->credit;
 			$Tutor->credit->credit += $Course->credit;
+			$Tutor->profile->teachhours += $Course->length;
 			$request->session()->flash('status', true);
 			$Course->verified = true;
+			$Tutor->profile->save();
 			$Tutor->credit->save();
 			$User->credit->save();
 			$Course->save();
