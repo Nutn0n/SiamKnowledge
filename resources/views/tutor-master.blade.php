@@ -61,7 +61,7 @@
       </div>
     </div>
 
-      <div class="credits" style="margin-top:-30px!important;">
+      <div class="credits" style="margin-top:-40px!important;">
         <h1>{{$User->credit->credit}}</h1>
         <h2>เครดิตที่ได้รับ</h2>
       </div>
