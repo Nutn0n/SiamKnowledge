@@ -54,6 +54,15 @@
         <option value=4.5>4 ชั่วโมง 30 นาที</option>
         <option value=5>5 ชั่วโมง</option>
       </select>
+      <h2 class="topic">ระดับชั้น</h2>
+      <select name='grade' class="dropdown-orange">
+        <option value="" disabled selected hidden>เลือกระดับชั้น</option>
+        <option value='kindergarten'>อนุบาล</option>
+        <option value='elementary'>ประถม</option>
+        <option value='1secondary'>มัฐยมต้น</option>
+        <option value='2secondary'>มัฐยมปลาย</option>
+        <option value='university'>มหาวิทยาลัย</option>
+      </select>
       <h2 class="topic">ใส่สถานที่</h2>
     <input type="text" name='place' class="normal-input">
 

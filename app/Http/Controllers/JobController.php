@@ -19,11 +19,11 @@ class JobController extends Controller
     		'topic'=>'required',
     		'group'=>'required',
     		'time'=>'required',
+    		'grade'=>'required',
     		]);
 		$Course = new Course;
 		$Course->user_id = Sentinel::getUser()->id;
 		$Course->subject = $request->input('subject');
-		$Course->credit = 3;
 		$Course->length = $request->input('length');
 		$Course->startdate = $request->input('date');
 		$Course->place = $request->input('place');
@@ -32,6 +32,22 @@ class JobController extends Controller
 		$Course->topic = $request->input('topic');
 		$Course->inter = $request->input('inter');
 		$Course->length = $request->input('length');
+		$Course->grade = $request->input('grade');
+		if($Course->grade =='kindergarten'){
+			$Course->credit = 225;
+		}
+		elseif($Course->grade =='elementary'){
+			$Course->credit = 225;
+		}
+		elseif($Course->grade =='1secondary'){
+			$Course->credit = 220;
+		}
+		elseif($Course->grade =='2secondary'){
+			$Course->credit = 250;
+		}
+		elseif($Course->grade =='university'){
+			$Course->credit = 300;
+		}
 		$Course->group = $request->input('group');
 		$Course->verificationcode = mt_rand(100000, 999999);
 		$Course->available = true;
@@ -145,7 +161,19 @@ class JobController extends Controller
 			$Tutor = User::find(Sentinel::getUser()->id);
 			$User = $Course->user;
 			$User->credit->reservedcredit -= $Course->credit;
-			$Tutor->credit->credit += $Course->credit;
+			if($Tutor->profile->tutorgrade == 'White'){
+				$rate = 0.8;
+			}
+			elseif($Tutor->profile->tutorgrade == 'White'){
+				$rate= 0.82;
+			}
+			elseif($Tutor->profile->tutorgrade == 'Silver'){
+				$rate= 0.85;
+			}
+			elseif($Tutor->profile->tutorgrade == 'Gold'){
+				$rate= 0.85;
+			}
+			$Tutor->credit->credit += $Course->credit * $rate;
 			$Tutor->profile->teachhours += $Course->length;
 			$request->session()->flash('status', true);
 			$Course->verified = true;
