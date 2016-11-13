@@ -54,7 +54,7 @@
             <select  name='tutorgrade' class="dropdown-outerspace">
               <option value="" disabled selected hidden>ระดับขั้นติวเตอร์</option>
               <option value='White' @if($data['user']->tutorgrade == 'White') selected @endif>ติวเตอร์ White</option>
-              <option value='White' @if($data['user']->tutorgrade == 'Bronze') selected @endif>ติวเตอร์ Bronze</option>
+              <option value='Bronze' @if($data['user']->tutorgrade == 'Bronze') selected @endif>ติวเตอร์ Bronze</option>
               <option value='Silver' @if($data['user']->tutorgrade == 'Silver') selected @endif>ติวเตอร์ Silver</option>
               <option value='Gold' @if($data['user']->tutorgrade == 'Gold') selected @endif>ติวเตอร์ Gold</option>
             </select>
