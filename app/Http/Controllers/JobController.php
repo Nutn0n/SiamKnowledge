@@ -182,7 +182,7 @@ class JobController extends Controller
 				if($Tutor->profile->tutorgrade == 'White'){
 					$Tutor->credit->credit += 10;
 				}
-				elseif($Tutor->profile->tutorgrade == 'White'){
+				elseif($Tutor->profile->tutorgrade == 'Bronze'){
 					$Tutor->credit->credit += 9;
 				}
 				elseif($Tutor->profile->tutorgrade == 'Silver'){
