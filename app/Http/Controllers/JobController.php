@@ -48,6 +48,9 @@ class JobController extends Controller
 		elseif($Course->grade =='university'){
 			$Course->credit = 300;
 		}
+		if($Course->inter == 'yes-inter'){
+			$Course->credit += 50;
+		}
 		$Course->group = $request->input('group');
 		$Course->verificationcode = mt_rand(100000, 999999);
 		$Course->available = true;
@@ -173,7 +176,22 @@ class JobController extends Controller
 			elseif($Tutor->profile->tutorgrade == 'Gold'){
 				$rate= 0.85;
 			}
+			$all = $Course->credit * $rate;
 			$Tutor->credit->credit += $Course->credit * $rate;
+			if($Course->inter == 'yes-inter'){
+				if($Tutor->profile->tutorgrade == 'White'){
+					$Tutor->credit->credit += 10;
+				}
+				elseif($Tutor->profile->tutorgrade == 'White'){
+					$Tutor->credit->credit += 9;
+				}
+				elseif($Tutor->profile->tutorgrade == 'Silver'){
+					$Tutor->credit->credit += 7.5;
+				}
+				elseif($Tutor->profile->tutorgrade == 'Gold'){
+					$Tutor->credit->credit += 7.5;
+				}
+			}
 			$Tutor->profile->teachhours += $Course->length;
 			$request->session()->flash('status', true);
 			$Course->verified = true;
