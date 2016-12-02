@@ -158,6 +158,41 @@ class JobController extends Controller
 		$Course = Course::find($id);
 		return view('tutor-verify')->with('Course', $Course);
 	}
+	public function dup(Request $request){
+		$Course = Course::find($request->id);
+		$Course->default = false;
+		$Course->save();
+		$ddate = Carbon::parse($Course->startdate);
+		if($request->every == NULL){
+			$every = 7;
+		}
+		else{
+			$every = $request->every;
+		}
+		for ($i=1; $i <= $request->num; $i++) { 
+			$CD = new Course;
+			$CD->user_id = Sentinel::getUser()->id;
+			$CD->subject = $Course->subject;
+			$CD->length = $Course->length;
+			$CD->startdate = $Course->date;
+			$CD->place = $Course->place;
+			$CD->objective = $Course->objective;
+			$CD->time = $Course->time;
+			$CD->topic = $Course->topic;
+			$CD->inter = $Course->inter;
+			$CD->length = $Course->length;
+			$CD->grade = $Course->grade;
+			$CD->startdate = $ddate->addDays($every)->format('d-m-Y');
+			$CD->credit = $Course->credit;
+			$CD->group = $Course->group;
+			$CD->verificationcode = mt_rand(100000, 999999);
+			$CD->available = true;
+			if($i == $request->num){
+				$CD->default = true;
+			}
+			$CD->save();
+		}
+	}
 	public function doverify(Request $request){
 		$Course = Course::find($request->courseid);
 		if($Course->verificationcode == $request->code){
