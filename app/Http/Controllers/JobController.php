@@ -192,6 +192,7 @@ class JobController extends Controller
 			}
 			$CD->save();
 		}
+		return back();
 	}
 	public function doverify(Request $request){
 		$Course = Course::find($request->courseid);
