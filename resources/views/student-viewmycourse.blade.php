@@ -52,6 +52,10 @@
       <script type="text/javascript">swal('เรียบร้อย', '{{session('status')}}', 'success');</script>
   @endif
   <script type="text/javascript">
+  function isNumeric(n) {
+      return !isNaN(parseFloat(n)) && isFinite(n);
+    }
+
     $(".dup").click(function(){
       swal({
         title: "ทำซ้ำ",
@@ -63,6 +67,8 @@
           if (inputValue === false) return false;
           if (inputValue === "") {swal.showInputError("You need to write something!");
           return false   }
+          if(isNumeric(inputValue) === false){swal.showInputError("กรุณากรอกจำนวนครั้งที่ถูกต้อง");
+          return false ;  }
           var first = inputValue;
         swal({
         title: "ต้องการเรียนทุกกี่วัน",
@@ -74,6 +80,8 @@
           if (inputValue === false) return false;
           if (inputValue === "") {swal.showInputError("You need to write something!");
           return false   }
+          if(isNumeric(inputValue) === false){swal.showInputError("กรุณากรอกจำนวนวันที่ถูกต้อง");
+          return false ;  }
           window.location = "{{route('welcome')}}/"+"dup/{{$Course->id}}/" + first +"/" + inputValue;
           });
     });

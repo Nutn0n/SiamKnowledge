@@ -181,16 +181,21 @@ class JobController extends Controller
 			$CD->topic = $Course->topic;
 			$CD->inter = $Course->inter;
 			$CD->length = $Course->length;
+			$CD->tutor_id = $Course->tutor_id;
 			$CD->grade = $Course->grade;
 			$CD->startdate = $ddate->addDays($every)->format('d-m-Y');
 			$CD->credit = $Course->credit;
 			$CD->group = $Course->group;
 			$CD->verificationcode = mt_rand(100000, 999999);
-			$CD->available = true;
+			$CD->available = false;
 			if($i == $request->num){
 				$CD->default = true;
 			}
 			$CD->save();
+			$int = new interest;
+			$int->user_id = $Course->tutor_id;
+			$int->course_id = $CD->id;
+			$int->save();
 		}
 		return back();
 	}
