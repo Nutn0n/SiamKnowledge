@@ -54,7 +54,6 @@ class JobController extends Controller
 		$Course->group = $request->input('group');
 		$Course->verificationcode = mt_rand(100000, 999999);
 		$Course->available = true;
-		$Course->default = 1;
 		if($Course->save()){
 			\App\log::create(['status' => 'เพิ่มคอร์ส', 'user_id' => Sentinel::getUser()->id]);
 			$request->session()->flash('status', 'เพิ่มคอร์สเรียบร้อยแล้ว');
