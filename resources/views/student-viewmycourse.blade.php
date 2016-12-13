@@ -15,8 +15,7 @@
   </script>
   @foreach($data['courses'] as $Course)
     <script type="text/javascript">
-
-    var long = '@if($Course->default == true)<button class="dup">ทำซ้ำ</h1></button>@endif<a href="{{route('viewmycoursepage', ['id'=>$Course->id])}}"><div class="card-small-wrapper"><div class="card-small"> <div class="date"><h1>{{$Course->date}}<br><span>{{$Course->month}}</span></h1></div><div class="card-detail"><div class="card-name"><h1>{{$Course->topic}}<br><span>{{$Course->subject}}</span></h1></div><div class="card-description"><h2 class="card-time">{{$Course->timestring}}</h2><br class="card-breaker"><h2 class="card-location">{{$Course->place}}</h2></div></div></div></a>';
+    var long = '@if($Course->default == true && $Course->available == false)<button value="{{$Course->id}}"class="dup">ทำซ้ำ</h1></button>@endif<a href="{{route('viewmycoursepage', ['id'=>$Course->id])}}"><div class="card-small-wrapper"><div class="card-small"> <div class="date"><h1>{{$Course->date}}<br><span>{{$Course->month}}</span></h1></div><div class="card-detail"><div class="card-name"><h1>{{$Course->topic}}<br><span>{{$Course->subject}}</span></h1></div><div class="card-description"><h2 class="card-time">{{$Course->timestring}}</h2><br class="card-breaker"><h2 class="card-location">{{$Course->place}}</h2></div></div></div></a>';
     </script>
     @if($Course->available == true)
     <script type="text/javascript">
@@ -57,6 +56,7 @@
     }
 
     $(".dup").click(function(){
+      var id = $(this).val();
       swal({
         title: "ทำซ้ำ",
         text: "ต้องการเรียนคอร์สนี้อีก:",
@@ -82,7 +82,7 @@
           return false   }
           if(isNumeric(inputValue) === false){swal.showInputError("กรุณากรอกจำนวนวันที่ถูกต้อง");
           return false ;  }
-          window.location = "{{route('welcome')}}/"+"dup/{{$Course->id}}/" + first +"/" + inputValue;
+          window.location = "{{route('welcome')}}/"+ "dup/" +id +"/" + first +"/" + inputValue;
           });
     });
     });
