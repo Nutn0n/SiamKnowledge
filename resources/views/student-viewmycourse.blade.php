@@ -36,22 +36,9 @@
         $(".passed").append(long);
       </script>
     @endif
-  @endforeach
-  <script type="text/javascript">
-    if(noanswer == 0){
-      $(".noanswer").append('<div  class="null-card"><h1> <span class="ion-ios-albums-outline"></span> ไม่มีข้อมูลให้แสดง</h1></div>');
-    }
-    if (happening ==0){
-      $(".happening").append(' <div  class="null-card"><h1> <span class="ion-ios-albums-outline"></span> ไม่มีข้อมูลให้แสดง</h1></div>  ');
-    }
-    if (passed ==0){
-      $(".passed").append('<div  class="null-card"><h1> <span class="ion-ios-albums-outline"></span> ไม่มีข้อมูลให้แสดง</h1></div>');
-    }
-  </script>
-  @if(session('status'))
-      <script type="text/javascript">swal('เรียบร้อย', '{{session('status')}}', 'success');</script>
-  @endif
-  <script type="text/javascript">
+
+
+    <script type="text/javascript">
   function isNumeric(n) {
       return !isNaN(parseFloat(n)) && isFinite(n);
     }
@@ -88,4 +75,20 @@
     });
 
   </script>
+  @endforeach
+  <script type="text/javascript">
+    if(noanswer == 0){
+      $(".noanswer").append('<div  class="null-card"><h1> <span class="ion-ios-albums-outline"></span> ไม่มีข้อมูลให้แสดง</h1></div>');
+    }
+    if (happening ==0){
+      $(".happening").append(' <div  class="null-card"><h1> <span class="ion-ios-albums-outline"></span> ไม่มีข้อมูลให้แสดง</h1></div>  ');
+    }
+    if (passed ==0){
+      $(".passed").append('<div  class="null-card"><h1> <span class="ion-ios-albums-outline"></span> ไม่มีข้อมูลให้แสดง</h1></div>');
+    }
+  </script>
+  @if(session('status'))
+      <script type="text/javascript">swal('เรียบร้อย', '{{session('status')}}', 'success');</script>
+  @endif
+  
 @endsection
