@@ -33,6 +33,7 @@ class JobController extends Controller
 		$Course->inter = $request->input('inter');
 		$Course->length = $request->input('length');
 		$Course->grade = $request->input('grade');
+		$Course->default = 1;
 		if($Course->grade =='kindergarten'){
 			$Course->credit = 225;
 		}
