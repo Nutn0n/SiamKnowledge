@@ -9,6 +9,29 @@ use App\User;
 use Carbon;
 class JobController extends Controller
 {
+	public function updatecourse(Request $request){
+		$this->validate($request,[
+			'subject'=>'required',
+    		'length'=>'required',
+    		'startdate'=>'required',
+    		'place'=>'required',
+    		'length'=>'required',
+    		'time'=>'required',
+			]);
+		$Course = Course::find($request->id);
+		$Course->subject = $request->subject;
+		$Course->objective = $request->objective;
+		$Course->startdate = $request->startdate;
+		$Course->place = $request->place;
+		$Course->length = $request->length;
+		$Course->time = $request->time;
+		$Course->save();
+		return back();
+	}
+	public function edit(Request $request){
+		$Course = Course::find($request->id);
+		return view('student-edit')->with('Course', $Course);
+	}
     public function addcourse(Request $request){
     	$this->validate($request, [
     		'subject'=>'required',

@@ -15,6 +15,8 @@
         Route::get('/viewmycourse/{id}/select/{tutorid}', 'JobController@selecttutor')->name('selecttutor');
         Route::get('/viewmycourse/{id}/profile/{tutorid}', 'JobController@viewprofile')->name('tutorprofile');
         Route::get('/dup/{id}/{num?}/{every?}', 'JobController@dup')->name('dup');
+        Route::get('/edit/{id}', 'JobController@edit')->name('edit');
+        Route::post('/edit/{id}', 'JobController@updatecourse');
     });
 /*Student Middleware*/
     Route::group(['middleware' => ['Checkuser:Student']], function () {
