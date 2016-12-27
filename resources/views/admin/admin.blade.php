@@ -14,9 +14,11 @@
 
     <!-- Static -->
     <nav>
-      <span class="nav-logo">
-        <img src="/siam-knowledge-logo_dark.svg" class="logo" />
-      </span>
+      <a href='/'>
+        <span class="nav-logo">
+            <img src="/siam-knowledge-logo_dark.svg" class="logo" />
+        </span>
+      </a>
       <span class="nav-text">
         <h2>I AM</h2>
         <h3>{{$data['user']->name}}</h3>
@@ -49,7 +51,7 @@
               <span class="profile-picture" style="background-image: url('@if($tutorprofile->avatar!=NULL) {{Storage::url($tutorprofile->avatar)}}@else https://api.adorable.io/avatars/100/{{$tutorprofile->email}} @endif');background-size: cover;background-position: center;background-repeat: no-repeat;"></span>
               <span class="profile-text">
               <h2>{{$tutorprofile->name}}</h2>
-              <h3>{{$tutorprofile->school}}</h3>
+              <h3>{{$tutorprofile->university}}</h3>
               </span>
             </div>
             </a>

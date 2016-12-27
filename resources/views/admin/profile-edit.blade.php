@@ -10,22 +10,21 @@
 
   </head>
   <body>
-
     <!-- Static -->
     <nav>
-      <span class="nav-logo">
-        <img src="/siam-knowledge-logo_dark.svg" class="logo" />
-      </span>
+      <a href='/'>
+        <span class="nav-logo">
+            <img src="/siam-knowledge-logo_dark.svg" class="logo" />
+        </span>
+      </a>
       <span class="nav-text">
         <h2>I AM</h2>
         <h3>{{$data['admin']->name}}</h3>
-        <h4>Admin <a href=""><span class="logout"><span class="ion-log-out"></span> Logout</span></a></h4>
+        <h4>Admin <a href="/logout"><span class="logout"><span class="ion-log-out"></span> Logout</span></a></h4>
       </span>
     </nav>
     <!-- end static -->
-
     <!-- start block -->
-
     <section class="block">
       <div class="tutorial">
         <h1 class="tutorial-header"><span class="tutorial-icon ion-person"></span> ข้อมูลผู้ใช้งาน</h1>

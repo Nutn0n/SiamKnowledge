@@ -13,9 +13,9 @@
             <div class="card-description"><h2 class="card-time">{{$data['profile']->calledname}}</h2></div>
           </div>
         </div>
-        <h2 class="large-topic teacher-skills"><span class="ion-person"></span> นายทิม คุก (พี่ทิม)</h2>
+        <h2 class="large-topic teacher-skills"><span class="ion-person"></span> {{$data['profile']->name}} ({{$data['profile']->calledname}})</h2>
         <h2 class="large-topic teacher-skills"><span class="ion-university"></span> {{$data['profile']->university}}</h2>
-        <h2 class="large-topic teacher-skills"><span class="ion-ios-chatboxes"></span>ประสบการณ์สอน {{$data['profile']->teachhours}} ชั่วโมง</h2>
+        <h2 class="large-topic teacher-skills"><span class="ion-ios-chatboxes"></span> ประสบการณ์สอน {{$data['profile']->teachhours}} ชั่วโมง</h2>
         <p>{{$data['profile']->bio}}</p>
         @if($data['available']==true)<a href="{{route('selecttutor', ['id'=>$data['id'], 'tutorid'=>$data['tutorid']])}}" class="button button-orange">เลือกคนนี้</a>@endif
         <a href="{{url()->previous()}}" class="button button-grey">ย้อนกลับ</a>
