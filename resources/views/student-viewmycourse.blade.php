@@ -9,7 +9,7 @@
 .tap{
   margin-top:15px;
 }
-.sweet-alert .save-edit-button,#kd {
+.sweet-alert .save-edit-button,#kd,#kd2 {
    display: initial;
    width: auto;
    height: auto;
@@ -35,7 +35,7 @@
   </script>
   @foreach($data['courses'] as $Course)
     <script type="text/javascript">
-    var long = '@if($Course->default == true && $Course->available == false)<button value="{{$Course->id}}"class="dup">ทำซ้ำ</h1></button>@endif<a href="{{route('edit', ['id'=>$Course->id])}}">edit</a><a href="{{route('viewmycoursepage', ['id'=>$Course->id])}}"><div class="card-small-wrapper"><div class="card-small"> <div class="date"><h1>{{$Course->date}}<br><span>{{$Course->month}}</span></h1></div><div class="card-detail"><div class="card-name"><h1>{{$Course->topic}}<br><span>{{$Course->subject}}</span></h1></div><div class="card-description"><h2 class="card-time">{{$Course->timestring}}</h2><br class="card-breaker"><h2 class="card-location">{{$Course->place}}</h2></div></div></div></a>';
+    var long = '@if($Course->default == true && $Course->available == false)<button value="{{$Course->id}}"class="dup button button-orange">ทำซ้ำ</h1></button>@endif<a class="button button-grey" href="{{route('edit', ['id'=>$Course->id])}}">แก้ไข</a><a href="{{route('viewmycoursepage', ['id'=>$Course->id])}}"><div class="card-small-wrapper"><div class="card-small"> <div class="date"><h1>{{$Course->date}}<br><span>{{$Course->month}}</span></h1></div><div class="card-detail"><div class="card-name"><h1>{{$Course->topic}}<br><span>{{$Course->subject}}</span></h1></div><div class="card-description"><h2 class="card-time">{{$Course->timestring}}</h2><br class="card-breaker"><h2 class="card-location">{{$Course->place}}</h2></div></div></div></a>';
     </script>
     @if($Course->available == true)
     <script type="text/javascript">
@@ -71,11 +71,15 @@
       <script type="text/javascript">swal('เรียบร้อย', '{{session('status')}}', 'success');</script>
   @endif
   <script type="text/javascript">
+      var every = 7;
+      var first = 1;
   function isNumeric(n) {
       return !isNaN(parseFloat(n)) && isFinite(n);
     }
+
     $(".dup").click(function(){
-      swal({   title: "",   text: `
+      var id = $(this).val();
+      swal({title: "",showCancelButton: true,text: `
         <p>ต้องกาารเรียนทุกกี่วัน?</p>
           <span class="input-group-btn">
               <span type="button" class="save-edit-button button button-orange"  data-type="minus" data-field="quant[2]">
@@ -92,7 +96,7 @@
               <span type="button" class="save-edit-button button button-orange"  data-type="minus" data-field="quant[3]">
               -</span>
           </span>
-          <input type="text" name="quant[3]" id='kd' class="form-control input-number" value="1" min="1" max="100">
+          <input type="text" name="quant[3]" id='kd2' class="form-control input-number" value="1" min="1" max="100">
           <span class="input-group-btn">
               <span type="button" class="save-edit-button button button-orange" data-type="plus" data-field="quant[3]">
               +</span>
@@ -100,7 +104,13 @@
           </div>
       `,
       html: true,
-      allowOutsideClick: false});
+      allowOutsideClick: false}, function(){
+        $('body').on('click', 'button.confirm', function() {
+          var every = $("#kd").val();
+          var first = $("#kd2").val();
+          window.location = "{{route('welcome')}}/"+ "dup/" +id +"/" + first +"/" + every;
+        });
+      });
       $('.save-edit-button').click(function(e){
     e.preventDefault();
     
@@ -135,8 +145,9 @@
 $('.input-number').focusin(function(){
    $(this).data('oldValue', $(this).val());
 });
-$('.input-number').change(function() {
-    
+$(document).ready(function(){$('.input-number').change(function() {
+    var every = $("#kd").val();
+    var first = $("#kd2").val();
     minValue =  parseInt($(this).attr('min'));
     maxValue =  parseInt($(this).attr('max'));
     valueCurrent = parseInt($(this).val());
@@ -153,7 +164,8 @@ $('.input-number').change(function() {
     } else {
         alert('Sorry, the maximum value was reached');
         $(this).val($(this).data('oldValue'));
-    }
+    }});
+
     
     
 });
@@ -174,8 +186,8 @@ $(".input-number").keydown(function (e) {
     });
 
     });
-    //plugin bootstrap minus and plus
-//http://jsfiddle.net/laelitenetwork/puJ6G/
+
 
   </script>
+}
 @endsection
