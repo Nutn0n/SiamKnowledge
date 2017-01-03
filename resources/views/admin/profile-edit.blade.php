@@ -70,8 +70,8 @@
             <h2 class="large-topic">โรงเรียน</h2>
             <input type="text" class="large-normal-input normal-input" name='school' value='{{$data['user']->school}}'>
             @endif
-             @if($data['user']->status == 'University')
-            <h2 class="large-topic">โรงเรียน</h2>
+             @if($data['user']->status == 'Tutor')
+            <h2 class="large-topic">University</h2>
             <input type="text" class="large-normal-input normal-input" name='university' value='{{$data['user']->university}}'>
             @endif
             <h2 class="large-topic">E-mail</h2>

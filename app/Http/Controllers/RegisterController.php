@@ -137,15 +137,15 @@ class RegisterController extends Controller
     	$profile->name = $request->name;
     	$profile->calledname = $request->calledname;
     	$profile->birthdate = $request->birthdate;
-        $profile->university = $request->university;
     	$profile->school = $request->school;
     	$profile->email = $request->email;
     	$profile->phone = $request->phone;
-
+        if($request->file('avatar')!=NULL){
         if ($request->file('avatar')->isValid()) {
             $path = $request->avatar->store('public/avatars');
             $profile->avatar = $path;
         }
+    }
     	$profile->save();
     	return back();
     }
@@ -177,15 +177,21 @@ class RegisterController extends Controller
     public function updatemyprofiletutor(Request $request){
         $this->validate($request, [
             'avatar' => 'max:2000|image'
-        ]);
+            ]);
         $profile = Profile::find(Sentinel::getUser()->id);
         $profile->name = $request->name;
         $profile->calledname = $request->calledname;
         $profile->birthdate = $request->birthdate;
         $profile->university = $request->university;
+        $profile->bio = $request->bio;
         $profile->email = $request->email;
         $profile->phone = $request->phone;
-        $profile->bio = $request->bio;
+        if($request->file('avatar')!=NULL){
+        if ($request->file('avatar')->isValid()) {
+            $path = $request->avatar->store('public/avatars');
+            $profile->avatar = $path;
+        }
+        }
         $profile->save();
         return back();
     }

@@ -20,6 +20,15 @@
       <input type="text" class="normal-input" name='email' value='{{$profile->email}}'>
       <h2 class="large-topic">โทรศัพท์มือถือ</h2>
       <input type="text" class="normal-input" name='phone' value='{{$profile->phone}}'>
+      <h2 class="large-topic">อัพโหลดภาพประจำตัวใหม่</h2>
+      @if(count($errors->get('avatar')) > 0)<br><span class="ion-ios-minus-outline"></span>ไฟล์ไม่ใช่รูปภาพหรือมีขนาดเกิน 2mb</span></h3>@endif
+      <!--<input type="file" class="normal-input" name='avatar'>-->
+      <br/>
+
+            <input type="file" id="files" name='avatar' >
+
+
+
       <br/>      <br/>
       <input type="hidden" name="_method" value="PUT">
       {{ csrf_field() }}
@@ -27,3 +36,8 @@
    </form>
     </div>
     @endsection
+    @section('postscript')
+  @if(count($errors->all())>0)
+    <script type="text/javascript">swal('มีข้อผิดพลาด กรุณาตรวจสอบข้อมูลอีกครั้ง');</script>
+  @endif
+@endsection

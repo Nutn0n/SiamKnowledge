@@ -60,6 +60,8 @@
       50
       @elseif(60<$User->profile->teachhours && $User->profile->teachhours <= 100)
       100
+      @elseif($User->profile->teachhours >100)
+      100
       @endif">
       <!-- ใน PHP ใส่หารเอา Percent มาใส่ตรงนี้ได้เลยนะ ที่รัก <3
             เค้าดึงไป Process ใน JavaScript อีกที
