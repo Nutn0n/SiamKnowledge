@@ -64,7 +64,7 @@
             <input type="text" class="large-normal-input normal-input" name='name' value='{{$data['user']->name}}'>
             <h2 class="large-topic">ชื่อเล่น</h2>
             <input type="text" class="normal-input" name='calledname' value='{{$data['user']->calledname}}'>
-            <h2 class="large-topic">อายุ</h2>
+            <h2 class="large-topic">ปีเกิด</h2>
             <input type="number" class="number-spin-input" name='birthdate' value='{{$data['user']->birthdate}}'>
             @if($data['user']->status == 'Student')
             <h2 class="large-topic">โรงเรียน</h2>

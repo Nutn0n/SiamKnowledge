@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/assets/login.css">
     <link rel="stylesheet" href="/assets/reset.css">
     <link rel="stylesheet" href="/assets/css/sweetalert.css">
-
+    <link rel="stylesheet" href="/assets/css/style.css">
 
   </head>
   <body>
@@ -36,8 +36,14 @@
   <span class="ion-ios-minus-outline"></span> ข้อมูลไม่ถูกต้องกรุณาตรวจสอบใหม่</span></h3>
   @endif
   <input value="{{ old('calledname') }}" name='calledname' class="enterplace calledname"  placeholder="กรอกชื่อเล่น" type="text"></input>
-  <h3>อายุ</h3> @if(count($errors->get('birthdate'))!=0)<span class="ion-ios-minus-outline"></span> ข้อมูลไม่ถูกต้องกรุณาตรวจสอบใหม่</span></h3> @endif
-  <input value="{{ old('birthdate') }}" name='birthdate' class="enterplace birth"  placeholder="กรอกอายุ" type="number"></input>
+  <h3>ปีเกิด</h3> @if(count($errors->get('birthdate'))!=0)<span class="ion-ios-minus-outline"></span> ข้อมูลไม่ถูกต้องกรุณาตรวจสอบใหม่</span></h3> @endif
+  <!--<input value="{{ old('birthdate') }}" name='birthdate' class="enterplace birth"  placeholder="กรอกอายุ" type="number"></input>-->
+  <select name='birthdate' class="dropdown-orange" >
+   <option disabled selected hidden>เลือกปีเกิด</option>
+    @for($d=1970; $d<2015; $d++)
+      <option @if(old('birthdate') == $d) selected @endif value='{{$d}}'>{{$d}}</option>
+    @endfor
+  </select>
   <h3>เพศ</h3>
   <br/>
   <div id="radios">

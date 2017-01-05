@@ -9,7 +9,7 @@
       <input type="text" class="large-normal-input normal-input" name='name' value='{{$profile->name}}'>
       <h2 class="large-topic">ชื่อเล่น</h2>
       <input type="text" class="normal-input" name='calledname' value='{{$profile->calledname}}'>
-      <h2 class="large-topic">อายุ</h2>
+      <h2 class="large-topic">ปีเกิด (ค.ศ.)</h2>
       <input type="number" class="number-spin-input" name='birthdate' value='{{$profile->birthdate}}'>
       <h2 class="large-topic">มหาวิทยาลัย</h2>
       <input type="text" class="large-normal-input normal-input" name='university' value='{{$profile->university}}'>
