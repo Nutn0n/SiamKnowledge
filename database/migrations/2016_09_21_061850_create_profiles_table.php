@@ -32,7 +32,6 @@ class CreateProfilesTable extends Migration
             $table->decimal('teachhours', 7, 2)->nullable();
             $table->string('tutorgrade')->nullable();
             $table->string('avatar')->nullable();
-            $table->integer('user_id');
             $table->softDeletes();
             $table->timestamps();
         });
