@@ -18,6 +18,11 @@
       <input type="text" class="normal-input" name='email' value='{{$profile->email}}'>
       <h2 class="large-topic">โทรศัพท์มือถือ</h2>
       <input type="text" class="normal-input" name='phone' value='{{$profile->phone}}'>
+      <h1 class="sub-heading">ข้อมูลของฉัน</h1><br>
+      <h2 class="large-topic">รหัสผ่าน</h2>
+      <input placeholder='รหัสผ่านเก่า' type="password" class="normal-input" name='oldpass'>
+      <input placeholder='รหัสผ่านใหม่' type="password" class="normal-input" name='password'>
+      <input placeholder='ยืนยันรหัสผ่านใหม่' type="password" class="normal-input" name='password_confirmation'>
       <h2 class="large-topic">อัพโหลดภาพประจำตัวใหม่</h2>
       @if(count($errors->get('avatar')) > 0)<br><span class="ion-ios-minus-outline"></span>ไฟล์ไม่ใช่รูปภาพหรือมีขนาดเกิน 2mb</span></h3>@endif
       <!--<input type="file" class="normal-input" name='avatar'>-->
@@ -37,5 +42,8 @@
 @section('postscript')
   @if(count($errors->all())>0)
     <script type="text/javascript">swal('มีข้อผิดพลาด กรุณาตรวจสอบข้อมูลอีกครั้ง');</script>
+  @endif
+    @if (session('status'))
+    <script type="text/javascript">swal('{{ session('status') }}' );</script>
   @endif
 @endsection

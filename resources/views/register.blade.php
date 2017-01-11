@@ -123,15 +123,16 @@
   <input value="{{ old('phone') }}" name='phone' class="enterplace phone"  placeholder="หมายเลขโทรศัพท์" type="tel"></input>
   <h3>ID LINE</h3> @if(count($errors->get('lineid'))!=0)<span class="ion-ios-minus-outline"></span> ข้อมูลไม่ถูกต้องกรุณาตรวจสอบใหม่</span></h3>@endif
   <input value="{{ old('lineid') }}" name='lineid' class="enterplace line"  placeholder="ID LINE" type="text"></input>
-  <br/>
-  <h3>เชื่อมต่อบัญชีเข้ากับ</h3>
+  <!--<h3>เชื่อมต่อบัญชีเข้ากับ</h3>
   <div class="social-account">
   <!--- If Facebook connected  change class to "facebook-connected" -->
-  <!--- If Twitter connected  change class to "twitter-connected" -->
+  <!--- If Twitter connected  change class to "twitter-connected" 
   <a href=""><span class="ion-social-facebook facebook-connect"></span></a>
     <a href=""><span class="ion-social-twitter twitter-connect"></span></a>
   </div>
     <p class="minor">การเชื่อมบัญชีเพื่อข้อมูลการติดต่อ สามารถทำได้ในภายหลัง</p>
+-->
+
   </section>
   	{{ csrf_field() }}
   <div class="finish-button">

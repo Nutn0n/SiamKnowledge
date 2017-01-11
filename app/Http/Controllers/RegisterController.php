@@ -131,7 +131,8 @@ class RegisterController extends Controller
 
     public function updatemyprofile(Request $request){
         $this->validate($request, [
-            'avatar' => 'max:2000|image'
+            'avatar' => 'max:2000|image',
+            'password' => 'confirmed'
             ]);
     	$profile = Profile::find(Sentinel::getUser()->id);
     	$profile->name = $request->name;
@@ -140,6 +141,14 @@ class RegisterController extends Controller
     	$profile->school = $request->school;
     	$profile->email = $request->email;
     	$profile->phone = $request->phone;
+        $i = false;
+        $status = 'อัพเดทรหัสผ่านแล้ว';
+        if($request->oldpass != Null && $request->password != Null){
+            $i = true;
+            if(!$this->changepassword($request->oldpass, $request->password)){
+                $status = 'รหัสผ่านเก่าไม่ถูกต้อง';
+            }
+        }
         if($request->file('avatar')!=NULL){
         if ($request->file('avatar')->isValid()) {
             $path = $request->avatar->store('public/avatars');
@@ -147,7 +156,12 @@ class RegisterController extends Controller
         }
     }
     	$profile->save();
-    	return back();
+    	 if($i){
+            return back()->with('status', $status);
+        }
+        else{
+            return back();
+        }
     }
     public function updatemyprofileadmin(Request $request){
         $this->validate($request, [
@@ -176,7 +190,8 @@ class RegisterController extends Controller
 
     public function updatemyprofiletutor(Request $request){
         $this->validate($request, [
-            'avatar' => 'max:2000|image'
+            'avatar' => 'max:2000|image',
+            'password' => 'confirmed'
             ]);
         $profile = Profile::find(Sentinel::getUser()->id);
         $profile->name = $request->name;
@@ -186,6 +201,14 @@ class RegisterController extends Controller
         $profile->bio = $request->bio;
         $profile->email = $request->email;
         $profile->phone = $request->phone;
+        $i = false;
+        $status = 'อัพเดทรหัสผ่านแล้ว';
+        if($request->oldpass != Null && $request->password != Null){
+            $i = true;
+            if(!$this->changepassword($request->oldpass, $request->password)){
+                $status = 'รหัสผ่านเก่าไม่ถูกต้อง';
+            }
+        }
         if($request->file('avatar')!=NULL){
         if ($request->file('avatar')->isValid()) {
             $path = $request->avatar->store('public/avatars');
@@ -193,6 +216,29 @@ class RegisterController extends Controller
         }
         }
         $profile->save();
-        return back();
+        if($i){
+            return back()->with('status', $status);
+        }
+        else{
+            return back();
+        }
+    }
+        public function changepassword($oldpassword, $newpassword){
+            $user = Sentinel::getUser();
+            $credentials = [
+                'email'    => $user->email,
+                'password' => $oldpassword,
+            ];
+
+            if(Sentinel::authenticate($credentials)){
+                $credentials = [
+                    'password' => $newpassword,
+                ];
+                Sentinel::update(Sentinel::getUser(), $credentials);
+                return true;
+            }
+            else{
+                return false;
+            }
     }
 }

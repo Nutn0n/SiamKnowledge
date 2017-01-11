@@ -37,7 +37,7 @@
       <a href="#" class="close-button"></a>
       <div class="profile">
         <div class="profile-wrapper">
-                <div style="background-image: url('https://api.adorable.io/avatars/100/{{$User->profile->email}}');background-size: cover;background-position: center;background-repeat: no-repeat;" class="profile-pic"></div>
+                <div style="background-image: url('@if($User->profile->avatar!=NULL) {{Storage::url($User->profile->avatar)}}@else https://api.adorable.io/avatars/100/{{$User->profile->email}} @endif');background-size: cover;background-position: center;background-repeat: no-repeat;" class="profile-pic"></div>
           <div class="profile-name">
             <h1 id="name">{{$User->profile->name}}</h1>
             <h2 id="type">{{$User->profile->tutorgrade}} Tutor</h2>
