@@ -43,7 +43,7 @@
             <h2 id="type">{{$User->profile->tutorgrade}} Tutor</h2>
           </div>
         </div>
-      </div>
+      </div><!--
       <div class="progress-pie-chart" data-percent="@if($User->profile->teachhours <= 5)
       20
       @elseif(5<$User->profile->teachhours && $User->profile->teachhours <= 10)
@@ -63,9 +63,7 @@
       @elseif($User->profile->teachhours >100)
       100
       @endif">
-      <!-- ใน PHP ใส่หารเอา Percent มาใส่ตรงนี้ได้เลยนะ ที่รัก <3
-            เค้าดึงไป Process ใน JavaScript อีกที
-      -->
+      
       <div class="ppc-progress">
         <div class="ppc-progress-fill"></div>
       </div>
@@ -78,6 +76,7 @@
         </div>
       </div>
     </div>
+    -->
 
       <div class="credits" style="margin-top:-40px!important;">
         <h1>{{$User->credit->credit}}</h1>

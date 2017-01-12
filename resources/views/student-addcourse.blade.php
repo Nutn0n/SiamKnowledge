@@ -30,11 +30,11 @@
       <textarea  name='objective' class="text-input" placeholder="ต้องการเรียนเพื่อสอบเข้า">{{ old('objective') }}</textarea>
       <ul class="select">
         <li class="selection">
-          <input value="{{ old('name') }}" name='group' value='individual' type="radio" id="a-option" checked="checked">
+          <input checked name='group' value='individual' type="radio" id="a-option">
           <label for="a-option">แบบเดี่ยว</label>
         </li>
         <li class="selection">
-          <input value="{{ old('name') }}" name='group' value='yes-group' type="radio" id="b-option">
+          <input name='group' value='yes-group' type="radio" id="b-option">
           <label for="b-option">แบบกลุ่ม</label>
         </li>
       </ul>
@@ -47,12 +47,12 @@
       <select name='length' class="dropdown-orange">
         <option value="" disabled checked hidden>เลือกชั่วโมง</option>
         <option value=2>2 ชั่วโมง</option>
-        <option checked value=2.5>2 ชั่วโมง 30 นาที</option>
-        <option checked value=3>3 ชั่วโมง</option>
-        <option checked value=3.5>3 ชั่วโมง 30 นาที</option>
-        <option checked value=4>4 ชั่วโมง</option>
-        <option checked value=4.5>4 ชั่วโมง 30 นาที</option>
-        <option checked value=5>5 ชั่วโมง</option>
+        <option value=2.5>2 ชั่วโมง 30 นาที</option>
+        <option value=3>3 ชั่วโมง</option>
+        <option value=3.5>3 ชั่วโมง 30 นาที</option>
+        <option value=4>4 ชั่วโมง</option>
+        <option value=4.5>4 ชั่วโมง 30 นาที</option>
+        <option value=5>5 ชั่วโมง</option>
       </select>
       <h2 class="topic">ระดับชั้น</h2>
       <select name='grade' class="dropdown-orange">

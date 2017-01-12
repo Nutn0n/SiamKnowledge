@@ -45,5 +45,5 @@
   @endif
     @if (session('status'))
     <script type="text/javascript">swal('{{ session('status') }}' );</script>
-  @endif
+    @endif
 @endsection
